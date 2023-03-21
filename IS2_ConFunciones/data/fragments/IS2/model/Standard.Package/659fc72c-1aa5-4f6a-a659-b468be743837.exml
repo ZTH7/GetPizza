@@ -1,0 +1,239 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="model" version="4">
+  <OBJECT>
+    <ID name="model" mc="Standard.Package" uid="659fc72c-1aa5-4f6a-a659-b468be743837"/>
+    <PID name="getpizza" mc="Standard.Package" uid="260e83d2-1d79-4a3d-89fe-61deb36c07f0"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[model]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="2d0f570a-573c-4fac-9c52-a532ac6efd5a"/>
+        <COMPID name="Interaction1" mc="Standard.Interaction" uid="7d951256-0f8e-490f-913b-8c739613f566"/>
+        <COMPID name="Interaction2" mc="Standard.Interaction" uid="05b7b4fa-40e6-4d8a-9d02-53d100b35e2b"/>
+        <COMPID name="Interaction3" mc="Standard.Interaction" uid="c202a29f-b86e-4930-9a04-d5e9c78b7819"/>
+        <COMPID name="Interaction4" mc="Standard.Interaction" uid="42a2cbff-2094-43b6-a37b-738ea6fdc17b"/>
+        <COMPID name="Interaction5" mc="Standard.Interaction" uid="9a7f1091-feac-4719-8749-945a9d9dad8b"/>
+        <COMPID name="Interaction6" mc="Standard.Interaction" uid="ab42c48e-94ab-4a7f-8cf6-bbe6b12fbf70"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="Pedido" mc="Standard.Class" uid="22caf2ec-18a6-492f-ab03-b86a68461bdd"/>
+        <COMPID name="Cliente" mc="Standard.Class" uid="214a8828-9881-416b-be6c-576eeb3c618c"/>
+        <COMPID name="Membresia" mc="Standard.Class" uid="968f9124-0556-4d56-88bc-48fc80d7706e"/>
+        <COMPID name="Descuento" mc="Standard.Class" uid="fa47f8bd-5976-4373-9497-2e75cd511167"/>
+        <COMPID name="DescuentoPorPuntos" mc="Standard.Class" uid="0c1fd22a-aa12-45e8-824f-dcb664cf24dd"/>
+        <COMPID name="DescuentoPorCodigo" mc="Standard.Class" uid="d3bcee56-6d32-49d2-ba8f-241dfea19697"/>
+        <COMPID name="DescuentoPorMembresia" mc="Standard.Class" uid="3f23fea3-2549-483e-9024-987df21a5333"/>
+        <COMPID name="DescuentoPorDia" mc="Standard.Class" uid="665d8a0f-c73e-4933-aed0-f2f7541b4398"/>
+        <COMPID name="Carrito" mc="Standard.Class" uid="95f99c76-705c-46ef-8680-cb164fdf96ce"/>
+        <COMPID name="MenuPredefinido" mc="Standard.Class" uid="b556a3c3-5fa4-488f-be83-5625ff025654"/>
+        <COMPID name="Producto" mc="Standard.Class" uid="1d75fc77-55b9-4a19-9100-2802959c9e67"/>
+        <COMPID name="Postre" mc="Standard.Class" uid="baaa049f-20ed-461a-8420-86a93a5609aa"/>
+        <COMPID name="Bebida" mc="Standard.Class" uid="ab60c0e0-1b19-475d-9ae0-2ab0e1d6448a"/>
+        <COMPID name="Pizza" mc="Standard.Class" uid="7ede2093-d9fb-4857-a0f5-77008361800b"/>
+        <COMPID name="PizzaPredefinida" mc="Standard.Class" uid="d5ab36c0-7e01-403d-90a5-14677b0687c2"/>
+        <COMPID name="PizzaPersonalizada" mc="Standard.Class" uid="5c65e4d9-c176-45c4-83af-c595dcef07b8"/>
+        <COMPID name="Ingrediente" mc="Standard.Class" uid="799e1ae9-018a-4717-8abd-879e2e5c9ce0"/>
+        <COMPID name="Codigo" mc="Standard.Class" uid="9849baa0-a72f-47d2-bbcd-b18dba4418c5"/>
+        <COMPID name="List" mc="Standard.DataType" uid="250919ee-1e55-45bf-94fc-37654a9d8cdb"/>
+        <OBJECT>
+          <ID name="Rango" mc="Standard.Enumeration" uid="533940b2-0048-4402-afd3-6258902d0c26"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Rango]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="Bronce" mc="Standard.EnumerationLiteral" uid="de5f8736-501c-40e6-b6a5-a19cffb943f9"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Bronce]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Plata" mc="Standard.EnumerationLiteral" uid="fb995017-7296-43fd-a6c2-a330bfbe4d93"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Plata]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Oro" mc="Standard.EnumerationLiteral" uid="60e17780-2a1b-402a-89e6-171e505051e6"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Oro]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Sin_rango" mc="Standard.EnumerationLiteral" uid="64a7fdb5-61b7-422e-aea6-5ef2d6a37fca"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Sin_rango]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Base" mc="Standard.Enumeration" uid="341227da-51be-45eb-8abe-40ffcb743031"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Base]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="Sin_base" mc="Standard.EnumerationLiteral" uid="566918d8-5e64-4337-a51c-7ab4a9283f68"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Sin_base]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Queso" mc="Standard.EnumerationLiteral" uid="bf3190ec-1547-434f-9312-b1b84c3fd5c0"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Queso]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Tomate" mc="Standard.EnumerationLiteral" uid="770a956e-039a-4607-a013-02a037a6b32d"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Tomate]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Queso_y_tomate" mc="Standard.EnumerationLiteral" uid="8274f463-9a81-43f3-9881-9557f6419cc0"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Queso_y_tomate]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Tamanyo" mc="Standard.Enumeration" uid="c35d0938-7e88-474f-9c85-a230e4c37b8e"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Tamanyo]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="Pequenyo" mc="Standard.EnumerationLiteral" uid="6e6795ce-c2dc-4733-906c-eb18d37866a5"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Pequenyo]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Mediano" mc="Standard.EnumerationLiteral" uid="bbda0911-2ea3-4fe6-9294-0dd1898bb39c"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Mediano]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Grande" mc="Standard.EnumerationLiteral" uid="01e6ab6c-c6a0-4906-9d63-33d9c1297cf4"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Grande]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Masa" mc="Standard.Enumeration" uid="21411f30-d9a7-45f2-9078-2db4c5e2b034"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Masa]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="Napolitana" mc="Standard.EnumerationLiteral" uid="77b96f72-95e2-404f-92ef-a5c07e5eb7d2"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Napolitana]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Romana" mc="Standard.EnumerationLiteral" uid="46cd2559-969c-412a-ac4e-a78687bee113"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Romana]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Americana" mc="Standard.EnumerationLiteral" uid="663505b4-ece7-4cdd-af2f-11c218ff7ec3"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Americana]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

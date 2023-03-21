@@ -1,0 +1,110 @@
+package getpizza.view;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Registry extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	
+	ActionListener registryListener;
+	JTextField Nombre, Apellido, Correo, Tel, Direccion, Ciudad, Provincia, CodigoPostal;
+	JPasswordField Password;
+	JButton registry;
+	
+	public Registry() {
+		super(null);
+		setBounds(0, 0, 600, 450);
+		setOpaque(false);
+
+		setTitle();
+		setRegistryButton();
+		addTextField(Nombre, "Nombre:", 222, 85, 120, 20);
+		addTextField(Apellido, "Apellido:", 362, 85, 120, 20);
+		addTextField(Correo, "Correo:", 222, 125, 160, 20);
+		addTextField(Tel, "Tel.:", 402, 125, 80, 20);
+		addPasswordField(Password, "Contraseña:", 222, 165, 150, 20);
+		addTextField(Direccion, "Direccion:", 222, 205, 260, 20);
+		addTextField(Ciudad, "Ciudad:", 222, 245, 120, 20);
+		addTextField(Provincia, "Provincia:", 362, 245, 120, 20);
+		addTextField(CodigoPostal, "Codigo Postal:", 222, 285, 100, 20);
+
+		setBackground();
+	}
+
+	void setTitle() {
+		JLabel title = new JLabel("Registrar");
+		title.setForeground(new Color(0xE0FAAB00, true));
+		title.setFont(new Font(null, 1, 30));
+		title.setBounds(222, 45, 260, 30);
+		title.setHorizontalAlignment(SwingConstants.CENTER);
+		add(title);
+	}
+
+	void setRegistryButton() {
+		registry = new JButton("Registry");
+		registry.setForeground(new Color(96, 96, 96));
+		registry.setBounds(272, 385, 160, 40);
+		registry.setBackground(new Color(0, 255, 176, 220));
+		registry.addActionListener(registryListener);
+		add(registry);
+	}
+
+	void setBackground() {
+		JLabel bkg = new JLabel();
+		bkg.setOpaque(true);
+		bkg.setOpaque(true);
+		bkg.setBackground(new Color(255, 255, 255, 100));
+		bkg.setBounds(202, 40, 300, 400);
+		add(bkg);
+	}
+
+	void addTextField(JTextField TextField, String name, int x, int y, int w, int l) {
+		JLabel Text = new JLabel(name);
+		Text.setForeground(new Color(255, 255, 255));
+		Text.setBounds(x, y, w, 15);
+		add(Text);
+
+		TextField = new JTextField(8);
+		TextField.setBounds(x, y + 15, w, l);
+		TextField.setBackground(new Color(255, 255, 255, 220));
+		add(TextField);
+	}
+
+	void addPasswordField(JPasswordField PasswordField, String name, int x, int y, int w, int l) {
+		JLabel Text = new JLabel(name);
+		Text.setForeground(new Color(255, 255, 255));
+		Text.setBounds(x, y, w, 15);
+		add(Text);
+
+		PasswordField = new JPasswordField(8);
+		PasswordField.setBounds(x, y + 15, w, l);
+		PasswordField.setBackground(new Color(255, 255, 255, 220));
+		add(PasswordField);
+	}
+
+	public void setRegistryListener(ActionListener registryListener) {
+		registry.removeActionListener(this.registryListener);
+		this.registryListener = registryListener;
+		registry.addActionListener(this.registryListener);
+	}
+	
+	public Map<String, String> getInfo(){
+		Map<String, String> res = new HashMap<>();
+		res.put("Nombre", Nombre.getText());
+		res.put("Apellido", Apellido.getText());
+		res.put("Correo", Correo.getText());
+		res.put("Tel", Tel.getText());
+		res.put("Direccion", Direccion.getText());
+		res.put("Ciudad", Ciudad.getText());
+		res.put("Provincia", Provincia.getText());
+		res.put("CodigoPostal", CodigoPostal.getText());
+		res.put("Password", new String(Password.getPassword()));
+		
+		return res;
+	}
+
+}
