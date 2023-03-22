@@ -75,7 +75,7 @@ public class Login extends JPanel {
 	}
 
 	void setRegistryButton() {
-		registry1 = new JButton("¿No te has registrado?");
+		registry1 = new JButton("Â¿No te has registrado?");
 		registry1.setOpaque(false);
 		registry1.setContentAreaFilled(false);
 		registry1.setBorder(null);
