@@ -1,60 +1,28 @@
 package getpizza.control;
 
-import java.awt.event.*;
-
-import javax.swing.JPanel;
-
 import getpizza.misc.DBHelper;
 import getpizza.model.Cliente;
-import getpizza.view.*;
 import getpizza.misc.*;
 
 public class LoginController {
-	Login login;
-	DBHelper dbhelper;
-	Controller controller;
-	
-	public LoginController(DBHelper dbhelper, Controller controller) {
-		this.dbhelper = dbhelper;
-		this.controller = controller;
+	Controller _ctrl;
 
-		this.login = new Login();
-		setLoginFunction();
-		setRegistryFunction();
+	public LoginController(Controller ctrl) {
+		this._ctrl = ctrl;
+
 	}
 
-	public void setLoginFunction() {
-		login.setLoginListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String username = login.getUserName();
-				String password = login.getPassword();
-				Cliente client = DBHelper.getClient(username, password);
-				if(client != null) {
-					//..change to MainPage panel
-				}
-				else {
-					Utils.showErrorMsg("El usuario o contraseña incorrecta");
-				}
-			}
-
-		});
+	public void login(String username, String password) {
+		Cliente cliente = DBHelper.getInstance().getClient(username, password);
+		if (cliente != null) {
+			_ctrl.setCliente(cliente);
+			_ctrl.loginSuccessful();
+		} else {
+			Utils.showErrorMsg("El usuario o contraseÃ±a incorrecta");
+		}
 	}
 
-	public void setRegistryFunction() {
-		login.setRegistryListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-		});
-	}
-	
-	public JPanel getLoginPanel() {
-		return login;
+	public void registry() {
+		_ctrl.registry();
 	}
 }

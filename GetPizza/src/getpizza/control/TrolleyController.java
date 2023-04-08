@@ -12,5 +12,12 @@ public class TrolleyController {
 		this.products = new ArrayList<>();
 	}
 	
+	public void addProducts(Producto product) {
+		products.add(product);
+	}
+	
+	public void tryToPay() {
+		
+	}
 	
 }

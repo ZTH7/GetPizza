@@ -1,25 +1,30 @@
 package getpizza.control;
 
-import java.awt.event.*;
-import getpizza.view.*;
+import java.util.Map;
+
+import getpizza.misc.DBHelper;
+import getpizza.misc.Utils;
+import getpizza.model.Cliente;
 
 public class RegistryController {
-	Registry registry;
+	Controller _ctrl;
 
-	public RegistryController() {
-		this.registry = new Registry();
-		setRegistryFunction();
+	public RegistryController(Controller _ctrl) {
+		this._ctrl = _ctrl;
+	}
+
+	public void registry(Map<String, String> datos) {
+		_ctrl.setCliente(createClient(datos));
+		DBHelper.getInstance().createClient(datos);
 	}
 	
-	public void setRegistryFunction() {
-		registry.setRegistryListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-		});
+	public Cliente createClient(Map<String, String> datos) {
+		// TODO create client & check data
+		
+		Utils.showErrorMsg("Datos incorrecta");
+		
+		return null;
 	}
+	
+	
 }

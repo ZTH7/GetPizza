@@ -10,12 +10,18 @@ import java.awt.event.MouseMotionAdapter;
 public class BottomPage extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	int x, y;
 
 	public BottomPage() {
 		super("Get Pizza");
 
+		InitGUI();
+
+		setupMouse();
+	}
+
+	void InitGUI() {
 		setBounds(300, 250, 704, 480);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,10 +29,8 @@ public class BottomPage extends JFrame {
 		setUndecorated(true);
 
 		setBackground();
-		setBackground(new Color(255,255,255,0));
+		setBackground(new Color(255, 255, 255, 0));
 		setCloseButton();
-
-		setupMouse();
 	}
 
 	void setupMouse() {

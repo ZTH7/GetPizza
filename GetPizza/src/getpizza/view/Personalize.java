@@ -1,17 +1,27 @@
 package getpizza.view;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Point;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.List;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
 
 import getpizza.model.Producto;
 
-public class PayConfirm extends JDialog {
+public class Personalize extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
@@ -22,7 +32,7 @@ public class PayConfirm extends JDialog {
 	JScrollPane _centralPanel;
 	ActionListener confirmListener;
 
-	public PayConfirm(JFrame parent) {
+	public Personalize(JFrame parent) {
 		super(parent);
 		this._parent = parent;
 
@@ -39,12 +49,12 @@ public class PayConfirm extends JDialog {
 		setUndecorated(true);
 		setCentralPanel();
 
-		setBounds(300, 200, 340, 460);
+		setBounds(300, 200, 600, 450);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 
-	public void setTitle() {
+	void setTitle() {
 		JLabel title = new JLabel("Bill");
 		title.setForeground(new Color(250, 192, 61));
 		title.setFont(new Font(null, 1, 20));
@@ -53,7 +63,7 @@ public class PayConfirm extends JDialog {
 		_panel.add(title);
 	}
 
-	public void setProductsList(List<Producto> products) {
+	void setProductsList(List<Producto> products) {
 		String list = "";
 		for (Producto product : products) {
 			list += product.getNombre();
@@ -68,7 +78,7 @@ public class PayConfirm extends JDialog {
 		_panel.add(title);
 	}
 
-	public void setButton() {
+	void setButton() {
 		confirm = new JButton("Confirm");
 		confirm.addActionListener(confirmListener);
 		confirm.setForeground(new Color(21, 60, 70));
@@ -86,13 +96,13 @@ public class PayConfirm extends JDialog {
 		_panel.add(cancel);
 	}
 
-	public void setConfirmListener(ActionListener confirmListener) {
+	void setConfirmListener(ActionListener confirmListener) {
 		confirm.removeActionListener(this.confirmListener);
 		this.confirmListener = confirmListener;
 		confirm.addActionListener(confirmListener);
 	}
 
-	public void setCentralPanel() {
+	void setCentralPanel() {
 		JPanel panel = new JPanel(new GridLayout(10, 2));
 		panel.setBackground(new Color(113, 152, 71));
 
@@ -139,4 +149,5 @@ public class PayConfirm extends JDialog {
 		_panel.setLayout(null);
 		this.setContentPane(_panel);
 	}
+
 }
