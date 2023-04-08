@@ -1,17 +1,17 @@
 package getpizza.launcher;
 
-import javax.swing.*;
-import getpizza.view.*;
+import getpizza.control.Controller;
 
 public class Main {
 	public static void main(String[] args) {
-		BottomPage bottom = new BottomPage();
-		JPanel menuPage = new MainPage();
-		
-		bottom.getContentPane().add(menuPage);
-		
-		JDialog payConfirm = new PayConfirm(bottom);
-		
-		bottom.setVisible(true);
+		Controller ctrl = new Controller();
+
+		try {
+			ctrl.run();
+		} catch (Exception e) {
+			System.err.println("Something went wrong ...");
+			System.err.println();
+			e.printStackTrace();
+		}
 	}
 }

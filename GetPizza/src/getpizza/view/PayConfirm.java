@@ -9,9 +9,10 @@ import java.util.List;
 
 import javax.swing.*;
 
+import getpizza.model.Observer;
 import getpizza.model.Producto;
 
-public class PayConfirm extends JDialog {
+public class PayConfirm extends JDialog implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
@@ -138,5 +139,17 @@ public class PayConfirm extends JDialog {
 		_panel = new JPanel();
 		_panel.setLayout(null);
 		this.setContentPane(_panel);
+	}
+
+	@Override
+	public void onProductAdded(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onProductRemoved(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
 	}
 }

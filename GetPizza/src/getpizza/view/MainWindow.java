@@ -2,18 +2,21 @@ package getpizza.view;
 
 import javax.swing.*;
 
+import getpizza.control.Controller;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
-public class BottomPage extends JFrame {
+public class MainWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
 	int x, y;
-
-	public BottomPage() {
+	Controller _ctrl;
+	
+	public MainWindow() {
 		super("Get Pizza");
 
 		InitGUI();
@@ -31,6 +34,8 @@ public class BottomPage extends JFrame {
 		setBackground();
 		setBackground(new Color(255, 255, 255, 0));
 		setCloseButton();
+		
+		setVisible(true);
 	}
 
 	void setupMouse() {
@@ -82,4 +87,5 @@ public class BottomPage extends JFrame {
 		getContentPane().add(close);
 		getContentPane().add(closeText);
 	}
+	
 }

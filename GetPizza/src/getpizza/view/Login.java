@@ -1,19 +1,24 @@
 package getpizza.view;
 
 import javax.swing.*;
-import getpizza.control.LoginController;
-import java.awt.*;
 
-public class Login extends JPanel {
+import getpizza.control.Controller;
+import getpizza.model.Observer;
+import getpizza.model.Producto;
+
+import java.awt.*;
+import java.util.List;
+
+public class Login extends JPanel implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
-	LoginController _ctrl;
+	Controller _ctrl;
 	JTextField username;
 	JPasswordField password;
 	JButton login, registry1, registry2;
 
-	public Login(LoginController ctrl) {
+	public Login(Controller ctrl) {
 		this._ctrl = ctrl;
 		InitGUI();
 	}
@@ -83,7 +88,7 @@ public class Login extends JPanel {
 		registry1.setBorder(null);
 		registry1.setForeground(new Color(2, 2, 250));
 		registry1.setBounds(287, 345, 130, 20);
-		registry1.addActionListener(e -> _ctrl.registry());
+		registry1.addActionListener(e -> _ctrl.changeToRegistry());
 		add(registry1);
 
 		registry2 = new JButton("<html><p>Registrate ahora</p></html>");
@@ -92,7 +97,7 @@ public class Login extends JPanel {
 		registry2.setBorder(null);
 		registry2.setForeground(new Color(2, 2, 250));
 		registry2.setBounds(292, 365, 120, 20);
-		registry2.addActionListener(e -> _ctrl.registry());
+		registry2.addActionListener(e -> _ctrl.changeToRegistry());
 		add(registry2);
 	}
 
@@ -102,5 +107,17 @@ public class Login extends JPanel {
 		bkg.setBackground(new Color(245, 242, 233, 160));
 		bkg.setBounds(202, 65, 300, 350);
 		add(bkg);
+	}
+
+	@Override
+	public void onProductAdded(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onProductRemoved(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
 	}
 }
