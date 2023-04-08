@@ -1,18 +1,25 @@
 package getpizza.view;
 
 import java.awt.*;
+import java.util.List;
+
 import javax.swing.*;
 
-public class MainPage extends JPanel {
+import getpizza.control.Controller;
+import getpizza.model.Observer;
+import getpizza.model.Producto;
+
+public class MenuPage extends JPanel implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
 	JPanel avatar, buttonsPanel, cardsPanel;
 	JButton Oferta, Pizza, Bebida, Postre, Carrito, Profile;
+	Controller _ctrl;
 
-	public MainPage() {
+	public MenuPage(Controller _ctrl) {
 		super(new BorderLayout());
-
+		this._ctrl = _ctrl;
 		InitGUI();
 	}
 
@@ -68,7 +75,7 @@ public class MainPage extends JPanel {
 		panel.add(createButton(Pizza, "Pizza"));
 		panel.add(createButton(Bebida, "Bebida"));
 		panel.add(createButton(Postre, "Postre"));
-		panel.add(createButton(Carrito, "Carrito")); //TODO
+		panel.add(createButton(Carrito, "Carrito")); // TODO
 
 		return panel;
 	}
@@ -115,6 +122,18 @@ public class MainPage extends JPanel {
 			cl.show(cardsPanel, name);
 		});
 		return button;
+	}
+
+	@Override
+	public void onProductAdded(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onProductRemoved(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
 	}
 }
 

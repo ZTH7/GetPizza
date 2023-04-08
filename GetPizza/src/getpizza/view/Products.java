@@ -1,9 +1,14 @@
 package getpizza.view;
 
 import java.awt.*;
+import java.util.List;
+
 import javax.swing.*;
 
-public class Products extends JScrollPane {
+import getpizza.model.Observer;
+import getpizza.model.Producto;
+
+public class Products extends JScrollPane implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
@@ -54,6 +59,18 @@ public class Products extends JScrollPane {
 	}
 
 	void postreIni() {
+
+	}
+
+	@Override
+	public void onProductAdded(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onProductRemoved(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
 
 	}
 

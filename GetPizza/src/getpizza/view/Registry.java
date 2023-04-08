@@ -2,22 +2,25 @@ package getpizza.view;
 
 import javax.swing.*;
 
-import getpizza.control.RegistryController;
+import getpizza.control.Controller;
+import getpizza.model.Observer;
+import getpizza.model.Producto;
 
 import java.awt.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class Registry extends JPanel {
+public class Registry extends JPanel implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
-	RegistryController _ctrl;
+	Controller _ctrl;
 	JTextField Nombre, Apellido, Correo, Tel, Direccion, Ciudad, Provincia, CodigoPostal;
 	JPasswordField Password;
 	JButton registry;
 
-	public Registry(RegistryController _ctrl) {
+	public Registry(Controller _ctrl) {
 		super(null);
 		this._ctrl = _ctrl;
 
@@ -107,6 +110,18 @@ public class Registry extends JPanel {
 		res.put("Password", new String(Password.getPassword()));
 
 		return res;
+	}
+
+	@Override
+	public void onProductAdded(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onProductRemoved(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
