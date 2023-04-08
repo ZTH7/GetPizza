@@ -1,13 +1,15 @@
 package getpizza.control;
 
-import getpizza.view.*;
-
 public class MenuController {
-	MainPage mainpage;
-	
-	public MenuController() {
-		this.mainpage = new MainPage();
+	Controller _ctrl;
+
+	public MenuController(Controller ctrl) {
+		this._ctrl = ctrl;
+
 	}
-	
-	
+
+	public void addToTrolley(String id) {
+
+	}
+
 }

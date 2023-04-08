@@ -1,22 +1,30 @@
 package getpizza.view;
 
 import javax.swing.*;
+
+import getpizza.control.RegistryController;
+
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Registry extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
-	ActionListener registryListener;
+
+	RegistryController _ctrl;
 	JTextField Nombre, Apellido, Correo, Tel, Direccion, Ciudad, Provincia, CodigoPostal;
 	JPasswordField Password;
 	JButton registry;
-	
-	public Registry() {
+
+	public Registry(RegistryController _ctrl) {
 		super(null);
+		this._ctrl = _ctrl;
+
+		InitGUI();
+	}
+
+	void InitGUI() {
 		setBounds(0, 0, 600, 450);
 		setOpaque(false);
 
@@ -26,7 +34,7 @@ public class Registry extends JPanel {
 		addTextField(Apellido, "Apellido:", 362, 85, 120, 20);
 		addTextField(Correo, "Correo:", 222, 125, 160, 20);
 		addTextField(Tel, "Tel.:", 402, 125, 80, 20);
-		addPasswordField(Password, "Contraseña:", 222, 165, 150, 20);
+		addPasswordField(Password, "Contraseï¿½a:", 222, 165, 150, 20);
 		addTextField(Direccion, "Direccion:", 222, 205, 260, 20);
 		addTextField(Ciudad, "Ciudad:", 222, 245, 120, 20);
 		addTextField(Provincia, "Provincia:", 362, 245, 120, 20);
@@ -49,7 +57,7 @@ public class Registry extends JPanel {
 		registry.setForeground(new Color(96, 96, 96));
 		registry.setBounds(272, 385, 160, 40);
 		registry.setBackground(new Color(0, 255, 176, 220));
-		registry.addActionListener(registryListener);
+		registry.addActionListener(e -> _ctrl.registry(getInfo()));
 		add(registry);
 	}
 
@@ -86,13 +94,7 @@ public class Registry extends JPanel {
 		add(PasswordField);
 	}
 
-	public void setRegistryListener(ActionListener registryListener) {
-		registry.removeActionListener(this.registryListener);
-		this.registryListener = registryListener;
-		registry.addActionListener(this.registryListener);
-	}
-	
-	public Map<String, String> getInfo(){
+	public Map<String, String> getInfo() {
 		Map<String, String> res = new HashMap<>();
 		res.put("Nombre", Nombre.getText());
 		res.put("Apellido", Apellido.getText());
@@ -103,7 +105,7 @@ public class Registry extends JPanel {
 		res.put("Provincia", Provincia.getText());
 		res.put("CodigoPostal", CodigoPostal.getText());
 		res.put("Password", new String(Password.getPassword()));
-		
+
 		return res;
 	}
 

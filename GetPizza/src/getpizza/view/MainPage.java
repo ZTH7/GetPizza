@@ -6,12 +6,17 @@ import javax.swing.*;
 public class MainPage extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	JPanel avatar, buttonsPanel, cardsPanel;
 	JButton Oferta, Pizza, Bebida, Postre, Carrito, Profile;
 
 	public MainPage() {
 		super(new BorderLayout());
+
+		InitGUI();
+	}
+
+	void InitGUI() {
 		buttonsPanel = createButtons();
 		add(buttonsPanel, BorderLayout.WEST);
 		add(ProductPanel(), BorderLayout.CENTER);
@@ -20,7 +25,7 @@ public class MainPage extends JPanel {
 		setOpaque(false);
 	}
 
-	private JPanel createAvatarImg() {
+	JPanel createAvatarImg() {
 		JPanel panel = new JPanel();
 		panel.setOpaque(false);
 		panel.setMaximumSize(new Dimension(176, 150));
@@ -37,10 +42,21 @@ public class MainPage extends JPanel {
 
 		panel.add(title);
 
+		JLabel image = new JLabel();
+		image.setAlignmentX(CENTER_ALIGNMENT);
+		image.setHorizontalAlignment(SwingConstants.CENTER);
+		image.setMaximumSize(new Dimension(80, 80));
+		image.setPreferredSize(new Dimension(80, 80));
+		ImageIcon icon = new ImageIcon("Resource/avatar.png");
+		icon.setImage(icon.getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+		image.setIcon(icon);
+
+		panel.add(image);
+
 		return panel;
 	}
 
-	private JPanel createButtons() {
+	JPanel createButtons() {
 		JPanel panel = new ButtonPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		panel.setPreferredSize(new Dimension(176, 480));
@@ -48,32 +64,38 @@ public class MainPage extends JPanel {
 		avatar = createAvatarImg();
 		panel.add(avatar);
 
-		panel.add(addButton(Oferta, "Oferta"));
-		panel.add(addButton(Pizza, "Pizza"));
-		panel.add(addButton(Bebida, "Bebida"));
-		panel.add(addButton(Postre, "Postre"));
-		panel.add(addButton(Carrito, "Carrito"));
+		panel.add(createButton(Oferta, "Oferta"));
+		panel.add(createButton(Pizza, "Pizza"));
+		panel.add(createButton(Bebida, "Bebida"));
+		panel.add(createButton(Postre, "Postre"));
+		panel.add(createButton(Carrito, "Carrito")); //TODO
 
 		return panel;
 	}
 
-	private JPanel ProductPanel() {
+	JPanel ProductPanel() {
 		JPanel panel = new JPanel(null);
 		panel.setOpaque(false);
 
-		Products ap = new Products();
-		ap.setBounds(60, 50, 408, 390);
+		cardsPanel = new JPanel(new CardLayout());
+		cardsPanel.setBounds(60, 50, 408, 390);
+		cardsPanel.setOpaque(false);
 
-		panel.add(ap);
+		cardsPanel.add(new Products("Oferta"), "Oferta");
+		cardsPanel.add(new Products("Pizza"), "Pizza");
+		cardsPanel.add(new Products("Bebida"), "Bebida");
+		cardsPanel.add(new Products("Postre"), "Postre");
+
+		panel.add(cardsPanel);
 
 		return panel;
 	}
 
-	private JButton addButton(JButton button, String name) {
+	JButton createButton(JButton button, String name) {
 		ImageIcon icon = new ImageIcon("Resource/NormalButton.png");
-		ImageIcon icon3 = new ImageIcon("Resource/RolloverButton.png");
+		ImageIcon icon2 = new ImageIcon("Resource/RolloverButton.png");
 		Image scaledImage = icon.getImage().getScaledInstance(176, 50, Image.SCALE_SMOOTH);
-		Image scaledImage3 = icon3.getImage().getScaledInstance(176, 50, Image.SCALE_SMOOTH);
+		Image scaledImage2 = icon2.getImage().getScaledInstance(176, 50, Image.SCALE_SMOOTH);
 
 		button = new JButton(name, new ImageIcon(scaledImage));
 
@@ -83,8 +105,8 @@ public class MainPage extends JPanel {
 		button.setAlignmentX(CENTER_ALIGNMENT);
 		button.setMaximumSize(new Dimension(176, 50));
 		button.setPreferredSize(new Dimension(176, 50));
-		button.setRolloverIcon(new ImageIcon(scaledImage3));
-		button.setSelectedIcon(new ImageIcon(scaledImage3));
+		button.setRolloverIcon(new ImageIcon(scaledImage2));
+		button.setSelectedIcon(new ImageIcon(scaledImage2));
 		button.setVerticalTextPosition(SwingConstants.CENTER);
 		button.setHorizontalTextPosition(SwingConstants.CENTER);
 
@@ -99,7 +121,7 @@ public class MainPage extends JPanel {
 class ButtonPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	Image img;
 
 	public ButtonPanel() {
