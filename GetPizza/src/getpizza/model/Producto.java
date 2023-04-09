@@ -12,10 +12,10 @@ public class Producto {
     @objid ("9690dcca-6f5e-4211-8748-b6152c61d17b")
     protected float precio;
 
-    @objid ("980417eb-eacc-4a14-902e-d896493db8e6")
+    @objid ("63e1741f-def7-49ba-9def-c87767780b88")
     public Carrito carrito;
 
-    @objid ("86346015-45f0-40bd-a043-d1eea242098f")
+    @objid ("b2baab49-f22e-4857-8136-b8cec2fe35c8")
     public List<MenuPredefinido> menuPredefinido = new ArrayList<MenuPredefinido> ();
 
     @objid ("2f886500-0e45-4b7d-b9b7-bf93ed6ba507")

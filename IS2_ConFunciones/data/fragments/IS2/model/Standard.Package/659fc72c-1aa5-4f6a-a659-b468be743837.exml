@@ -47,7 +47,7 @@
           <ATTRIBUTES>
             <ATT name="IsElementary">true</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
             <ATT name="IsRoot">false</ATT>
             <ATT name="Visibility">Public</ATT>
             <ATT name="Name"><![CDATA[Rango]]></ATT>
@@ -98,7 +98,7 @@
           <ATTRIBUTES>
             <ATT name="IsElementary">true</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
             <ATT name="IsRoot">false</ATT>
             <ATT name="Visibility">Public</ATT>
             <ATT name="Name"><![CDATA[Base]]></ATT>
@@ -149,7 +149,7 @@
           <ATTRIBUTES>
             <ATT name="IsElementary">true</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
             <ATT name="IsRoot">false</ATT>
             <ATT name="Visibility">Public</ATT>
             <ATT name="Name"><![CDATA[Tamanyo]]></ATT>
@@ -192,7 +192,7 @@
           <ATTRIBUTES>
             <ATT name="IsElementary">true</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
             <ATT name="IsRoot">false</ATT>
             <ATT name="Visibility">Public</ATT>
             <ATT name="Name"><![CDATA[Masa]]></ATT>
@@ -230,6 +230,7 @@
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
+        <COMPID name="Observer" mc="Standard.Interface" uid="e5354d22-a112-4ab1-85d7-ea4bafda9922"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

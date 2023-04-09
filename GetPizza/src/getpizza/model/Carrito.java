@@ -1,5 +1,6 @@
 package getpizza.model;
 
+import java.util.List;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("95f99c76-705c-46ef-8680-cb164fdf96ce")
@@ -9,6 +10,9 @@ public class Carrito {
 
     @objid ("df1cd22a-c0a1-45b4-ab25-37188c118939")
     public Pedido pedido;
+
+    @objid ("cf821f7b-c561-4a61-9466-c4e640cec871")
+    public List<Producto> productos;
 
     @objid ("d2e07c97-9261-4d4c-9257-0138bce63c0c")
     float getPrecioTotal() {
@@ -22,14 +26,6 @@ public class Carrito {
         this.precioTotal = value;
     }
 
-    @objid ("26e5bd71-a07c-4198-bbf6-6692a1a93b38")
-    public void addProducto() {
-    }
-
-    @objid ("ce0cef6f-0ca6-4891-9dbe-911fe8949405")
-    public void removeProducto() {
-    }
-
     @objid ("dbeef1fd-a234-44ef-990b-74441e71730c")
     public void addMenuPredef() {
     }
@@ -40,6 +36,16 @@ public class Carrito {
 
     @objid ("a443cc58-d442-4d73-950f-8b7e56eba091")
     public void visualizarCarrito() {
+    }
+
+    @objid ("5b4c402d-0be2-44d3-bec0-36e8130a8d97")
+    public void addProducto(Producto producto) {
+        productos.add(producto);
+    }
+
+    @objid ("86bbd819-20cc-469e-b483-0f4f263a340f")
+    public void removeProducto(Producto producto) {
+        productos.remove(producto);
     }
 
 }

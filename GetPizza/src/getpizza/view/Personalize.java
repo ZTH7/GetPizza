@@ -118,18 +118,6 @@ public class Personalize extends JDialog implements Observer {
 		_panel.add(_centralPanel);
 	}
 
-	public void setDescuento() {
-
-	}
-
-	public void setDirection() {
-
-	}
-
-	public void setPayMethod() {
-
-	}
-
 	void setupMouse() {
 		addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {

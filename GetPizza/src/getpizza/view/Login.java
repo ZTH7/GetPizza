@@ -7,6 +7,7 @@ import getpizza.model.Observer;
 import getpizza.model.Producto;
 
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class Login extends JPanel implements Observer {
@@ -77,7 +78,6 @@ public class Login extends JPanel implements Observer {
 		login.setForeground(new Color(96, 96, 96));
 		login.setBounds(272, 305, 160, 40);
 		login.setBackground(new Color(250, 192, 61));
-		login.addActionListener(e -> _ctrl.login(username.getText(), new String(password.getPassword())));
 		add(login);
 	}
 
@@ -88,7 +88,6 @@ public class Login extends JPanel implements Observer {
 		registry1.setBorder(null);
 		registry1.setForeground(new Color(2, 2, 250));
 		registry1.setBounds(287, 345, 130, 20);
-		registry1.addActionListener(e -> _ctrl.changeToRegistry());
 		add(registry1);
 
 		registry2 = new JButton("<html><p>Registrate ahora</p></html>");
@@ -97,7 +96,6 @@ public class Login extends JPanel implements Observer {
 		registry2.setBorder(null);
 		registry2.setForeground(new Color(2, 2, 250));
 		registry2.setBounds(292, 365, 120, 20);
-		registry2.addActionListener(e -> _ctrl.changeToRegistry());
 		add(registry2);
 	}
 
@@ -107,6 +105,23 @@ public class Login extends JPanel implements Observer {
 		bkg.setBackground(new Color(245, 242, 233, 160));
 		bkg.setBounds(202, 65, 300, 350);
 		add(bkg);
+	}
+	
+	public String getUsername() {
+		return username.getText();
+	}
+	
+	public String getPassword() {
+		return new String(password.getPassword());
+	}
+	
+	public void setLoginAction(ActionListener al) {
+		login.addActionListener(al);
+	}
+	
+	public void setRegistryAction(ActionListener al) {
+		registry1.addActionListener(al);
+		registry2.addActionListener(al);
 	}
 
 	@Override
