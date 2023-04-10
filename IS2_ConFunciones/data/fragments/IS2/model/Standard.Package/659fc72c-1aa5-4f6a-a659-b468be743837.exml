@@ -231,6 +231,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <COMPID name="Observer" mc="Standard.Interface" uid="e5354d22-a112-4ab1-85d7-ea4bafda9922"/>
+        <COMPID name="Observable" mc="Standard.Interface" uid="6f68d69d-d5be-43d4-b836-4b6337a47f74"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

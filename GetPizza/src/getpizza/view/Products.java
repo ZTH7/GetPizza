@@ -5,7 +5,9 @@ import java.util.List;
 
 import javax.swing.*;
 
+import getpizza.model.Codigo;
 import getpizza.model.Observer;
+import getpizza.model.Pedido;
 import getpizza.model.Producto;
 
 public class Products extends JScrollPane implements Observer {
@@ -38,6 +40,18 @@ public class Products extends JScrollPane implements Observer {
 
 	@Override
 	public void onProductRemoved(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onCodeUsed(Codigo codigo) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onOrderSended(Pedido pedido) {
 		// TODO Auto-generated method stub
 
 	}

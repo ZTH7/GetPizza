@@ -9,7 +9,9 @@ import java.util.List;
 
 import javax.swing.*;
 
+import getpizza.model.Codigo;
 import getpizza.model.Observer;
+import getpizza.model.Pedido;
 import getpizza.model.Producto;
 
 public class PayConfirm extends JDialog implements Observer {
@@ -149,6 +151,18 @@ public class PayConfirm extends JDialog implements Observer {
 
 	@Override
 	public void onProductRemoved(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onCodeUsed(Codigo codigo) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onOrderSended(Pedido pedido) {
 		// TODO Auto-generated method stub
 
 	}
