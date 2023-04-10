@@ -125,11 +125,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="6025ef79-5a83-4a59-a740-3ef51a2bf0a8"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="addProducto" mc="Standard.Operation" uid="26e5bd71-a07c-4198-bbf6-6692a1a93b38"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -218,11 +213,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="80af9d2e-efa8-42fb-85b7-a8c8474ef38f"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="removeProducto" mc="Standard.Operation" uid="ce0cef6f-0ca6-4891-9dbe-911fe8949405"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>

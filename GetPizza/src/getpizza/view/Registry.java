@@ -3,15 +3,12 @@ package getpizza.view;
 import javax.swing.*;
 
 import getpizza.control.Controller;
-import getpizza.model.Observer;
-import getpizza.model.Producto;
-
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class Registry extends JPanel implements Observer {
+public class Registry extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
@@ -60,7 +57,6 @@ public class Registry extends JPanel implements Observer {
 		registry.setForeground(new Color(96, 96, 96));
 		registry.setBounds(272, 385, 160, 40);
 		registry.setBackground(new Color(0, 255, 176, 220));
-		registry.addActionListener(e -> _ctrl.registry(getInfo()));
 		add(registry);
 	}
 
@@ -112,16 +108,8 @@ public class Registry extends JPanel implements Observer {
 		return res;
 	}
 
-	@Override
-	public void onProductAdded(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onProductRemoved(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
+	public void setRegistryAction(ActionListener al) {
+		registry.addActionListener(al);
 	}
 
 }

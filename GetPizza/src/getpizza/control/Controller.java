@@ -13,7 +13,7 @@ import getpizza.view.*;
 
 public class Controller {
 	JFrame mainWindow;
-	JPanel login, registry, menuPage, payConfirm, trolley;
+	JPanel login, registry, mainPanel, payConfirm, trolley;
 	Cliente cliente;
 	List<Producto> products;
 
@@ -24,7 +24,7 @@ public class Controller {
 	public void run() throws Exception {
 		mainWindow = new MainWindow();
 		login = new Login(this);
-		menuPage = new MenuPage(this);
+		mainPanel = new MainPanel(this);
 		setMainWindowPanel(login, null);
 	}
 
@@ -42,7 +42,7 @@ public class Controller {
 		Cliente cliente = DBHelper.getInstance().getClient(username, password);
 		if (cliente != null) {
 			this.cliente = cliente;
-			setMainWindowPanel(menuPage, login);
+			setMainWindowPanel(mainPanel, login);
 		} else {
 			Utils.showErrorMsg("El usuario o contraseña incorrecta");
 		}
@@ -57,7 +57,7 @@ public class Controller {
 		Cliente client = createClient(datos);
 		if (client != null) {
 			DBHelper.getInstance().createClient(datos);
-			setMainWindowPanel(menuPage, registry);
+			setMainWindowPanel(mainPanel, registry);
 		}
 
 	}

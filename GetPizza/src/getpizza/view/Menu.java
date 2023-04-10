@@ -1,25 +1,23 @@
 package getpizza.view;
 
-import java.awt.*;
-import java.util.List;
+import java.awt.Color;
+import java.awt.GridLayout;
 
-import javax.swing.*;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
-import getpizza.model.Observer;
-import getpizza.model.Producto;
-
-public class Products extends JScrollPane implements Observer {
+public class Menu extends JScrollPane {
 
 	private static final long serialVersionUID = 1L;
 
 	JPanel contentPanel;
 
-	public Products(String str) {
+	public Menu() {
 		contentPanel = new JPanel(new GridLayout(5, 2));
 		contentPanel.setBackground(new Color(255, 255, 255, 160));
 
 		InitGUI();
-
 	}
 
 	void InitGUI() {
@@ -28,18 +26,6 @@ public class Products extends JScrollPane implements Observer {
 		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		setBounds(60, 50, 408, 390);
 		setOpaque(false);
-	}
-
-	@Override
-	public void onProductAdded(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onProductRemoved(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

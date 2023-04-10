@@ -1,25 +1,20 @@
 package getpizza.view;
 
 import java.awt.*;
-import java.util.List;
 
 import javax.swing.*;
 
 import getpizza.control.Controller;
-import getpizza.model.Observer;
-import getpizza.model.Producto;
 
-public class MenuPage extends JPanel implements Observer {
+public class MainPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
 	JPanel avatar, buttonsPanel, cardsPanel;
-	JButton Oferta, Pizza, Bebida, Postre, Carrito, Profile;
-	Controller _ctrl;
+	JButton Descuento, Menu, Perfil, Pedido, Historia;
 
-	public MenuPage(Controller _ctrl) {
+	public MainPanel(Controller _ctrl) {
 		super(new BorderLayout());
-		this._ctrl = _ctrl;
 		InitGUI();
 	}
 
@@ -71,11 +66,11 @@ public class MenuPage extends JPanel implements Observer {
 		avatar = createAvatarImg();
 		panel.add(avatar);
 
-		panel.add(createButton(Oferta, "Oferta"));
-		panel.add(createButton(Pizza, "Pizza"));
-		panel.add(createButton(Bebida, "Bebida"));
-		panel.add(createButton(Postre, "Postre"));
-		panel.add(createButton(Carrito, "Carrito")); // TODO
+		panel.add(createButton(Descuento, "Descuento"));
+		panel.add(createButton(Menu, "Menu"));
+		panel.add(createButton(Perfil, "Perfil"));
+		panel.add(createButton(Pedido, "Pedido"));
+		panel.add(createButton(Historia, "Historia"));
 
 		return panel;
 	}
@@ -88,10 +83,12 @@ public class MenuPage extends JPanel implements Observer {
 		cardsPanel.setBounds(60, 50, 408, 390);
 		cardsPanel.setOpaque(false);
 
-		cardsPanel.add(new Products("Oferta"), "Oferta");
-		cardsPanel.add(new Products("Pizza"), "Pizza");
-		cardsPanel.add(new Products("Bebida"), "Bebida");
-		cardsPanel.add(new Products("Postre"), "Postre");
+		// TODO
+		cardsPanel.add(null, "Descuento");
+		cardsPanel.add(null, "Menu");
+		cardsPanel.add(null, "Perfil");
+		cardsPanel.add(null, "Pedido");
+		cardsPanel.add(null, "Historia");
 
 		panel.add(cardsPanel);
 
@@ -122,18 +119,6 @@ public class MenuPage extends JPanel implements Observer {
 			cl.show(cardsPanel, name);
 		});
 		return button;
-	}
-
-	@Override
-	public void onProductAdded(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onProductRemoved(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
 	}
 }
 

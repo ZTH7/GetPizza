@@ -15,7 +15,7 @@ public class MainWindow extends JFrame {
 
 	int x, y;
 	Controller _ctrl;
-	
+
 	public MainWindow() {
 		super("Get Pizza");
 
@@ -34,7 +34,7 @@ public class MainWindow extends JFrame {
 		setBackground();
 		setBackground(new Color(255, 255, 255, 0));
 		setCloseButton();
-		
+
 		setVisible(true);
 	}
 
@@ -87,5 +87,5 @@ public class MainWindow extends JFrame {
 		getContentPane().add(close);
 		getContentPane().add(closeText);
 	}
-	
+
 }
