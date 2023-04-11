@@ -19,7 +19,9 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
+import getpizza.model.Codigo;
 import getpizza.model.Observer;
+import getpizza.model.Pedido;
 import getpizza.model.Producto;
 
 public class Personalize extends JDialog implements Observer {
@@ -147,6 +149,18 @@ public class Personalize extends JDialog implements Observer {
 
 	@Override
 	public void onProductRemoved(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onCodeUsed(Codigo codigo) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onOrderSended(Pedido pedido) {
 		// TODO Auto-generated method stub
 
 	}

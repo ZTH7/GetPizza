@@ -3,7 +3,9 @@ package getpizza.view;
 import javax.swing.*;
 
 import getpizza.control.Controller;
+import getpizza.model.Codigo;
 import getpizza.model.Observer;
+import getpizza.model.Pedido;
 import getpizza.model.Producto;
 
 import java.awt.*;
@@ -106,19 +108,19 @@ public class Login extends JPanel implements Observer {
 		bkg.setBounds(202, 65, 300, 350);
 		add(bkg);
 	}
-	
+
 	public String getUsername() {
 		return username.getText();
 	}
-	
+
 	public String getPassword() {
 		return new String(password.getPassword());
 	}
-	
+
 	public void setLoginAction(ActionListener al) {
 		login.addActionListener(al);
 	}
-	
+
 	public void setRegistryAction(ActionListener al) {
 		registry1.addActionListener(al);
 		registry2.addActionListener(al);
@@ -132,6 +134,18 @@ public class Login extends JPanel implements Observer {
 
 	@Override
 	public void onProductRemoved(List<Producto> products, Producto p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onCodeUsed(Codigo codigo) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onOrderSended(Pedido pedido) {
 		// TODO Auto-generated method stub
 
 	}

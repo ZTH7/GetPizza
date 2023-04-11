@@ -8,6 +8,7 @@ import javax.swing.*;
 import getpizza.misc.DBHelper;
 import getpizza.misc.Utils;
 import getpizza.model.Cliente;
+import getpizza.model.Observer;
 import getpizza.model.Producto;
 import getpizza.view.*;
 
@@ -39,13 +40,14 @@ public class Controller {
 	}
 
 	public void login(String username, String password) {
-		Cliente cliente = DBHelper.getInstance().getClient(username, password);
-		if (cliente != null) {
-			this.cliente = cliente;
-			setMainWindowPanel(mainPanel, login);
-		} else {
-			Utils.showErrorMsg("El usuario o contraseña incorrecta");
-		}
+		setMainWindowPanel(mainPanel, login);
+//		Cliente cliente = DBHelper.getInstance().getClient(username, password);
+//		if (cliente != null) {
+//			this.cliente = cliente;
+//			setMainWindowPanel(mainPanel, login);
+//		} else {
+//			Utils.showErrorMsg("El usuario o contraseña incorrecta");
+//		}
 	}
 
 	public void changeToRegistry() {// change login to registry
@@ -85,6 +87,14 @@ public class Controller {
 
 	public void sendOrder() {
 		// TODO enviar los products a base de dato
+	}
+
+	public void addObserver(Observer o) {
+		// TODO
+	}
+
+	public void removeObserver(Observer o) {
+		// TODO
 	}
 
 }

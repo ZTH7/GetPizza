@@ -10,11 +10,13 @@ public class MainPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
+	Controller _ctrl;
 	JPanel avatar, buttonsPanel, cardsPanel;
 	JButton Descuento, Menu, Perfil, Pedido, Historia;
 
 	public MainPanel(Controller _ctrl) {
 		super(new BorderLayout());
+		this._ctrl = _ctrl;
 		InitGUI();
 	}
 
@@ -84,11 +86,11 @@ public class MainPanel extends JPanel {
 		cardsPanel.setOpaque(false);
 
 		// TODO
-		cardsPanel.add(null, "Descuento");
-		cardsPanel.add(null, "Menu");
-		cardsPanel.add(null, "Perfil");
-		cardsPanel.add(null, "Pedido");
-		cardsPanel.add(null, "Historia");
+//		cardsPanel.add(null, "Descuento");
+//		cardsPanel.add(null, "Menu");
+//		cardsPanel.add(null, "Perfil");
+//		cardsPanel.add(null, "Pedido");
+//		cardsPanel.add(null, "Historia");
 
 		panel.add(cardsPanel);
 

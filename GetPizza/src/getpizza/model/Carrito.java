@@ -8,9 +8,6 @@ public class Carrito {
     @objid ("a7b1b666-f599-4e4c-8fc4-030e8760041b")
     protected float precioTotal;
 
-    @objid ("df1cd22a-c0a1-45b4-ab25-37188c118939")
-    public Pedido pedido;
-
     @objid ("cf821f7b-c561-4a61-9466-c4e640cec871")
     public List<Producto> productos;
 

@@ -13,7 +13,7 @@ public class Cliente {
     private String nombreCompleto;
 
     @objid ("cd84b812-4c47-47e6-a467-3b0ed19b7934")
-    protected List direccion;
+    protected List<String> direccion;
 
     @objid ("bf743f3a-7b25-4d07-a19c-510853c97417")
     private String correo;
@@ -25,7 +25,7 @@ public class Cliente {
     public String telefono;
 
     @objid ("ba205d83-959a-4812-b16d-7695a2fd404e")
-    public List codigosUsados;
+    public List<String> codigosUsados;
 
     @objid ("f6293778-a65b-4f9c-9c9a-6f8eb96bb60e")
     public Membresia membresia;
@@ -58,13 +58,13 @@ public class Cliente {
     }
 
     @objid ("84a4a702-fc96-4c52-982c-916cf7013863")
-    List getDireccion() {
+    List<String> getDireccion() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.direccion;
     }
 
     @objid ("0280ee83-76d4-487a-87d7-72ce37a57d0e")
-    void setDireccion(List value) {
+    void setDireccion(List<String> value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.direccion = value;
     }
