@@ -5,7 +5,7 @@ import java.util.List;
 import getpizza.model.Observable;
 import getpizza.model.Observer;
 
-public class PlaceOrder implements Observable<Observer> {
+public class SACliente implements Observable<Observer> {
 	List<Observer> observadores;
 
 	@Override
