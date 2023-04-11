@@ -1,8 +1,6 @@
 package getpizza.view;
 
 import javax.swing.*;
-
-import getpizza.control.Controller;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
@@ -12,14 +10,12 @@ public class Registry extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	Controller _ctrl;
 	JTextField Nombre, Apellido, Correo, Tel, Direccion, Ciudad, Provincia, CodigoPostal;
 	JPasswordField Password;
 	JButton registry;
 
-	public Registry(Controller _ctrl) {
+	public Registry() {
 		super(null);
-		this._ctrl = _ctrl;
 
 		InitGUI();
 	}
@@ -34,7 +30,7 @@ public class Registry extends JPanel {
 		addTextField(Apellido, "Apellido:", 362, 85, 120, 20);
 		addTextField(Correo, "Correo:", 222, 125, 160, 20);
 		addTextField(Tel, "Tel.:", 402, 125, 80, 20);
-		addPasswordField(Password, "Contrase�a:", 222, 165, 150, 20);
+		addPasswordField(Password, "Contraseña:", 222, 165, 150, 20);
 		addTextField(Direccion, "Direccion:", 222, 205, 260, 20);
 		addTextField(Ciudad, "Ciudad:", 222, 245, 120, 20);
 		addTextField(Provincia, "Provincia:", 362, 245, 120, 20);
