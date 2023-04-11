@@ -1,84 +1,51 @@
 package getpizza.control;
 
-import java.util.List;
-import java.util.Map;
-
 import javax.swing.*;
 
-import getpizza.misc.DBHelper;
-import getpizza.misc.Utils;
 import getpizza.model.Cliente;
 import getpizza.model.Observer;
-import getpizza.model.Producto;
 import getpizza.view.*;
 
 public class Controller {
 	JFrame mainWindow;
-	JPanel login, registry, mainPanel, payConfirm, trolley;
+	JPanel login, registry, mainPanel, currentPanel = null;
 	Cliente cliente;
-	List<Producto> products;
+	SALogin salogin;
+	SARegistry sareg;
 
 	public Controller() {
+		login = new Login();
+		salogin = new SALogin(this, (Login) login);
+
+		registry = new Registry();
+		sareg = new SARegistry(this, (Registry) registry);
+
+		mainPanel = new MainPanel(this);
+		mainWindow = new MainWindow();
 
 	}
 
 	public void run() throws Exception {
-		mainWindow = new MainWindow();
-		login = new Login(this);
-		mainPanel = new MainPanel(this);
-		setMainWindowPanel(login, null);
+		setMainWindowPanel(login);
 	}
 
-	void setMainWindowPanel(JPanel panel, JPanel anterior) {
-		if (anterior != null)
-			mainWindow.getContentPane().remove(anterior);
+	void setMainWindowPanel(JPanel panel) {
+		if (currentPanel != null)
+			mainWindow.getContentPane().remove(currentPanel);
 
 		mainWindow.getContentPane().add(panel);
-
 		mainWindow.revalidate();
 		mainWindow.repaint();
+
+		currentPanel = panel;
 	}
 
-	public void login(String username, String password) {
-		setMainWindowPanel(mainPanel, login);
-//		Cliente cliente = DBHelper.getInstance().getClient(username, password);
-//		if (cliente != null) {
-//			this.cliente = cliente;
-//			setMainWindowPanel(mainPanel, login);
-//		} else {
-//			Utils.showErrorMsg("El usuario o contraseña incorrecta");
-//		}
+	public void toMainPanel() {
+		setMainWindowPanel(mainPanel);
 	}
 
-	public void changeToRegistry() {// change login to registry
-		registry = new Registry(this);
-		setMainWindowPanel(registry, login);
-	}
-
-	public void registry(Map<String, String> datos) {
-		Cliente client = createClient(datos);
-		if (client != null) {
-			DBHelper.getInstance().createClient(datos);
-			setMainWindowPanel(mainPanel, registry);
-		}
-
-	}
-
-	public Cliente createClient(Map<String, String> datos) {
-		// TODO create client & check data
-
-		Utils.showErrorMsg("Datos incorrecta");
-
-		return null;
-	}
-
-	public void addProduct(Producto product) {
-		products.add(product);
-	}
-
-	public void removeProduct(Producto product) {
-		if (products.contains(product))
-			products.remove(product);
+	public void toRegistry() {
+		setMainWindowPanel(registry);
 	}
 
 	public void tryToPay() {

@@ -2,27 +2,17 @@ package getpizza.view;
 
 import javax.swing.*;
 
-import getpizza.control.Controller;
-import getpizza.model.Codigo;
-import getpizza.model.Observer;
-import getpizza.model.Pedido;
-import getpizza.model.Producto;
-
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.List;
 
-public class Login extends JPanel implements Observer {
+public class Login extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-
-	Controller _ctrl;
 	JTextField username;
 	JPasswordField password;
 	JButton login, registry1, registry2;
 
-	public Login(Controller ctrl) {
-		this._ctrl = ctrl;
+	public Login() {
 		InitGUI();
 	}
 
@@ -126,27 +116,4 @@ public class Login extends JPanel implements Observer {
 		registry2.addActionListener(al);
 	}
 
-	@Override
-	public void onProductAdded(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onProductRemoved(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onCodeUsed(Codigo codigo) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onOrderSended(Pedido pedido) {
-		// TODO Auto-generated method stub
-
-	}
 }

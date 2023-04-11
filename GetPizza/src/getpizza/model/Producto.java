@@ -1,7 +1,5 @@
 package getpizza.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("1d75fc77-55b9-4a19-9100-2802959c9e67")
@@ -12,11 +10,11 @@ public class Producto {
     @objid ("9690dcca-6f5e-4211-8748-b6152c61d17b")
     protected float precio;
 
-    @objid ("63e1741f-def7-49ba-9def-c87767780b88")
-    public Carrito carrito;
+    @objid ("ddec5e11-3f9f-454f-a3ce-f198c1bda735")
+    protected String desc;
 
-    @objid ("b2baab49-f22e-4857-8136-b8cec2fe35c8")
-    public List<MenuPredefinido> menuPredefinido = new ArrayList<MenuPredefinido> ();
+    @objid ("600dd12d-eb00-43fe-87b1-227ff33aee42")
+    protected String id;
 
     @objid ("2f886500-0e45-4b7d-b9b7-bf93ed6ba507")
     public String getNombre() {
@@ -40,6 +38,30 @@ public class Producto {
     void setPrecio(float value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.precio = value;
+    }
+
+    @objid ("23c00978-0da2-4659-bf48-452e1045f220")
+    String getId() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.id;
+    }
+
+    @objid ("5ab450e5-ef9d-4093-8767-40c82d158d1b")
+    void setId(String value) {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        this.id = value;
+    }
+
+    @objid ("98060370-b472-4592-b472-2361bfecb7f0")
+    String getDesc() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.desc;
+    }
+
+    @objid ("64ec1618-f382-4232-97b9-aaae9974dc72")
+    void setDesc(String value) {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        this.desc = value;
     }
 
 }

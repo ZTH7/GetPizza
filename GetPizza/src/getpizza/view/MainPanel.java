@@ -68,7 +68,6 @@ public class MainPanel extends JPanel {
 		avatar = createAvatarImg();
 		panel.add(avatar);
 
-		panel.add(createButton(Descuento, "Descuento"));
 		panel.add(createButton(Menu, "Menu"));
 		panel.add(createButton(Perfil, "Perfil"));
 		panel.add(createButton(Pedido, "Pedido"));
@@ -86,11 +85,10 @@ public class MainPanel extends JPanel {
 		cardsPanel.setOpaque(false);
 
 		// TODO
-//		cardsPanel.add(null, "Descuento");
-//		cardsPanel.add(null, "Menu");
-//		cardsPanel.add(null, "Perfil");
-//		cardsPanel.add(null, "Pedido");
-//		cardsPanel.add(null, "Historia");
+		cardsPanel.add(new Menu(), "Menu");
+		cardsPanel.add(new Profile(_ctrl), "Perfil");
+		// cardsPanel.add(null, "Realizar Pedido");
+		cardsPanel.add(new Historia(_ctrl), "Historia");
 
 		panel.add(cardsPanel);
 
