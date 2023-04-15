@@ -9,13 +9,13 @@ import javax.swing.ScrollPaneConstants;
 
 import getpizza.control.Controller;
 
-public class Discount extends JScrollPane{
+public class Membresia extends JScrollPane{
 
 	private static final long serialVersionUID = 1L;
 
 	JPanel contentPanel;
 
-	public Discount(Controller _ctrl) {
+	public Membresia(Controller _ctrl) {
 		contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 		contentPanel.setBackground(new Color(255, 255, 255, 160));

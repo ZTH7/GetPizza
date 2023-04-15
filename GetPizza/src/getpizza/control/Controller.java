@@ -12,6 +12,7 @@ public class Controller {
 	Cliente cliente;
 	SALogin salogin;
 	SARegistry sareg;
+	SACliente sacliente;
 
 	public Controller() {
 		login = new Login();
@@ -48,20 +49,12 @@ public class Controller {
 		setMainWindowPanel(registry);
 	}
 
-	public void tryToPay() {
-		// TODO show payConfirm panel
+	public void addClientObserver(Observer o) {
+		sacliente.addObserver(o);
 	}
 
-	public void sendOrder() {
-		// TODO enviar los products a base de dato
-	}
-
-	public void addObserver(Observer o) {
-		// TODO
-	}
-
-	public void removeObserver(Observer o) {
-		// TODO
+	public void removeClientObserver(Observer o) {
+		sacliente.removeObserver(o);
 	}
 
 }

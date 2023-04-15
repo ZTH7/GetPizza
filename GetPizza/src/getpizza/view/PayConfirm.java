@@ -47,7 +47,7 @@ public class PayConfirm extends JDialog implements Observer {
 		setVisible(true);
 	}
 
-	public void setTitle() {
+	void setTitle() {
 		JLabel title = new JLabel("Bill");
 		title.setForeground(new Color(250, 192, 61));
 		title.setFont(new Font(null, 1, 20));
@@ -56,7 +56,7 @@ public class PayConfirm extends JDialog implements Observer {
 		_panel.add(title);
 	}
 
-	public void setProductsList(List<Producto> products) {
+	void setProductsList(List<Producto> products) {
 		String list = "";
 		for (Producto product : products) {
 			list += product.getNombre();
@@ -71,7 +71,7 @@ public class PayConfirm extends JDialog implements Observer {
 		_panel.add(title);
 	}
 
-	public void setButton() {
+	void setButton() {
 		confirm = new JButton("Confirm");
 		confirm.addActionListener(confirmListener);
 		confirm.setForeground(new Color(21, 60, 70));
@@ -95,7 +95,7 @@ public class PayConfirm extends JDialog implements Observer {
 		confirm.addActionListener(confirmListener);
 	}
 
-	public void setCentralPanel() {
+	void setCentralPanel() {
 		JPanel panel = new JPanel(new GridLayout(10, 2));
 		panel.setBackground(new Color(113, 152, 71));
 
@@ -110,15 +110,15 @@ public class PayConfirm extends JDialog implements Observer {
 		_panel.add(_centralPanel);
 	}
 
-	public void setDescuento() {
+	void setDescuento() {
 
 	}
 
-	public void setDirection() {
+	void setDirection() {
 
 	}
 
-	public void setPayMethod() {
+	void setPayMethod() {
 
 	}
 

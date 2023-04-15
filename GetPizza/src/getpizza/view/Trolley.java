@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.swing.*;
 
+import getpizza.model.Carrito;
 import getpizza.model.Codigo;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
@@ -14,21 +15,22 @@ public class Trolley extends JScrollPane implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
-	List<Producto> products;
+	Carrito carrito;
+	JPanel _panel;
 
 	public Trolley() {
-		JPanel panel = new JPanel();
-		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-		panel.setBackground(new Color(255, 255, 255, 160));
-
-		setViewportView(panel);
-		getVerticalScrollBar().setBackground(new Color(255, 255, 255, 160));
-		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-		setOpaque(false);
+		InitGUI();
 	}
+	
+	void InitGUI() {
+		_panel = new JPanel();
+		_panel.setLayout(new BoxLayout(_panel, BoxLayout.Y_AXIS));
+		_panel.setBackground(new Color(108, 169, 132));
 
-	public void setButton() {
-
+		setViewportView(_panel);
+		getVerticalScrollBar().setBackground(new Color(108, 169, 132));
+		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		setBounds(590, 60, 240, 340);
 	}
 
 	public void setProducts() {

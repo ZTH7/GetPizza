@@ -16,7 +16,7 @@ public class SALogin {
 		setRegistryAction();
 	}
 
-	public void login(String username, String password) {
+	void login(String username, String password) {
 		_ctrl.toMainPanel();
 //		Cliente cliente = DBHelper.getInstance().getClient(username, password);
 //		if (cliente != null) {
@@ -27,7 +27,7 @@ public class SALogin {
 //		}
 	}
 
-	public void setLoginAction() {
+	void setLoginAction() {
 		ActionListener al = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -37,7 +37,7 @@ public class SALogin {
 		login.setLoginAction(al);
 	}
 
-	public void setRegistryAction() {
+	void setRegistryAction() {
 		ActionListener al = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
