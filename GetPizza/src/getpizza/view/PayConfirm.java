@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.swing.*;
 
+import getpizza.control.Controller;
+import getpizza.model.Carrito;
 import getpizza.model.Codigo;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
@@ -25,11 +27,13 @@ public class PayConfirm extends JDialog implements Observer {
 	JScrollPane _centralPanel;
 	ActionListener confirmListener;
 
-	public PayConfirm(JFrame parent) {
+	public PayConfirm(JFrame parent, Controller ctrl, Carrito carrito) {
 		super(parent);
 		this._parent = parent;
 
 		InitGUI();
+		
+		ctrl.addClientObserver(this);
 	}
 
 	void InitGUI() {

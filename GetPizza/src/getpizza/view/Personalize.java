@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Point;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -18,7 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
-
+import getpizza.control.SACliente;
 import getpizza.model.Codigo;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
@@ -32,12 +31,14 @@ public class Personalize extends JDialog implements Observer {
 	JFrame _parent;
 	JPanel _panel;
 	JButton confirm;
-	JScrollPane _centralPanel, trolley;
-	ActionListener confirmListener;
+	JScrollPane _centralPanel;
+	Trolley trolley;
+	SACliente sacliente;
 
-	public Personalize(JFrame parent) {
+	public Personalize(JFrame parent, SACliente sacliente) {
 		super(parent);
 		this._parent = parent;
+		this.sacliente = sacliente;
 
 		InitGUI();
 	}
@@ -84,15 +85,14 @@ public class Personalize extends JDialog implements Observer {
 
 	void setButton() {
 		confirm = new JButton("Confirm");
-		confirm.addActionListener(confirmListener);
 		confirm.setForeground(new Color(21, 60, 70));
 		confirm.setBounds(600, 420, 100, 30);
 		confirm.setBackground(new Color(250, 192, 61));
-
+		confirm.addActionListener(e -> sacliente.tryToPay(trolley.getCarrito()));
+		
 		_panel.add(confirm);
 
 		JButton cancel = new JButton("Cancel");
-		cancel.addActionListener(e -> this.dispose());
 		cancel.setForeground(new Color(21, 60, 70));
 		cancel.setBounds(720, 420, 100, 30);
 		cancel.setBackground(new Color(134, 144, 138));
@@ -101,12 +101,6 @@ public class Personalize extends JDialog implements Observer {
 		});
 
 		_panel.add(cancel);
-	}
-
-	void setConfirmListener(ActionListener confirmListener) {
-		confirm.removeActionListener(this.confirmListener);
-		this.confirmListener = confirmListener;
-		confirm.addActionListener(confirmListener);
 	}
 
 	void setCentralPanel() {
@@ -146,7 +140,7 @@ public class Personalize extends JDialog implements Observer {
 	}
 
 	void setTrolleyPanel() {
-		trolley = new Trolley();
+		trolley = new Trolley(sacliente);
 		_panel.add(trolley);
 	}
 
@@ -173,11 +167,9 @@ public class Personalize extends JDialog implements Observer {
 		// TODO Auto-generated method stub
 
 	}
-
-	public static void main(String[] args) {
-		Personalize dialog = new Personalize(null);
-		// dialog.pack();
-		// dialog.setVisible(true);
+	
+	public static void main(String[] arg) {
+		Personalize dialog = new Personalize(null, null);
 	}
 
 }

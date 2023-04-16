@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.List;
 
 import javax.swing.*;
-
+import getpizza.control.SACliente;
 import getpizza.model.Carrito;
 import getpizza.model.Codigo;
 import getpizza.model.Observer;
@@ -15,11 +15,16 @@ public class Trolley extends JScrollPane implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
+	SACliente sacliente;
 	Carrito carrito;
 	JPanel _panel;
 
-	public Trolley() {
+	public Trolley(SACliente sacliente) {
+		this.carrito = new Carrito();
+		
 		InitGUI();
+		
+		//sacliente.addObserver(this);
 	}
 	
 	void InitGUI() {
@@ -33,13 +38,42 @@ public class Trolley extends JScrollPane implements Observer {
 		setBounds(590, 60, 240, 340);
 	}
 
-	public void setProducts() {
+	void setProducts() {
 
 	}
 
-	public JPanel createProduct(Producto p) {
-		// TODO
-		return null;
+	public Carrito getCarrito() {
+		return this.carrito;
+	}
+	
+	JPanel createProduct(Producto p) {
+		JPanel prod = new JPanel();
+		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
+		prod.setBackground(new Color(255, 255, 255, 160)); // TODO change a color
+
+		JLabel nombre = new JLabel("<html>"
+				+ "<p><center>" + p.getNombre() + "</center></p>"
+				+ "</html>");
+
+		JLabel precio = new JLabel("<html>"
+				+ "<p><center>" + Float.toString(p.getPrecio()) + "</center></p>"
+				+ "</html>");
+
+		JButton remove = new JButton("Eliminar");
+		remove.setPreferredSize(new Dimension(50, 20));
+		remove.addActionListener(e -> {
+			carrito.removeProducto(p);
+			repaint();
+		});
+		
+		prod.add(nombre);
+		prod.add(Box.createHorizontalStrut(20));
+		prod.add(precio);
+		prod.add(Box.createHorizontalGlue());
+		prod.add(remove);
+		prod.setMaximumSize(new Dimension(240, 20));
+		prod.setAlignmentX(Box.CENTER_ALIGNMENT);
+		return prod;
 	}
 
 	@Override

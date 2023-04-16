@@ -38,29 +38,42 @@ public class MenuOption extends JDialog {
 		setContentPanel();
 		setupMouse();
 		setTitle();
-		_panel.setBackground(new Color(248, 247, 240));
+		setButton();
+		setOption();
 		setResizable(false);
 		setUndecorated(true);
+		_panel.setBackground(new Color(248, 247, 240));
 
-		setBounds(300, 200, 340, 460);
+		setBounds(300, 200, 280, 220);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 
 	void setTitle() {
-		JLabel title = new JLabel("Seleccionar el tipo");
+		JLabel title = new JLabel("<html><center>Seleccionar el tipo</center></html>");
 		title.setForeground(new Color(250, 192, 61));
 		title.setFont(new Font(null, 1, 20));
-		title.setBounds(100, 10, 140, 30);
+		title.setBounds(0, 10, 280, 30);
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 		_panel.add(title);
 	}
 
 	void setOption() {
-		predefinida = new JRadioButton("Menu predefinida");
-		predefinida.setSelected(true);
-		personalizada = new JRadioButton("Menu personalizada");
 		group = new ButtonGroup();
+
+		predefinida = new JRadioButton("Menu predefinida");
+		predefinida.setBounds(70, 60, 180, 30);
+		predefinida.setOpaque(false);
+		predefinida.setSelected(true);
+		group.add(predefinida);
+		_panel.add(predefinida);
+
+		personalizada = new JRadioButton("Menu personalizada");
+		personalizada.setBounds(70, 100, 180, 30);
+		personalizada.setOpaque(false);
+		group.add(personalizada);
+		_panel.add(personalizada);
+
 		// TODO format
 	}
 
@@ -68,9 +81,23 @@ public class MenuOption extends JDialog {
 		return group.getSelection() == personalizada.getModel() ? 1 : 0;
 	}
 
-	public void setConfirmButton() {
-		confirm = new JButton("Confirmar");
-		// TODO format
+	void setButton() {
+		confirm = new JButton("Confirm");
+		confirm.setForeground(new Color(21, 60, 70));
+		confirm.setBounds(30, 170, 100, 30);
+		confirm.setBackground(new Color(250, 192, 61));
+
+		_panel.add(confirm);
+
+		JButton cancel = new JButton("Cancel");
+		cancel.setForeground(new Color(21, 60, 70));
+		cancel.setBounds(150, 170, 100, 30);
+		cancel.setBackground(new Color(134, 144, 138));
+		cancel.addActionListener(e -> {
+			this.dispose(); // TODO reset carrito
+		});
+
+		_panel.add(cancel);
 	}
 
 	public void setConfirmAction(ActionListener al) {

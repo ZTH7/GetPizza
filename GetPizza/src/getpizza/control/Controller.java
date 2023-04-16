@@ -21,9 +21,9 @@ public class Controller {
 		registry = new Registry();
 		sareg = new SARegistry(this, (Registry) registry);
 
-		mainPanel = new MainPanel(this);
 		mainWindow = new MainWindow();
-
+		sacliente = new SACliente(this, mainWindow);
+		mainPanel = new MainPanel(this);
 	}
 
 	public void run() throws Exception {
@@ -55,6 +55,10 @@ public class Controller {
 
 	public void removeClientObserver(Observer o) {
 		sacliente.removeObserver(o);
+	}
+	
+	public Cliente getCliente() {
+		return this.cliente;
 	}
 
 }

@@ -34,7 +34,7 @@ public class Cliente {
     public List<Codigo> codigo = new ArrayList<Codigo> ();
 
     @objid ("a2ae45fd-4184-43bd-807f-6b74f126be9f")
-    String getId() {
+    public String getId() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.id;
     }
@@ -46,7 +46,7 @@ public class Cliente {
     }
 
     @objid ("a1e72852-de4f-4c6a-8675-1d679a4168af")
-    String getNombreCompleto() {
+    public String getNombreCompleto() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.nombreCompleto;
     }
@@ -58,7 +58,7 @@ public class Cliente {
     }
 
     @objid ("84a4a702-fc96-4c52-982c-916cf7013863")
-    List<String> getDireccion() {
+    public List<String> getDireccion() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.direccion;
     }
@@ -70,7 +70,7 @@ public class Cliente {
     }
 
     @objid ("79e3c272-5b28-457c-aa12-925a4334201b")
-    String getCorreo() {
+    public String getCorreo() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.correo;
     }
@@ -83,6 +83,11 @@ public class Cliente {
 
     @objid ("c5145b16-aa5f-4cfd-8a71-cb4c26eac9a3")
     public void cambiarDatos() {
+    }
+    
+    public Membresia getMembresia() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.membresia;
     }
 
 }
