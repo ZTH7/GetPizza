@@ -3,6 +3,7 @@ package getpizza.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import getpizza.model.Cliente;
 import getpizza.view.Login;
 
 public class SALogin {
@@ -25,6 +26,7 @@ public class SALogin {
 //		} else {
 //			Utils.showErrorMsg("El usuario o contraseña incorrecta");
 //		}
+		//_ctrl.setCliente(new Cliente());
 	}
 
 	void setLoginAction() {

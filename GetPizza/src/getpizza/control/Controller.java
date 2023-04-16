@@ -1,5 +1,7 @@
 package getpizza.control;
 
+import java.util.Map;
+
 import javax.swing.*;
 
 import getpizza.model.Cliente;
@@ -63,6 +65,10 @@ public class Controller {
 	
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+	
+	public void changeClient(Map<String, String> datos) {
+		
 	}
 
 }

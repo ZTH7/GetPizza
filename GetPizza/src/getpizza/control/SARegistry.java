@@ -20,29 +20,28 @@ public class SARegistry {
 	}
 
 	void registry(Map<String, String> datos) {
-		Cliente client = createClient(datos);
-		if (client != null) {
-			DBHelper.getInstance().createClient(datos);
-			_ctrl.toMainPanel();
-		} else {
+		Cliente client;
+		try {
+			client = new Cliente(datos);
+			if (client != null) {
+				DBHelper.getInstance().createClient(client);
+				_ctrl.toMainPanel();
+				_ctrl.setCliente(client);
+			}
+		} catch (Exception e) {
 			Utils.showErrorMsg("Datos incorrecta");
 		}
-
-	}
-
-	Cliente createClient(Map<String, String> datos) {
-		// TODO create client & check data
-
-		Utils.showErrorMsg("Datos incorrecta");
-
-		return null;
 	}
 
 	void setRegistryAction() {
 		ActionListener al = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				registry(_reg.getInfo());
+				try {
+					registry(_reg.getInfo());
+				} catch (Exception ex) {
+					Utils.showErrorMsg("Los datos no pueden ser vacio");
+				}
 			}
 		};
 		_reg.setRegistryAction(al);
