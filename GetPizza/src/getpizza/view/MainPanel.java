@@ -73,7 +73,6 @@ public class MainPanel extends JPanel {
 		panel.add(createButton(Perfil, "Perfil"));
 		panel.add(createButton(Membresia, "Membresia"));
 		panel.add(createButton(Pedido, "Realizar Pedido"));
-		panel.add(createButton(Historial, "Historial"));
 
 		return panel;
 	}
@@ -87,10 +86,9 @@ public class MainPanel extends JPanel {
 		cardsPanel.setOpaque(false);
 
 		// TODO
-		cardsPanel.add(new Menu(), "Menu");
+		cardsPanel.add(new Carta(), "Menu");
 		cardsPanel.add(new Profile(_ctrl), "Perfil");
 		cardsPanel.add(new Membership(_ctrl), "Membresia");
-		cardsPanel.add(new Historia(_ctrl), "Historia");
 
 		panel.add(cardsPanel);
 

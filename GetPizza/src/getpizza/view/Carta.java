@@ -15,16 +15,21 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
+import getpizza.model.Bebida;
+import getpizza.model.Pizza;
+import getpizza.model.Postre;
 import getpizza.model.Producto;
 
-public class Menu extends JScrollPane {
+public class Carta extends JScrollPane {
 
 	private static final long serialVersionUID = 1L;
 
 	JPanel contentPanel;
-	List<Producto> pizza, bebida, postre;
+	List<Pizza> pizza;
+	List<Bebida> bebida;
+	List<Postre> postre;
 
-	public Menu() {
+	public Carta() {
 		contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 		// contentPanel = new JPanel(new GridLayout(5, 2));
@@ -46,12 +51,12 @@ public class Menu extends JScrollPane {
 
 	void InitProducts() {
 		pizza = new ArrayList<>();
-		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
+//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
+//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
+//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
+//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
+//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
+//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
 		bebida = new ArrayList<>();
 		postre = new ArrayList<>();
 	}

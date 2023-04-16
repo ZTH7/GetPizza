@@ -3,7 +3,7 @@ package getpizza.model;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid("1d75fc77-55b9-4a19-9100-2802959c9e67")
-public class Producto {
+public abstract class Producto {
 	@objid("f1dc602d-21df-4f4c-8373-c968fff942e8")
 	protected String nombre;
 
