@@ -60,5 +60,9 @@ public class Controller {
 	public Cliente getCliente() {
 		return this.cliente;
 	}
+	
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 
 }

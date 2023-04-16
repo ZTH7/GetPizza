@@ -1,0 +1,23 @@
+{
+    "password": "abcd",
+    "nombreCompleto": "asfgasf",
+    "correo": "",
+    "tel": "",
+    "membresia": {
+        "rango": "",
+        "puntos": 0,
+        "puntosTotales": 0
+    },
+    "direccion": "",
+    "cp": "",
+    "codigo":[
+        "asdfg",
+        "sfgh",
+        "fdsgdhf"
+    ],
+    "codigoUsado":[
+        "asdfg",
+        "sfgh",
+        "fdsgdhf"
+    ]
+}
