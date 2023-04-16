@@ -12,6 +12,7 @@ public class Controller {
 	Cliente cliente;
 	SALogin salogin;
 	SARegistry sareg;
+	SACliente sacliente;
 
 	public Controller() {
 		login = new Login();
@@ -20,9 +21,9 @@ public class Controller {
 		registry = new Registry();
 		sareg = new SARegistry(this, (Registry) registry);
 
-		mainPanel = new MainPanel(this);
 		mainWindow = new MainWindow();
-
+		sacliente = new SACliente(this, mainWindow);
+		mainPanel = new MainPanel(this);
 	}
 
 	public void run() throws Exception {
@@ -48,20 +49,16 @@ public class Controller {
 		setMainWindowPanel(registry);
 	}
 
-	public void tryToPay() {
-		// TODO show payConfirm panel
+	public void addClientObserver(Observer o) {
+		sacliente.addObserver(o);
 	}
 
-	public void sendOrder() {
-		// TODO enviar los products a base de dato
+	public void removeClientObserver(Observer o) {
+		sacliente.removeObserver(o);
 	}
-
-	public void addObserver(Observer o) {
-		// TODO
-	}
-
-	public void removeObserver(Observer o) {
-		// TODO
+	
+	public Cliente getCliente() {
+		return this.cliente;
 	}
 
 }

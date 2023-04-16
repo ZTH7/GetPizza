@@ -12,12 +12,13 @@ public class MainPanel extends JPanel {
 
 	Controller _ctrl;
 	JPanel avatar, buttonsPanel, cardsPanel;
-	JButton Descuento, Menu, Perfil, Pedido, Historia;
+	JButton Membresia, Menu, Perfil, Pedido, Historial;
 
 	public MainPanel(Controller _ctrl) {
 		super(new BorderLayout());
 		this._ctrl = _ctrl;
 		InitGUI();
+		
 	}
 
 	void InitGUI() {
@@ -70,8 +71,9 @@ public class MainPanel extends JPanel {
 
 		panel.add(createButton(Menu, "Menu"));
 		panel.add(createButton(Perfil, "Perfil"));
-		panel.add(createButton(Pedido, "Pedido"));
-		panel.add(createButton(Historia, "Historia"));
+		panel.add(createButton(Membresia, "Membresia"));
+		panel.add(createButton(Pedido, "Realizar Pedido"));
+		panel.add(createButton(Historial, "Historial"));
 
 		return panel;
 	}
@@ -87,7 +89,7 @@ public class MainPanel extends JPanel {
 		// TODO
 		cardsPanel.add(new Menu(), "Menu");
 		cardsPanel.add(new Profile(_ctrl), "Perfil");
-		// cardsPanel.add(null, "Realizar Pedido");
+		cardsPanel.add(new Membership(_ctrl), "Membresia");
 		cardsPanel.add(new Historia(_ctrl), "Historia");
 
 		panel.add(cardsPanel);
@@ -119,6 +121,12 @@ public class MainPanel extends JPanel {
 			cl.show(cardsPanel, name);
 		});
 		return button;
+	}
+	
+	void setRealizarPedidoButton() {
+		Pedido.addActionListener(e -> {
+			// TODO create MenuOption
+		});
 	}
 }
 

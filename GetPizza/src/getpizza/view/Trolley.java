@@ -4,7 +4,8 @@ import java.awt.*;
 import java.util.List;
 
 import javax.swing.*;
-
+import getpizza.control.SACliente;
+import getpizza.model.Carrito;
 import getpizza.model.Codigo;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
@@ -14,30 +15,65 @@ public class Trolley extends JScrollPane implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
-	List<Producto> products;
+	SACliente sacliente;
+	Carrito carrito;
+	JPanel _panel;
 
-	public Trolley() {
-		JPanel panel = new JPanel();
-		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-		panel.setBackground(new Color(255, 255, 255, 160));
+	public Trolley(SACliente sacliente) {
+		this.carrito = new Carrito();
+		
+		InitGUI();
+		
+		//sacliente.addObserver(this);
+	}
+	
+	void InitGUI() {
+		_panel = new JPanel();
+		_panel.setLayout(new BoxLayout(_panel, BoxLayout.Y_AXIS));
+		_panel.setBackground(new Color(108, 169, 132));
 
-		setViewportView(panel);
-		getVerticalScrollBar().setBackground(new Color(255, 255, 255, 160));
+		setViewportView(_panel);
+		getVerticalScrollBar().setBackground(new Color(108, 169, 132));
 		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-		setOpaque(false);
+		setBounds(590, 60, 240, 340);
 	}
 
-	public void setButton() {
-
-	}
-
-	public void setProducts() {
+	void setProducts() {
 
 	}
 
-	public JPanel createProduct(Producto p) {
-		// TODO
-		return null;
+	public Carrito getCarrito() {
+		return this.carrito;
+	}
+	
+	JPanel createProduct(Producto p) {
+		JPanel prod = new JPanel();
+		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
+		prod.setBackground(new Color(255, 255, 255, 160)); // TODO change a color
+
+		JLabel nombre = new JLabel("<html>"
+				+ "<p><center>" + p.getNombre() + "</center></p>"
+				+ "</html>");
+
+		JLabel precio = new JLabel("<html>"
+				+ "<p><center>" + Float.toString(p.getPrecio()) + "</center></p>"
+				+ "</html>");
+
+		JButton remove = new JButton("Eliminar");
+		remove.setPreferredSize(new Dimension(50, 20));
+		remove.addActionListener(e -> {
+			carrito.removeProducto(p);
+			repaint();
+		});
+		
+		prod.add(nombre);
+		prod.add(Box.createHorizontalStrut(20));
+		prod.add(precio);
+		prod.add(Box.createHorizontalGlue());
+		prod.add(remove);
+		prod.setMaximumSize(new Dimension(240, 20));
+		prod.setAlignmentX(Box.CENTER_ALIGNMENT);
+		return prod;
 	}
 
 	@Override

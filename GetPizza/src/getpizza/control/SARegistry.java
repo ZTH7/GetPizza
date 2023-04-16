@@ -19,7 +19,7 @@ public class SARegistry {
 		setRegistryAction();
 	}
 
-	public void registry(Map<String, String> datos) {
+	void registry(Map<String, String> datos) {
 		Cliente client = createClient(datos);
 		if (client != null) {
 			DBHelper.getInstance().createClient(datos);
@@ -30,7 +30,7 @@ public class SARegistry {
 
 	}
 
-	public Cliente createClient(Map<String, String> datos) {
+	Cliente createClient(Map<String, String> datos) {
 		// TODO create client & check data
 
 		Utils.showErrorMsg("Datos incorrecta");
@@ -38,7 +38,7 @@ public class SARegistry {
 		return null;
 	}
 
-	public void setRegistryAction() {
+	void setRegistryAction() {
 		ActionListener al = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

@@ -1,6 +1,8 @@
 package getpizza.model;
 
 import java.util.List;
+import java.util.function.Consumer;
+
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("95f99c76-705c-46ef-8680-cb164fdf96ce")
@@ -43,6 +45,10 @@ public class Carrito {
     @objid ("86bbd819-20cc-469e-b483-0f4f263a340f")
     public void removeProducto(Producto producto) {
         productos.remove(producto);
+    }
+    
+    public void forEach(Consumer<? super Producto> action) {
+    	productos.forEach(action);
     }
 
 }
