@@ -31,10 +31,17 @@ public class Login extends JPanel {
 	}
 
 	void setTitle() {
-		JLabel title = new JLabel("Get Pizza");
+		JLabel title = new JLabel();
+		
+		ImageIcon Icon = new ImageIcon("Resource/GetPizza.png");
+		Image image = Icon.getImage();
+		Image scaledImage = image.getScaledInstance(260, 50, Image.SCALE_SMOOTH);
+		Icon = new ImageIcon(scaledImage);
+		title.setIcon(Icon);
+		
 		title.setForeground(new Color(0, 0, 0));
 		title.setFont(new Font(null, 1, 55));
-		title.setBounds(222, 85, 260, 50);
+		title.setBounds(222, 90, 260, 50);
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 		add(title);
 	}
