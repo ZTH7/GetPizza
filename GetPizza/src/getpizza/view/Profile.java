@@ -3,51 +3,38 @@ package getpizza.view;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.ScrollPaneConstants;
 
 import getpizza.control.Controller;
 import getpizza.misc.Utils;
 import getpizza.model.Cliente;
 
-public class Profile extends JScrollPane {
+public class Profile extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
 	JButton save;
 	Controller _ctrl;
-	JPanel contentPanel;
 	JTextField Nombre, Apellido, Correo, Tel, Direccion, Ciudad, Provincia, CodigoPostal, Password;
 
 	int x = 75, y = 40;
 
 	public Profile(Controller _ctrl) {
-		contentPanel = new JPanel();
-		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
-		contentPanel.setBackground(new Color(255, 255, 255, 160));
 		this._ctrl = _ctrl;
 
 		InitGUI();
 	}
 
 	void InitGUI() {
-		setViewportView(contentPanel);
-		getVerticalScrollBar().setBackground(new Color(255, 255, 255, 160));
-		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		setLayout(null);
+		setBackground(new Color(255, 255, 255, 160));
 		setBounds(60, 50, 408, 390);
-		setOpaque(false);
 		
 		setSaveButton();
-		
-		//Cliente cliente = _ctrl.getCliente();
 		addTextField(Nombre = new JTextField(8), "Nombre:", x, y, 120, 20);
-		//Nombre.setText(cliente.getId());
 		Nombre.setEnabled(false);
 		addTextField(Apellido = new JTextField(8), "Apellido:", x + 140, y, 120, 20);
 		addTextField(Correo = new JTextField(8), "Correo:", x, y + 40, 160, 20);
@@ -57,6 +44,20 @@ public class Profile extends JScrollPane {
 		addTextField(Ciudad = new JTextField(8), "Ciudad:", x, y + 160, 120, 20);
 		addTextField(Provincia = new JTextField(8), "Provincia:", x + 140, y + 160, 120, 20);
 		addTextField(CodigoPostal = new JTextField(8), "Codigo Postal:", x, y + 200, 100, 20);
+	}
+	
+	void setData() {
+		Cliente cliente = _ctrl.getCliente();
+		Nombre.setText(cliente.getId());
+		Nombre.setEnabled(false);
+		Apellido.setText(cliente.getId());
+		Correo.setText(cliente.getCorreo());
+		Tel.setText(cliente.getTelefono());
+		Password.setText(cliente.getPassword());
+		Direccion.setText(cliente.getDireccion());
+		Ciudad.setText(cliente.getCiudad());
+		Provincia.setText(cliente.getProvincia());
+		CodigoPostal.setText(cliente.getCodigoPostal());
 	}
 	
 	void setSaveButton() {

@@ -14,6 +14,7 @@ public class MainPanel extends JPanel {
 
 	Controller _ctrl;
 	JPanel avatar, buttonsPanel, cardsPanel;
+	Profile profilePanel;
 	MakeOrderView MakeOrderView;
 	JButton Membresia, Menu, Perfil, Pedido, Historial;
 
@@ -21,7 +22,7 @@ public class MainPanel extends JPanel {
 		super(new BorderLayout());
 		this._ctrl = _ctrl;
 		InitGUI();
-		
+
 	}
 
 	void InitGUI() {
@@ -72,18 +73,35 @@ public class MainPanel extends JPanel {
 		avatar = createAvatarImg();
 		panel.add(avatar);
 
-		panel.add(createButton(Menu, "Menu"));
-		panel.add(createButton(Perfil, "Perfil"));
-		panel.add(createButton(Membresia, "Membresia"));
-		
-		Pedido = new JButton("Realizar Pedido");
+		panel.add(createButton(Menu = new JButton(), "Menu"));
+		Menu.addActionListener((e) -> {
+			CardLayout cl = (CardLayout) cardsPanel.getLayout();
+			cl.show(cardsPanel, "Menu");
+		});
+
+		panel.add(createButton(Perfil = new JButton(), "Perfil"));
+		Perfil.addActionListener(e -> {
+			profilePanel.setData();
+			profilePanel.updateUI();
+			profilePanel.validate();
+			profilePanel.repaint();
+			CardLayout cl = (CardLayout) cardsPanel.getLayout();
+			cl.show(cardsPanel, "Perfil");
+		});
+
+		panel.add(createButton(Membresia = new JButton(), "Membresia"));
+		Membresia.addActionListener(e -> {
+			CardLayout cl = (CardLayout) cardsPanel.getLayout();
+			cl.show(cardsPanel, "Membresia");
+		});
+
+		panel.add(createButton(Pedido = new JButton(), "Realizar Pedido"));
 		Pedido.addActionListener((e) -> {
 			if (MakeOrderView == null)
 				MakeOrderView = new MakeOrderView((JFrame) Utils.getWindow(MainPanel.this), _ctrl);
-			
+
 			MakeOrderView.open();
 		});
-		panel.add(Pedido);
 
 		return panel;
 	}
@@ -96,11 +114,9 @@ public class MainPanel extends JPanel {
 		cardsPanel.setBounds(60, 50, 408, 390);
 		cardsPanel.setOpaque(false);
 
-		// TODO
 		cardsPanel.add(new Carta(), "Menu");
-		cardsPanel.add(new Profile(_ctrl), "Perfil");
+		cardsPanel.add(profilePanel = new Profile(_ctrl), "Perfil");
 		cardsPanel.add(new Membership(_ctrl), "Membresia");
-		
 
 		panel.add(cardsPanel);
 
@@ -113,8 +129,10 @@ public class MainPanel extends JPanel {
 		Image scaledImage = icon.getImage().getScaledInstance(176, 50, Image.SCALE_SMOOTH);
 		Image scaledImage2 = icon2.getImage().getScaledInstance(176, 50, Image.SCALE_SMOOTH);
 
-		button = new JButton(name, new ImageIcon(scaledImage));
+		// button = new JButton(name, new ImageIcon(scaledImage));
 
+		button.setText(name);
+		button.setIcon(new ImageIcon(scaledImage));
 		button.setBorderPainted(false);
 		button.setForeground(Color.GREEN);
 		button.setContentAreaFilled(false);
@@ -126,13 +144,9 @@ public class MainPanel extends JPanel {
 		button.setVerticalTextPosition(SwingConstants.CENTER);
 		button.setHorizontalTextPosition(SwingConstants.CENTER);
 
-		button.addActionListener((e) -> {
-			CardLayout cl = (CardLayout) cardsPanel.getLayout();
-			cl.show(cardsPanel, name);
-		});
 		return button;
 	}
-	
+
 	void setRealizarPedidoButton() {
 		Pedido.addActionListener(e -> {
 			// TODO create MenuOption

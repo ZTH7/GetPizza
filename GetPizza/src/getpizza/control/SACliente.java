@@ -13,11 +13,9 @@ import getpizza.view.PayConfirm;
 
 public class SACliente implements Observable<Observer> {
 	List<Observer> observadores;
-	Controller _ctrl;
 	JFrame mainWindow;
 
-	public SACliente(Controller _ctrl, JFrame mainWindow) {
-		this._ctrl = _ctrl;
+	public SACliente(JFrame mainWindow) {
 		this.mainWindow = mainWindow;
 		
 		observadores = new ArrayList<>();
@@ -37,7 +35,7 @@ public class SACliente implements Observable<Observer> {
 	}
 
 	public void tryToPay(Carrito carrito) {
-		JDialog payConfirm = new PayConfirm(mainWindow, _ctrl, carrito);
+		JDialog payConfirm = new PayConfirm(mainWindow, this, carrito);
 		// TODO show payConfirm panel
 	}
 
