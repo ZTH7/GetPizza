@@ -1,12 +1,12 @@
 package getpizza.model;
 
-import java.util.List;
-
-public class Menu {
-	List<Pizza> pizza;
-	List<Bebida> bebida;
-	List<Postre> postre;
+public interface Menu {
 	
-	protected float precioTotal;
-	public List<Producto> productos;
+	void addPizza(Pizza pizza);
+	void addBebida(Bebida bebida);
+	void addPostre(Postre postre);
+	void removePizza(Pizza pizza);
+	void removeBebida(Bebida bebida);
+	void removePostre(Postre postre);
+	
 }

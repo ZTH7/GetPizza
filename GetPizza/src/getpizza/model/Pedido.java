@@ -25,9 +25,6 @@ public class Pedido {
     @objid ("9c238495-e2c5-45f0-bab5-ea61507442b8")
     public Cliente cliente;
 
-    @objid ("df1cd22a-c0a1-45b4-ab25-37188c118939")
-    public Carrito carrito;
-
     @objid ("5bee4103-5d16-4837-88c7-4eb2299625dc")
     String getId() {
         // Automatically generated method. Please delete this comment before entering specific code.

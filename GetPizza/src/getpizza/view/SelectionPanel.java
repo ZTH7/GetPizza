@@ -28,7 +28,7 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	
 	public SelectionPanel(Controller ctrl) {
 		_ctrl = ctrl;
-		// carta = _ctrl.obtenerCarta()
+		
 		InitGUI();
 	}
 	
@@ -36,6 +36,8 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		_panel = new JPanel();
 		_panel.setLayout(new BoxLayout(_panel, BoxLayout.Y_AXIS));
 		_panel.setBackground(new Color(255, 204, 153));
+		
+		// carta = _ctrl.obtenerCarta()
 
 		setViewportView(_panel);
 		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
