@@ -3,6 +3,8 @@ package getpizza.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import getpizza.misc.DBHelper;
+import getpizza.model.Cliente;
 import getpizza.view.Login;
 
 public class SALogin {
@@ -17,14 +19,11 @@ public class SALogin {
 	}
 
 	void login(String username, String password) {
-		_ctrl.toMainPanel();
-//		Cliente cliente = DBHelper.getInstance().getClient(username, password);
-//		if (cliente != null) {
-//			this.cliente = cliente;
-//			setMainWindowPanel(mainPanel, login);
-//		} else {
-//			Utils.showErrorMsg("El usuario o contraseña incorrecta");
-//		}
+		Cliente cliente = DBHelper.getInstance().getClient(username, password);
+		if (cliente != null) {
+			_ctrl.toMainPanel();
+			_ctrl.setCliente(cliente);
+		}
 	}
 
 	void setLoginAction() {

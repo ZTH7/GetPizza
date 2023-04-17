@@ -13,7 +13,8 @@ public class Registry extends JPanel {
 	JTextField Nombre, Apellido, Correo, Tel, Direccion, Ciudad, Provincia, CodigoPostal;
 	JPasswordField Password;
 	JButton registry;
-
+	int x = 222, y = 85;
+	
 	public Registry() {
 		super(null);
 
@@ -26,15 +27,15 @@ public class Registry extends JPanel {
 
 		setTitle();
 		setRegistryButton();
-		addTextField(Nombre, "Nombre:", 222, 85, 120, 20);
-		addTextField(Apellido, "Apellido:", 362, 85, 120, 20);
-		addTextField(Correo, "Correo:", 222, 125, 160, 20);
-		addTextField(Tel, "Tel.:", 402, 125, 80, 20);
-		addPasswordField(Password, "Contraseña:", 222, 165, 150, 20);
-		addTextField(Direccion, "Direccion:", 222, 205, 260, 20);
-		addTextField(Ciudad, "Ciudad:", 222, 245, 120, 20);
-		addTextField(Provincia, "Provincia:", 362, 245, 120, 20);
-		addTextField(CodigoPostal, "Codigo Postal:", 222, 285, 100, 20);
+		addTextField(Nombre = new JTextField(8), "Nombre:", x, y, 120, 20);
+		addTextField(Apellido = new JTextField(8), "Apellido:", x + 140, y, 120, 20);
+		addTextField(Correo = new JTextField(8), "Correo:", x, y + 40, 160, 20);
+		addTextField(Tel = new JTextField(8), "Tel.:", x + 180, y + 40, 80, 20);
+		addTextField(Password = new JPasswordField(8), "Contraseña:", x, y + 80, 150, 20);
+		addTextField(Direccion = new JTextField(8), "Direccion:", x, y + 120, 260, 20);
+		addTextField(Ciudad = new JTextField(8), "Ciudad:", x, y + 160, 120, 20);
+		addTextField(Provincia = new JTextField(8), "Provincia:", x + 140, y + 160, 120, 20);
+		addTextField(CodigoPostal = new JTextField(8), "Codigo Postal:", x, y + 200, 100, 20);
 
 		setBackground();
 	}
@@ -71,7 +72,6 @@ public class Registry extends JPanel {
 		Text.setBounds(x, y, w, 15);
 		add(Text);
 
-		TextField = new JTextField(8);
 		TextField.setBounds(x, y + 15, w, l);
 		TextField.setBackground(new Color(255, 255, 255, 220));
 		add(TextField);
@@ -83,7 +83,6 @@ public class Registry extends JPanel {
 		Text.setBounds(x, y, w, 15);
 		add(Text);
 
-		PasswordField = new JPasswordField(8);
 		PasswordField.setBounds(x, y + 15, w, l);
 		PasswordField.setBackground(new Color(255, 255, 255, 220));
 		add(PasswordField);
