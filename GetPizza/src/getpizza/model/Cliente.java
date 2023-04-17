@@ -128,5 +128,29 @@ public class Cliente {
     public void setTelefono(String telefono) {
     	this.telefono = telefono;
     }
+    
+    public String getCiudad() {
+    	return this.ciudad;
+    }
+    
+    public void setCiudad(String ciudad) {
+    	this.ciudad = telefono;
+    }
+    
+    public String getProvincia() {
+    	return this.provincia;
+    }
+    
+    public void setProvincia(String provincia) {
+    	this.provincia = provincia;
+    }
+    
+    public String getPassword() {
+    	return this.password;
+    }
+    
+    public void setPassword(String password) {
+    	this.password = password;
+    }
 
 }

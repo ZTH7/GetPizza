@@ -29,7 +29,7 @@ public class Controller {
 		sareg = new SARegistry(this, (Registry) registry);
 
 		mainWindow = new MainWindow();
-		sacliente = new SACliente(this, mainWindow);
+		sacliente = new SACliente(mainWindow);
 		mainPanel = new MainPanel(this);
 	}
 
