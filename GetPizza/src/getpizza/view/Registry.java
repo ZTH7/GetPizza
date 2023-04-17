@@ -27,13 +27,13 @@ public class Registry extends JPanel {
 
 		setTitle();
 		setRegistryButton();
-		addTextField(Usuario = new JTextField(8), "Usuario:", x, y - 40, 120, 20);
+		addTextField(Usuario = new JTextField(8), "Nombre de usuario:", x, y - 40, 120, 20);
 		addTextField(Nombre = new JTextField(8), "Nombre:", x, y, 120, 20);
 		addTextField(Apellido = new JTextField(8), "Apellido:", x + 140, y, 120, 20);
 		addTextField(Correo = new JTextField(8), "Correo:", x, y + 40, 160, 20);
 		addTextField(Tel = new JTextField(8), "Tel.:", x + 180, y + 40, 80, 20);
 		addTextField(Password = new JPasswordField(8), "Contraseña:", x, y + 80, 150, 20);
-		addTextField(Direccion = new JTextField(8), "Direccion:", x, y + 120, 260, 20);
+		addTextField(Direccion = new JTextField(8), "Dirección:", x, y + 120, 260, 20);
 		addTextField(Ciudad = new JTextField(8), "Ciudad:", x, y + 160, 120, 20);
 		addTextField(Provincia = new JTextField(8), "Provincia:", x + 140, y + 160, 120, 20);
 		addTextField(CodigoPostal = new JTextField(8), "Codigo Postal:", x, y + 200, 100, 20);

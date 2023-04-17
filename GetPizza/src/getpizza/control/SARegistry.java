@@ -26,8 +26,8 @@ public class SARegistry {
 			if (client != null) {
 				if (!DBHelper.getInstance().exists(datos.get("Nombre"))) {
 					DBHelper.getInstance().setClient(client);
-					_ctrl.toMainPanel();
 					_ctrl.setCliente(client);
+					_ctrl.toMainPanel();
 				} else
 					Utils.showErrorMsg("Usuario ya existe");
 			}

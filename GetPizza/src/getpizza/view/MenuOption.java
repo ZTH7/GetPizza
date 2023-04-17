@@ -142,5 +142,5 @@ public class MenuOption extends JDialog {
 	public void close() {
 		setVisible(false);
 	}
-
+  
 }

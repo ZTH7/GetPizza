@@ -15,6 +15,7 @@ public class MainPanel extends JPanel {
 	MakeOrderView MakeOrderView;
 	MenuOption MenuOption;
 	JButton Membresia, Menu, Perfil, Pedido, Historial;
+	Membership membresiaPanel;
 
 	public MainPanel(Controller _ctrl) {
 		super(new BorderLayout());
@@ -70,11 +71,13 @@ public class MainPanel extends JPanel {
 
 		avatar = createAvatarImg();
 		panel.add(avatar);
+		
+		panel.add(Box.createVerticalStrut(40));
 
-		panel.add(createButton(Menu = new JButton(), "Menu"));
+		panel.add(createButton(Menu = new JButton(), "Menú"));
 		Menu.addActionListener((e) -> {
 			CardLayout cl = (CardLayout) cardsPanel.getLayout();
-			cl.show(cardsPanel, "Menu");
+			cl.show(cardsPanel, "Menú");
 		});
 
 		panel.add(createButton(Perfil = new JButton(), "Perfil"));
@@ -84,17 +87,19 @@ public class MainPanel extends JPanel {
 			cl.show(cardsPanel, "Perfil");
 		});
 
-		panel.add(createButton(Membresia = new JButton(), "Membresia"));
+		panel.add(createButton(Membresia = new JButton(), "Membresía"));
 		Membresia.addActionListener(e -> {
+			membresiaPanel.setData();
 			CardLayout cl = (CardLayout) cardsPanel.getLayout();
-			cl.show(cardsPanel, "Membresia");
+			cl.show(cardsPanel, "Membresía");
 		});
 
 		panel.add(createButton(Pedido = new JButton(), "Realizar Pedido"));
 		Pedido.addActionListener((e) -> {
 			if (MenuOption == null)
+
 				MenuOption = new MenuOption((JFrame)Utils.getWindow(MainPanel.this), _ctrl);
-			
+
 			MenuOption.open();
 		});
 
@@ -109,9 +114,9 @@ public class MainPanel extends JPanel {
 		cardsPanel.setBounds(60, 50, 408, 390);
 		cardsPanel.setOpaque(false);
 
-		cardsPanel.add(new Carta(), "Menu");
+		cardsPanel.add(new Carta(), "Menú");
 		cardsPanel.add(profilePanel = new Profile(_ctrl), "Perfil");
-		cardsPanel.add(new Membership(_ctrl), "Membresia");
+		cardsPanel.add(membresiaPanel = new Membership(_ctrl), "Membresía");
 
 		panel.add(cardsPanel);
 
@@ -123,8 +128,6 @@ public class MainPanel extends JPanel {
 		ImageIcon icon2 = new ImageIcon("Resource/RolloverButton.png");
 		Image scaledImage = icon.getImage().getScaledInstance(176, 50, Image.SCALE_SMOOTH);
 		Image scaledImage2 = icon2.getImage().getScaledInstance(176, 50, Image.SCALE_SMOOTH);
-
-		// button = new JButton(name, new ImageIcon(scaledImage));
 
 		button.setText(name);
 		button.setIcon(new ImageIcon(scaledImage));
@@ -142,11 +145,6 @@ public class MainPanel extends JPanel {
 		return button;
 	}
 
-	void setRealizarPedidoButton() {
-		Pedido.addActionListener(e -> {
-			// TODO create MenuOption
-		});
-	}
 }
 
 class ButtonPanel extends JPanel {

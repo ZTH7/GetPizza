@@ -21,8 +21,8 @@ public class SALogin {
 	void login(String username, String password) {
 		Cliente cliente = DBHelper.getInstance().getClient(username, password);
 		if (cliente != null) {
-			_ctrl.toMainPanel();
 			_ctrl.setCliente(cliente);
+			_ctrl.toMainPanel();
 		}
 	}
 

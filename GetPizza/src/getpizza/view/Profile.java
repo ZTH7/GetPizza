@@ -39,7 +39,7 @@ public class Profile extends JPanel {
 		addTextField(Correo = new JTextField(8), "Correo:", x, y + 40, 160, 20);
 		addTextField(Tel = new JTextField(8), "Tel.:", x + 180, y + 40, 80, 20);
 		addTextField(Password = new JTextField(8), "Contraseña:", x, y + 80, 150, 20);
-		addTextField(Direccion = new JTextField(8), "Direccion:", x, y + 120, 260, 20);
+		addTextField(Direccion = new JTextField(8), "Dirección:", x, y + 120, 260, 20);
 		addTextField(Ciudad = new JTextField(8), "Ciudad:", x, y + 160, 120, 20);
 		addTextField(Provincia = new JTextField(8), "Provincia:", x + 140, y + 160, 120, 20);
 		addTextField(CodigoPostal = new JTextField(8), "Codigo Postal:", x, y + 200, 100, 20);
@@ -47,9 +47,8 @@ public class Profile extends JPanel {
 	
 	void setData() {
 		Cliente cliente = _ctrl.getCliente();
-		Nombre.setText(cliente.getId());
-		Nombre.setEnabled(false);
-		Apellido.setText(cliente.getId());
+		Nombre.setText(cliente.getNombre());
+		Apellido.setText(cliente.getApellido());
 		Correo.setText(cliente.getCorreo());
 		Tel.setText(cliente.getTelefono());
 		Password.setText(cliente.getPassword());
@@ -61,11 +60,16 @@ public class Profile extends JPanel {
 	
 	void setSaveButton() {
 		save = new JButton("Guardar");
-		save.setForeground(new Color(96, 96, 96));
+		save.setForeground(new Color(0, 0, 0));
 		save.setBounds(x + 50, y + 280, 160, 40);
-		save.setBackground(new Color(0, 255, 176, 220));
+		save.setBackground(new Color(255, 204, 153));
 		save.addActionListener(e -> {
 			try {
+				Map<String, String> datos = getInfo();
+				for(String str : datos.values()) {
+					if(str.equals(""))
+						throw new IllegalArgumentException();
+				}
 				_ctrl.changeClient(getInfo());
 			} catch (Exception ex) {
 				Utils.showErrorMsg("Los datos no pueden ser vacio");
@@ -76,11 +80,10 @@ public class Profile extends JPanel {
 	
 	void addTextField(JTextField TextField, String name, int x, int y, int w, int l) {
 		JLabel Text = new JLabel(name);
-		Text.setForeground(new Color(255, 255, 255));
+		Text.setForeground(new Color(0, 0, 0));
 		Text.setBounds(x, y, w, 15);
 		add(Text);
 
-		TextField = new JTextField(8);
 		TextField.setBounds(x, y + 15, w, l);
 		TextField.setBackground(new Color(255, 255, 255, 220));
 		add(TextField);

@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.swing.*;
 
+import getpizza.misc.DBHelper;
 import getpizza.model.Carrito;
 import getpizza.model.Cliente;
 import getpizza.model.Observer;
@@ -30,7 +31,6 @@ public class Controller {
 
 		mainWindow = new MainWindow();
 		sacliente = new SACliente(mainWindow);
-		mainPanel = new MainPanel(this);
 	}
 
 	public void run() throws Exception {
@@ -49,6 +49,7 @@ public class Controller {
 	}
 
 	public void toMainPanel() {
+		mainPanel = new MainPanel(this);
 		setMainWindowPanel(mainPanel);
 	}
 
@@ -73,7 +74,16 @@ public class Controller {
 	}
 	
 	public void changeClient(Map<String, String> datos) {
-		
+		cliente.setNombre(datos.get("Nombre"));
+		cliente.setApellido(datos.get("Apellido"));
+		cliente.setCorreo(datos.get("Correo"));
+		cliente.setTelefono(datos.get("Tel"));
+		cliente.setDireccion(datos.get("Direccion"));
+		cliente.setCiudad(datos.get("Ciudad"));
+		cliente.setProvincia(datos.get("Provincia"));
+		cliente.setCodigoPostal(datos.get("CodigoPostal"));
+		cliente.setPassword(datos.get("Password"));
+		DBHelper.getInstance().setClient(cliente);
 	}
 
 	public Object tryToPay() {

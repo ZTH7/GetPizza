@@ -79,7 +79,7 @@ public class Login extends JPanel {
 		registry1.setContentAreaFilled(false);
 		registry1.setBorder(null);
 		registry1.setForeground(new Color(2, 2, 250));
-		registry1.setBounds(287, 345, 130, 20);
+		registry1.setBounds(277, 345, 150, 20);
 		add(registry1);
 
 		registry2 = new JButton("<html><center>Registrate ahora</center></html>");
@@ -87,7 +87,7 @@ public class Login extends JPanel {
 		registry2.setContentAreaFilled(false);
 		registry2.setBorder(null);
 		registry2.setForeground(new Color(2, 2, 250));
-		registry2.setBounds(292, 365, 120, 20);
+		registry2.setBounds(292, 365, 130, 20);
 		add(registry2);
 	}
 
