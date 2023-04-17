@@ -17,6 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 
+import getpizza.control.Controller;
+
 public class MenuOption extends JDialog {
 
 	private static final long serialVersionUID = 1L;
@@ -26,11 +28,13 @@ public class MenuOption extends JDialog {
 	JPanel _panel;
 	ButtonGroup group;
 	JButton confirm;
+	Controller _ctrl;
 	JRadioButton predefinida, personalizada;
 
-	public MenuOption(JFrame parent) {
+	public MenuOption(JFrame parent, Controller ctrl) {
 		super(parent);
 		this._parent = parent;
+		_ctrl = ctrl;
 		InitGUI();
 	}
 
@@ -48,7 +52,7 @@ public class MenuOption extends JDialog {
 	}
 
 	void setTitle() {
-		JLabel title = new JLabel("<html><center>Seleccionar el tipo</center></html>");
+		JLabel title = new JLabel("<html><center>¿Qué tipo de menú desea?</center></html>");
 		title.setForeground(new Color(250, 192, 61));
 		title.setFont(new Font(null, 1, 20));
 		title.setBounds(0, 10, 280, 30);
@@ -59,14 +63,14 @@ public class MenuOption extends JDialog {
 	void setOption() {
 		group = new ButtonGroup();
 
-		predefinida = new JRadioButton("Menu predefinida");
+		predefinida = new JRadioButton("Menú predefinido");
 		predefinida.setBounds(70, 60, 180, 30);
 		predefinida.setOpaque(false);
 		predefinida.setSelected(true);
 		group.add(predefinida);
 		_panel.add(predefinida);
 
-		personalizada = new JRadioButton("Menu personalizada");
+		personalizada = new JRadioButton("Menú personalizado");
 		personalizada.setBounds(70, 100, 180, 30);
 		personalizada.setOpaque(false);
 		group.add(personalizada);
@@ -84,6 +88,12 @@ public class MenuOption extends JDialog {
 		confirm.setForeground(new Color(21, 60, 70));
 		confirm.setBounds(30, 170, 100, 30);
 		confirm.setBackground(new Color(250, 192, 61));
+		
+		confirm.addActionListener((e) -> {
+			MakeOrderView MakeOrderView = new MakeOrderView(_parent, _ctrl);
+			MakeOrderView.open();
+			this.close();
+		});
 
 		_panel.add(confirm);
 
@@ -132,5 +142,5 @@ public class MenuOption extends JDialog {
 	public void close() {
 		setVisible(false);
 	}
-	
+  
 }

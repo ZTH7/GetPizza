@@ -13,6 +13,7 @@ import getpizza.view.PayConfirm;
 
 public class SACliente implements Observable<Observer> {
 	List<Observer> observadores;
+	Carrito carrito;
 	JFrame mainWindow;
 
 	public SACliente(JFrame mainWindow) {
@@ -34,13 +35,9 @@ public class SACliente implements Observable<Observer> {
 		observadores.remove(o);
 	}
 
-	public void tryToPay(Carrito carrito) {
-		JDialog payConfirm = new PayConfirm(mainWindow, this, carrito);
+	public void tryToPay() {
+		JDialog payConfirm = new PayConfirm(mainWindow, this);
 		// TODO show payConfirm panel
-	}
-
-	public void sendOrder() {
-		// TODO enviar los products a base de dato
 	}
 
 }
