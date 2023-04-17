@@ -8,8 +8,8 @@ import java.awt.event.MouseMotionAdapter;
 import java.util.List;
 
 import javax.swing.*;
-import getpizza.control.SACliente;
-import getpizza.model.Carrito;
+
+import getpizza.control.Controller;
 import getpizza.model.Codigo;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
@@ -21,18 +21,21 @@ public class PayConfirm extends JDialog implements Observer {
 
 	int x, y;
 	JFrame _parent;
-	JPanel _panel;
+	JPanel _panel, contentPanel;
 	JButton confirm;
-	JScrollPane _centralPanel;
 	ActionListener confirmListener;
+	ButtonGroup group;
+	JRadioButton efectivo, tarjeta;
+	Controller _ctrl;
 
-	public PayConfirm(JFrame parent, SACliente sacliente) {
+	public PayConfirm(JFrame parent, Controller ctrl) {
 		super(parent);
 		this._parent = parent;
+		this._ctrl = ctrl;
 
 		InitGUI();
-		
-		sacliente.addObserver(this);
+
+		// sacliente.addObserver(this);
 	}
 
 	void InitGUI() {
@@ -48,6 +51,67 @@ public class PayConfirm extends JDialog implements Observer {
 		setBounds(300, 200, 340, 460);
 		setLocationRelativeTo(null);
 		setVisible(true);
+
+		setPayMethod();
+		setPrecioTotal();
+		setDescuentoOption();
+		setPrecioFinal();
+		setDireccion();
+	}
+
+	void setPrecioTotal() {
+		JLabel text = new JLabel("Precio Total: ");
+		text.setForeground(new Color(0, 0, 0));
+		text.setBounds(10, 10, 180, 20);
+		contentPanel.add(text);
+	}
+
+	void setDescuentoOption() {
+		JLabel text = new JLabel("¿Desea aplicar descuento?");
+		text.setForeground(new Color(0, 0, 0));
+		text.setBounds(10, 40, 180, 20);
+		contentPanel.add(text);
+	}
+
+	void setPrecioFinal() {
+		JLabel text = new JLabel("Precio Final: ");
+		text.setForeground(new Color(0, 0, 0));
+		text.setBounds(10, 100, 180, 20);
+		contentPanel.add(text);
+	}
+
+	void setDireccion() {
+		JLabel text = new JLabel("Dirección");
+		text.setForeground(new Color(0, 0, 0));
+		text.setBounds(10, 140, 230, 20);
+		contentPanel.add(text);
+
+		JTextField textField = new JTextField(8);
+		textField.setBounds(10, 170, 230, 20);
+		textField.setBackground(new Color(255, 255, 255, 220));
+		//textField.setText(_ctrl.getCliente().getDireccion());
+		contentPanel.add(textField);
+	}
+
+	void setPayMethod() {
+		JLabel text = new JLabel("¿Como desea pagar?");
+		text.setForeground(new Color(0, 0, 0));
+		text.setBounds(10, 200, 180, 20);
+		contentPanel.add(text);
+
+		group = new ButtonGroup();
+		tarjeta = new JRadioButton("Con tarjeta");
+		tarjeta.setBounds(10, 230, 180, 30);
+		tarjeta.setOpaque(false);
+		tarjeta.setSelected(true);
+		group.add(tarjeta);
+		contentPanel.add(tarjeta);
+
+		efectivo = new JRadioButton("Efectivo");
+		efectivo.setBounds(10, 260, 180, 30);
+		efectivo.setOpaque(false);
+		group.add(efectivo);
+		contentPanel.add(efectivo);
 	}
 
 	void setTitle() {
@@ -55,21 +119,6 @@ public class PayConfirm extends JDialog implements Observer {
 		title.setForeground(new Color(250, 192, 61));
 		title.setFont(new Font(null, 1, 20));
 		title.setBounds(100, 10, 140, 30);
-		title.setHorizontalAlignment(SwingConstants.CENTER);
-		_panel.add(title);
-	}
-
-	void setProductsList(List<Producto> products) {
-		String list = "";
-		for (Producto product : products) {
-			list += product.getNombre();
-			list += product.getPrecio();
-		}
-
-		JLabel title = new JLabel(list);
-		title.setForeground(new Color(250, 192, 61));
-		title.setFont(new Font(null, 1, 20));
-		title.setBounds(80, 20, 140, 30);
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 		_panel.add(title);
 	}
@@ -92,37 +141,14 @@ public class PayConfirm extends JDialog implements Observer {
 		_panel.add(cancel);
 	}
 
-	public void setConfirmListener(ActionListener confirmListener) {
-		confirm.removeActionListener(this.confirmListener);
-		this.confirmListener = confirmListener;
-		confirm.addActionListener(confirmListener);
-	}
-
 	void setCentralPanel() {
-		JPanel panel = new JPanel(new GridLayout(10, 2));
-		panel.setBackground(new Color(113, 152, 71));
+		contentPanel = new JPanel();
+		contentPanel.setLayout(null);
+		contentPanel.setBackground(new Color(255, 204, 153));
+		contentPanel.setBounds(40, 50, 260, 340);
+		contentPanel.setVisible(true);
 
-		_centralPanel = new JScrollPane();
-		_centralPanel.setViewportView(panel);
-		_centralPanel.getVerticalScrollBar().setBackground(new Color(113, 152, 71));
-		_centralPanel.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-		_centralPanel.setOpaque(false);
-		_centralPanel.setBounds(40, 50, 260, 340);
-		_centralPanel.setVisible(true);
-
-		_panel.add(_centralPanel);
-	}
-
-	void setDescuento() {
-
-	}
-
-	void setDirection() {
-
-	}
-
-	void setPayMethod() {
-
+		_panel.add(contentPanel);
 	}
 
 	void setupMouse() {
@@ -144,6 +170,10 @@ public class PayConfirm extends JDialog implements Observer {
 		_panel = new JPanel();
 		_panel.setLayout(null);
 		this.setContentPane(_panel);
+	}
+
+	public void setConfirmListener(ActionListener al) {
+		confirm.addActionListener(al);
 	}
 
 	@Override
@@ -168,5 +198,9 @@ public class PayConfirm extends JDialog implements Observer {
 	public void onOrderSended(Pedido pedido) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public static void main(String[] arg) {
+		new PayConfirm(null, null);
 	}
 }

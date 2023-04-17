@@ -20,6 +20,8 @@ import getpizza.model.Producto;
 
 public class SelectionPanel extends JScrollPane implements Observer {
 
+	private static final long serialVersionUID = 1L;
+
 	Controller _ctrl;
 	List<Producto> carta;
 	JPanel _panel;

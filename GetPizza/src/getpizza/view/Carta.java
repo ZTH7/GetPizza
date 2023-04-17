@@ -32,8 +32,6 @@ public class Carta extends JScrollPane {
 	public Carta() {
 		contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
-		// contentPanel = new JPanel(new GridLayout(5, 2));
-
 		contentPanel.setBackground(new Color(255, 255, 255, 160));
 
 		InitGUI();

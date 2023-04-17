@@ -74,25 +74,19 @@ public class TrolleyPanel extends JScrollPane implements Observer {
 
 	@Override
 	public void onProductAdded(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
+		productos.add(p);
 	}
 
 	@Override
 	public void onProductRemoved(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
+		productos.remove(p);
 	}
 
 	@Override
 	public void onCodeUsed(Codigo codigo) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void onOrderSended(Pedido pedido) {
-		// TODO Auto-generated method stub
-
 	}
 }
