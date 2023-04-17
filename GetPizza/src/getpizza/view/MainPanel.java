@@ -78,8 +78,17 @@ public class MainPanel extends JPanel {
 		panel.add(Box.createVerticalStrut(10));
 
 		panel.add(avatar);
+		
+		JLabel nombre = new JLabel(_ctrl.getCliente().getNombre());
+		nombre.setForeground(new Color(255, 204, 153));
+		nombre.setFont(new Font(null, 1, 16));
+		nombre.setAlignmentX(CENTER_ALIGNMENT);
+		nombre.setMaximumSize(new Dimension(176, 30));
+		nombre.setPreferredSize(new Dimension(176, 30));
+		nombre.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(nombre);
 
-		panel.add(Box.createVerticalStrut(30));
+		panel.add(Box.createVerticalStrut(10));
 
 		panel.add(createButton(Menu = new JButton(), "Menú"));
 		Menu.addActionListener((e) -> {

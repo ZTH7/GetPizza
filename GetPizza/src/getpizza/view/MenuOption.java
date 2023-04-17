@@ -75,8 +75,6 @@ public class MenuOption extends JDialog {
 		personalizada.setOpaque(false);
 		group.add(personalizada);
 		_panel.add(personalizada);
-
-		// TODO format
 	}
 
 	public int getOption() {
