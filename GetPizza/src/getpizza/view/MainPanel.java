@@ -40,12 +40,16 @@ public class MainPanel extends JPanel {
 		panel.setPreferredSize(new Dimension(176, 150));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-		JLabel title = new JLabel("Get Pizza");
-		title.setForeground(new Color(0xE0FAAB00, true));
-		title.setFont(new Font(null, 1, 30));
+		JLabel title = new JLabel();
+
+		ImageIcon Icon = new ImageIcon("Resource/GetPizza.png");
+		Image scaledImage = Icon.getImage().getScaledInstance(176, 50, Image.SCALE_SMOOTH);
+		Icon = new ImageIcon(scaledImage);
+		title.setIcon(Icon);
+
 		title.setAlignmentX(CENTER_ALIGNMENT);
-		title.setMaximumSize(new Dimension(176, 50));
-		title.setPreferredSize(new Dimension(176, 50));
+		title.setMaximumSize(new Dimension(176, 70));
+		title.setPreferredSize(new Dimension(176, 70));
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 
 		panel.add(title);
@@ -70,9 +74,12 @@ public class MainPanel extends JPanel {
 		panel.setPreferredSize(new Dimension(176, 480));
 
 		avatar = createAvatarImg();
+
+		panel.add(Box.createVerticalStrut(10));
+
 		panel.add(avatar);
-		
-		panel.add(Box.createVerticalStrut(40));
+
+		panel.add(Box.createVerticalStrut(30));
 
 		panel.add(createButton(Menu = new JButton(), "Menú"));
 		Menu.addActionListener((e) -> {
@@ -98,7 +105,7 @@ public class MainPanel extends JPanel {
 		Pedido.addActionListener((e) -> {
 			if (MenuOption == null)
 
-				MenuOption = new MenuOption((JFrame)Utils.getWindow(MainPanel.this), _ctrl);
+				MenuOption = new MenuOption((JFrame) Utils.getWindow(MainPanel.this), _ctrl);
 
 			MenuOption.open();
 		});
