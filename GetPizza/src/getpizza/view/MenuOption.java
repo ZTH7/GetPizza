@@ -125,4 +125,7 @@ public class MenuOption extends JDialog {
 		});
 	}
 
+	public static void main(String[] arg) {
+		JDialog d = new MenuOption(null);
+	}
 }

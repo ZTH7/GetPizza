@@ -32,7 +32,7 @@ public class Login extends JPanel {
 
 	void setTitle() {
 		JLabel title = new JLabel("Get Pizza");
-		title.setForeground(new Color(250, 192, 61));
+		title.setForeground(new Color(0, 0, 0));
 		title.setFont(new Font(null, 1, 55));
 		title.setBounds(222, 85, 260, 50);
 		title.setHorizontalAlignment(SwingConstants.CENTER);
@@ -41,7 +41,7 @@ public class Login extends JPanel {
 
 	void setUserField() {
 		JLabel userText = new JLabel("Username:");
-		userText.setForeground(new Color(250, 192, 61));
+		userText.setForeground(new Color(0, 0, 0));
 		userText.setBounds(272, 155, 100, 20);
 		add(userText);
 
@@ -54,7 +54,7 @@ public class Login extends JPanel {
 
 	void setPasswordField() {
 		JLabel pwdText = new JLabel("Password:");
-		pwdText.setForeground(new Color(250, 192, 61));
+		pwdText.setForeground(new Color(0, 0, 0));
 		pwdText.setBounds(272, 220, 100, 20);
 		add(pwdText);
 
@@ -67,14 +67,14 @@ public class Login extends JPanel {
 
 	void setLoginButton() {
 		login = new JButton("Log in");
-		login.setForeground(new Color(96, 96, 96));
+		login.setForeground(new Color(0, 0, 0));
 		login.setBounds(272, 305, 160, 40);
 		login.setBackground(new Color(250, 192, 61));
 		add(login);
 	}
 
 	void setRegistryButton() {
-		registry1 = new JButton("<html><p>¿No te has registrado?</p></html>");
+		registry1 = new JButton("<html><center>¿No te has registrado?</center></html>");
 		registry1.setOpaque(false);
 		registry1.setContentAreaFilled(false);
 		registry1.setBorder(null);
@@ -82,7 +82,7 @@ public class Login extends JPanel {
 		registry1.setBounds(287, 345, 130, 20);
 		add(registry1);
 
-		registry2 = new JButton("<html><p>Registrate ahora</p></html>");
+		registry2 = new JButton("<html><center>Registrate ahora</center></html>");
 		registry2.setOpaque(false);
 		registry2.setContentAreaFilled(false);
 		registry2.setBorder(null);

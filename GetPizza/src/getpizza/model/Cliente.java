@@ -11,8 +11,10 @@ public class Cliente {
     @objid ("9a29129c-4ce7-488a-a365-8b53e394d1bd")
     private String id;
 
+    private String nombre;
+    
     @objid ("2e917b6d-e0e5-4f1f-aebc-2e1dde62012c")
-    private String nombreCompleto;
+    private String apellido;
 
     @objid ("bf743f3a-7b25-4d07-a19c-510853c97417")
     private String correo;
@@ -42,8 +44,9 @@ public class Cliente {
     public List<Codigo> codigosUsados;
     
     public Cliente(Map<String, String> datos){
-    	this.id = datos.get("Nombre");
-		this.nombreCompleto = datos.get("Nombre") + " " + datos.get("Nombre");
+    	this.id = datos.get("Usuario");
+		this.nombre = datos.get("Nombre");
+		this.apellido = datos.get("Apellido");
 		this.correo = datos.get("Correo");
 		this.telefono = datos.get("Tel");
 		this.direccion = datos.get("Direccion");
@@ -69,15 +72,25 @@ public class Cliente {
     }
 
     @objid ("a1e72852-de4f-4c6a-8675-1d679a4168af")
-    public String getNombreCompleto() {
+    public String getNombre() {
         // Automatically generated method. Please delete this comment before entering specific code.
-        return this.nombreCompleto;
+        return this.nombre;
     }
 
     @objid ("0bf237ed-6d9b-4b14-ba50-298b08432d9b")
-    public void setNombreCompleto(String value) {
+    public void setNombre(String value) {
         // Automatically generated method. Please delete this comment before entering specific code.
-        this.nombreCompleto = value;
+        this.nombre = value;
+    }
+
+    public String getApellido() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.apellido;
+    }
+
+    public void setApellido(String value) {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        this.apellido = value;
     }
 
     @objid ("84a4a702-fc96-4c52-982c-916cf7013863")
