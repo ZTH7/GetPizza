@@ -13,7 +13,7 @@ import getpizza.view.PayConfirm;
 
 public class SACliente implements Observable<Observer> {
 	List<Observer> observadores;
-	Carrito carrito;
+	
 	JFrame mainWindow;
 
 	public SACliente(JFrame mainWindow) {

@@ -26,7 +26,7 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	
 	public SelectionPanel(Controller ctrl) {
 		_ctrl = ctrl;
-		// Hacer un carta = _ctrl.obtenerCarta()
+		// carta = _ctrl.obtenerCarta()
 		InitGUI();
 	}
 	

@@ -1,0 +1,95 @@
+{
+  "pizzas": {
+    "p1": {
+      "nombre": "Pizza Margarita",
+      "precio": 9.99,
+      "desc": "Margarita",
+      "id": "p1",
+      "masa": "Napolitana",
+      "tamanyo": "Mediano",
+      "base": "Queso",
+      "ingredientes": [
+        "Salsa de tomate",
+        "Mozzarella fresca",
+        "Albahaca fresca"
+      ]
+    },
+    "p2": {
+      "nombre": "Pizza Pepperoni",
+      "precio": 12.99,
+      "desc": "Pepperoni",
+      "id": "p2",
+      "masa": "Americana",
+      "tamanyo": "Grande",
+      "base": "Queso",
+      "ingredientes": [
+        "Salsa de tomate",
+        "Queso mozzarella",
+        "Pepperoni en rodajas"
+      ]
+    },
+    "p3": {
+      "nombre": "Pizza Hawaiana",
+      "precio": 14.99,
+      "desc": "Hawaiana",
+      "id": "p3",
+      "masa": "Romana",
+      "tamanyo": "Grande",
+      "base": "Tomate",
+      "ingredientes": [
+        "Salsa de tomate",
+        "Queso mozzarella",
+        "Jamón",
+        "Piña"
+      ]
+    },
+    "p4": {
+      "nombre": "Pizza Napolitana",
+      "precio": 11.99,
+      "desc": "Napolitana",
+      "id": "p4",
+      "masa": "Napolitana",
+      "tamanyo": "Mediano",
+      "base": "Tomate",
+      "ingredientes": [
+        "Salsa de tomate",
+        "Mozzarella fresca",
+        "Anchoas",
+        "Aceitunas negras"
+      ]
+    },
+    "p5": {
+      "nombre": "Pizza Cuatro Quesos",
+      "precio": 13.99,
+      "desc": "Cuatro Quesos",
+      "id": "p5",
+      "masa": "Romana",
+      "tamanyo": "Grande",
+      "base": "Queso_y_tomate",
+      "ingredientes": [
+        "Salsa de tomate",
+        "Queso mozzarella",
+        "Queso gorgonzola",
+        "Queso parmesano",
+        "Queso provolone"
+      ]
+    },
+    "p6": {
+      "nombre": "Pizza Vegetariana",
+      "precio": 10.99,
+      "desc": "Vegetariana",
+      "id": "p6",
+      "masa": "Americana",
+      "tamanyo": "Pequenyo",
+      "base": "Sin_base",
+      "ingredientes": [
+        "Salsa de tomate",
+        "Queso mozzarella",
+        "Espinacas",
+        "Tomate",
+        "Cebolla",
+        "Pimiento",
+        "Aceitunas negras"
+      ]
+    }
+}

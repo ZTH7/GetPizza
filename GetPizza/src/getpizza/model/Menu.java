@@ -7,5 +7,6 @@ public class Menu {
 	List<Bebida> bebida;
 	List<Postre> postre;
 	
-	
+	protected float precioTotal;
+	public List<Producto> productos;
 }
