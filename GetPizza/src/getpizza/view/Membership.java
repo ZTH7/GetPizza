@@ -31,23 +31,18 @@ public class Membership extends JPanel implements Observer {
 		setLayout(null);
 		setBounds(60, 50, 408, 390);
 		setBackground(new Color(255, 255, 255, 160));
-		//TODO 
-//		rango = new JLabel("<html><p><center>Rango: "
-//				+ ctrl.getCliente().getMembresia().rango.name()
-//				+ "</center></p></html>");
-//		punto = new JLabel("<html><p><center>Punto: "
-//				+ ctrl.getCliente().getMembresia().puntos
-//				+ "</center></p></html>");
 		
-		rango = new JLabel("<html><p><center>Rango: 0</center></p></html>");
+		rango = new JLabel();
 		rango.setForeground(new Color(21, 60, 70));
-		rango.setFont(new Font(null, 1, 20));
-		rango.setBounds(170, 80, 150, 60);
+		rango.setFont(new Font(null, 1, 18));
+		rango.setBounds(120, 80, 200, 60);
+		rango.setOpaque(false);
 		add(rango);
-		punto = new JLabel("<html><p><center>Punto: 0</center></p></html>");
+		punto = new JLabel();
 		punto.setForeground(new Color(21, 60, 70));
-		punto.setFont(new Font(null, 1, 20));
-		punto.setBounds(170, 140, 150, 60);
+		punto.setFont(new Font(null, 1, 18));
+		punto.setBounds(120, 120, 200, 60);
+		punto.setOpaque(false);
 		add(punto);
 	}
 	
@@ -59,6 +54,15 @@ public class Membership extends JPanel implements Observer {
     public void setPunto(int punto) {
         this.punto.setText("Punto: " + punto);
         repaint();
+    }
+    
+	public void setData() {
+		rango.setText("<html><p><center>Rango: "
+				+ ctrl.getCliente().getMembresia().rango.name()
+				+ "</center></p></html>");
+		punto.setText("<html><p><center>Punto: "
+				+ ctrl.getCliente().getMembresia().puntos
+				+ "</center></p></html>");
     }
 
 	@Override
