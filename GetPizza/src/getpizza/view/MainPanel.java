@@ -1,10 +1,12 @@
 package getpizza.view;
 
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
 import getpizza.control.Controller;
+import getpizza.misc.Utils;
 
 public class MainPanel extends JPanel {
 
@@ -12,6 +14,7 @@ public class MainPanel extends JPanel {
 
 	Controller _ctrl;
 	JPanel avatar, buttonsPanel, cardsPanel;
+	MakeOrderView MakeOrderView;
 	JButton Membresia, Menu, Perfil, Pedido, Historial;
 
 	public MainPanel(Controller _ctrl) {
@@ -72,7 +75,15 @@ public class MainPanel extends JPanel {
 		panel.add(createButton(Menu, "Menu"));
 		panel.add(createButton(Perfil, "Perfil"));
 		panel.add(createButton(Membresia, "Membresia"));
-		panel.add(createButton(Pedido, "Realizar Pedido"));
+		
+		Pedido = new JButton("Realizar Pedido");
+		Pedido.addActionListener((e) -> {
+			if (MakeOrderView == null)
+				MakeOrderView = new MakeOrderView((JFrame) Utils.getWindow(MainPanel.this), _ctrl);
+			
+			MakeOrderView.open();
+		});
+		panel.add(Pedido);
 
 		return panel;
 	}
@@ -89,6 +100,7 @@ public class MainPanel extends JPanel {
 		cardsPanel.add(new Carta(), "Menu");
 		cardsPanel.add(new Profile(_ctrl), "Perfil");
 		cardsPanel.add(new Membership(_ctrl), "Membresia");
+		
 
 		panel.add(cardsPanel);
 

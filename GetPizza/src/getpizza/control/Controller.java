@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.swing.*;
 
+import getpizza.model.Carrito;
 import getpizza.model.Cliente;
 import getpizza.model.Observer;
 import getpizza.view.*;
@@ -15,6 +16,10 @@ public class Controller {
 	SALogin salogin;
 	SARegistry sareg;
 	SACliente sacliente;
+	
+	/*TODO:
+	 * El controller debe de tener todos los metodos de los SA, ya que es el que controla sus acciones
+	 * Hay que hacer anyadir Observer de cada tipo*/
 
 	public Controller() {
 		login = new Login();
@@ -69,6 +74,11 @@ public class Controller {
 	
 	public void changeClient(Map<String, String> datos) {
 		
+	}
+
+	public Object tryToPay(Carrito carrito) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

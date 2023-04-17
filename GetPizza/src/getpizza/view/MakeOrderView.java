@@ -17,13 +17,15 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
+
+import getpizza.control.Controller;
 import getpizza.control.SACliente;
 import getpizza.model.Codigo;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
 import getpizza.model.Producto;
 
-public class Personalize extends JDialog implements Observer {
+public class MakeOrderView extends JDialog implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
@@ -33,12 +35,15 @@ public class Personalize extends JDialog implements Observer {
 	JButton confirm;
 	JScrollPane _centralPanel;
 	Trolley trolley;
-	SACliente sacliente;
+	Controller _ctrl;
+	JPanel _selection;
+	
+	/*TODO: RESET, resetear el carrito en caso de cancelar el pedido*/
 
-	public Personalize(JFrame parent, SACliente sacliente) {
+	public MakeOrderView(JFrame parent, Controller ctrl) {
 		super(parent);
 		this._parent = parent;
-		this.sacliente = sacliente;
+		this._ctrl = ctrl;
 
 		InitGUI();
 	}
@@ -55,8 +60,7 @@ public class Personalize extends JDialog implements Observer {
 		setTrolleyPanel();
 
 		setBounds(300, 200, 854, 480);
-		setLocationRelativeTo(null);
-		setVisible(true);
+		
 	}
 
 	void setTitle() {
@@ -88,7 +92,7 @@ public class Personalize extends JDialog implements Observer {
 		confirm.setForeground(new Color(21, 60, 70));
 		confirm.setBounds(600, 420, 100, 30);
 		confirm.setBackground(new Color(250, 192, 61));
-		confirm.addActionListener(e -> sacliente.tryToPay(trolley.getCarrito()));
+		confirm.addActionListener(e -> _ctrl.tryToPay(trolley.getCarrito()));
 		
 		_panel.add(confirm);
 
@@ -104,11 +108,11 @@ public class Personalize extends JDialog implements Observer {
 	}
 
 	void setCentralPanel() {
-		JPanel panel = new JPanel(new GridLayout(10, 2));
-		panel.setBackground(new Color(108, 169, 132));
+		_selection = new JPanel(new GridLayout(10, 2));
+		_selection.setBackground(new Color(108, 169, 132));
 
 		_centralPanel = new JScrollPane();
-		_centralPanel.setViewportView(panel);
+		_centralPanel.setViewportView(_selection);
 		_centralPanel.getVerticalScrollBar().setBackground(new Color(108, 169, 132));
 		_centralPanel.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		_centralPanel.setOpaque(false);
@@ -132,6 +136,12 @@ public class Personalize extends JDialog implements Observer {
 			}
 		});
 	}
+	
+	public void open() {
+		// Establecer la posición de la ventana de diálogo de tal manera que se abra en el centro de la ventana principal
+		setLocationRelativeTo(null);
+		setVisible(true);
+	}
 
 	void setContentPanel() {
 		_panel = new JPanel();
@@ -140,7 +150,7 @@ public class Personalize extends JDialog implements Observer {
 	}
 
 	void setTrolleyPanel() {
-		trolley = new Trolley(sacliente);
+		trolley = new Trolley(_ctrl);
 		_panel.add(trolley);
 	}
 
@@ -166,10 +176,6 @@ public class Personalize extends JDialog implements Observer {
 	public void onOrderSended(Pedido pedido) {
 		// TODO Auto-generated method stub
 
-	}
-	
-	public static void main(String[] arg) {
-		Personalize dialog = new Personalize(null, null);
 	}
 
 }

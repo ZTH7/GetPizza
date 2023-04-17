@@ -4,6 +4,8 @@ import java.awt.*;
 import java.util.List;
 
 import javax.swing.*;
+
+import getpizza.control.Controller;
 import getpizza.control.SACliente;
 import getpizza.model.Carrito;
 import getpizza.model.Codigo;
@@ -15,16 +17,16 @@ public class Trolley extends JScrollPane implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
-	SACliente sacliente;
+	Controller _ctrl;
 	Carrito carrito;
 	JPanel _panel;
 
-	public Trolley(SACliente sacliente) {
+	public Trolley(Controller _ctrl) {
 		this.carrito = new Carrito();
 		
 		InitGUI();
 		
-		//sacliente.addObserver(this);
+		//_ctrl.addClientObserver(this);
 	}
 	
 	void InitGUI() {
