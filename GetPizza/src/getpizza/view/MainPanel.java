@@ -1,10 +1,7 @@
 package getpizza.view;
 
 import java.awt.*;
-import java.awt.event.ActionListener;
-
 import javax.swing.*;
-
 import getpizza.control.Controller;
 import getpizza.misc.Utils;
 
@@ -83,9 +80,6 @@ public class MainPanel extends JPanel {
 		panel.add(createButton(Perfil = new JButton(), "Perfil"));
 		Perfil.addActionListener(e -> {
 			profilePanel.setData();
-			profilePanel.updateUI();
-			profilePanel.validate();
-			profilePanel.repaint();
 			CardLayout cl = (CardLayout) cardsPanel.getLayout();
 			cl.show(cardsPanel, "Perfil");
 		});

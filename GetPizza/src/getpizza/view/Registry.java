@@ -10,10 +10,10 @@ public class Registry extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	JTextField Nombre, Apellido, Correo, Tel, Direccion, Ciudad, Provincia, CodigoPostal;
+	JTextField Usuario, Nombre, Apellido, Correo, Tel, Direccion, Ciudad, Provincia, CodigoPostal;
 	JPasswordField Password;
 	JButton registry;
-	int x = 222, y = 85;
+	int x = 222, y = 125;
 	
 	public Registry() {
 		super(null);
@@ -27,6 +27,7 @@ public class Registry extends JPanel {
 
 		setTitle();
 		setRegistryButton();
+		addTextField(Usuario = new JTextField(8), "Usuario:", x, y - 40, 120, 20);
 		addTextField(Nombre = new JTextField(8), "Nombre:", x, y, 120, 20);
 		addTextField(Apellido = new JTextField(8), "Apellido:", x + 140, y, 120, 20);
 		addTextField(Correo = new JTextField(8), "Correo:", x, y + 40, 160, 20);
@@ -41,7 +42,7 @@ public class Registry extends JPanel {
 	}
 
 	void setTitle() {
-		JLabel title = new JLabel("Registrar");
+		JLabel title = new JLabel("Registrarse");
 		title.setForeground(new Color(0xE0FAAB00, true));
 		title.setFont(new Font(null, 1, 30));
 		title.setBounds(222, 45, 260, 30);
@@ -51,9 +52,9 @@ public class Registry extends JPanel {
 
 	void setRegistryButton() {
 		registry = new JButton("Registry");
-		registry.setForeground(new Color(96, 96, 96));
-		registry.setBounds(272, 385, 160, 40);
-		registry.setBackground(new Color(0, 255, 176, 220));
+		registry.setForeground(new Color(0, 0, 0));
+		registry.setBounds(272, 380, 160, 40);
+		registry.setBackground(new Color(255, 204, 153));
 		add(registry);
 	}
 
@@ -61,14 +62,14 @@ public class Registry extends JPanel {
 		JLabel bkg = new JLabel();
 		bkg.setOpaque(true);
 		bkg.setOpaque(true);
-		bkg.setBackground(new Color(255, 255, 255, 100));
+		bkg.setBackground(new Color(255, 255, 255, 160));
 		bkg.setBounds(202, 40, 300, 400);
 		add(bkg);
 	}
 
 	void addTextField(JTextField TextField, String name, int x, int y, int w, int l) {
 		JLabel Text = new JLabel(name);
-		Text.setForeground(new Color(255, 255, 255));
+		Text.setForeground(new Color(0, 0, 0));
 		Text.setBounds(x, y, w, 15);
 		add(Text);
 
@@ -90,6 +91,7 @@ public class Registry extends JPanel {
 
 	public Map<String, String> getInfo() {
 		Map<String, String> res = new HashMap<>();
+		res.put("Usuario", Usuario.getText());
 		res.put("Nombre", Nombre.getText());
 		res.put("Apellido", Apellido.getText());
 		res.put("Correo", Correo.getText());

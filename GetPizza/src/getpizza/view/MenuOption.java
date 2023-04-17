@@ -133,4 +133,7 @@ public class MenuOption extends JDialog {
 		setVisible(false);
 	}
 
+	public static void main(String[] arg) {
+		JDialog d = new MenuOption(null);
+	}
 }

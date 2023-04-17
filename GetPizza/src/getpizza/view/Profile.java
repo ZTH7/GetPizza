@@ -35,7 +35,6 @@ public class Profile extends JPanel {
 		
 		setSaveButton();
 		addTextField(Nombre = new JTextField(8), "Nombre:", x, y, 120, 20);
-		Nombre.setEnabled(false);
 		addTextField(Apellido = new JTextField(8), "Apellido:", x + 140, y, 120, 20);
 		addTextField(Correo = new JTextField(8), "Correo:", x, y + 40, 160, 20);
 		addTextField(Tel = new JTextField(8), "Tel.:", x + 180, y + 40, 80, 20);
