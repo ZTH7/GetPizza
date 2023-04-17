@@ -34,7 +34,7 @@ public class MakeOrderView extends JDialog implements Observer {
 	JPanel _panel;
 	JButton confirm;
 	JScrollPane _centralPanel;
-	Trolley trolley;
+	TrolleyPanel trolley;
 	Controller _ctrl;
 	JPanel _selection;
 	
@@ -92,7 +92,7 @@ public class MakeOrderView extends JDialog implements Observer {
 		confirm.setForeground(new Color(21, 60, 70));
 		confirm.setBounds(600, 420, 100, 30);
 		confirm.setBackground(new Color(250, 192, 61));
-		confirm.addActionListener(e -> _ctrl.tryToPay(trolley.getCarrito()));
+		confirm.addActionListener(e -> _ctrl.tryToPay());
 		
 		_panel.add(confirm);
 
@@ -109,11 +109,11 @@ public class MakeOrderView extends JDialog implements Observer {
 
 	void setCentralPanel() {
 		_selection = new JPanel(new GridLayout(10, 2));
-		_selection.setBackground(new Color(108, 169, 132));
+		_selection.setBackground(new Color(255, 204, 153));
 
 		_centralPanel = new JScrollPane();
 		_centralPanel.setViewportView(_selection);
-		_centralPanel.getVerticalScrollBar().setBackground(new Color(108, 169, 132));
+		_centralPanel.getVerticalScrollBar().setBackground(new Color(255, 204, 153));
 		_centralPanel.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		_centralPanel.setOpaque(false);
 		_centralPanel.setBounds(40, 60, 520, 390);
@@ -144,7 +144,7 @@ public class MakeOrderView extends JDialog implements Observer {
 	}
 	
 	public void close() {
-		setVisible(false);
+		dispose();
 	}
 
 	void setContentPanel() {
@@ -154,7 +154,7 @@ public class MakeOrderView extends JDialog implements Observer {
 	}
 
 	void setTrolleyPanel() {
-		trolley = new Trolley(_ctrl);
+		trolley = new TrolleyPanel(_ctrl);
 		_panel.add(trolley);
 	}
 

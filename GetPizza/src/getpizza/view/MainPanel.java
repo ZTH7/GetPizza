@@ -93,7 +93,7 @@ public class MainPanel extends JPanel {
 		panel.add(createButton(Pedido = new JButton(), "Realizar Pedido"));
 		Pedido.addActionListener((e) -> {
 			if (MenuOption == null)
-				MenuOption = new MenuOption((JFrame)Utils.getWindow(MainPanel.this));
+				MenuOption = new MenuOption((JFrame)Utils.getWindow(MainPanel.this), _ctrl);
 			
 			MenuOption.open();
 		});

@@ -26,7 +26,7 @@ public class PayConfirm extends JDialog implements Observer {
 	JScrollPane _centralPanel;
 	ActionListener confirmListener;
 
-	public PayConfirm(JFrame parent, SACliente sacliente, Carrito carrito) {
+	public PayConfirm(JFrame parent, SACliente sacliente) {
 		super(parent);
 		this._parent = parent;
 

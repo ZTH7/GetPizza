@@ -76,7 +76,7 @@ public class Controller {
 		
 	}
 
-	public Object tryToPay(Carrito carrito) {
+	public Object tryToPay() {
 		// TODO Auto-generated method stub
 		return null;
 	}
