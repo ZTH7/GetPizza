@@ -45,8 +45,6 @@ public class MenuOption extends JDialog {
 		_panel.setBackground(new Color(248, 247, 240));
 
 		setBounds(300, 200, 280, 220);
-		setLocationRelativeTo(null);
-		setVisible(true);
 	}
 
 	void setTitle() {
@@ -123,6 +121,16 @@ public class MenuOption extends JDialog {
 				setLocation(p.x + e.getX() - x, p.y + e.getY() - y);
 			}
 		});
+	}
+	
+	public void open() {
+		// Establecer la posición de la ventana de diálogo de tal manera que se abra en el centro de la ventana principal
+		setLocationRelativeTo(null);
+		setVisible(true);
+	}
+	
+	public void close() {
+		setVisible(false);
 	}
 
 }

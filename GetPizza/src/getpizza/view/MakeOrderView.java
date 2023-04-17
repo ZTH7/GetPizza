@@ -139,8 +139,12 @@ public class MakeOrderView extends JDialog implements Observer {
 	
 	public void open() {
 		// Establecer la posición de la ventana de diálogo de tal manera que se abra en el centro de la ventana principal
-		setLocationRelativeTo(null);
+		setLocationRelativeTo(this.getParent());
 		setVisible(true);
+	}
+	
+	public void close() {
+		setVisible(false);
 	}
 
 	void setContentPanel() {

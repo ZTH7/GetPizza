@@ -16,6 +16,7 @@ public class MainPanel extends JPanel {
 	JPanel avatar, buttonsPanel, cardsPanel;
 	Profile profilePanel;
 	MakeOrderView MakeOrderView;
+	MenuOption MenuOption;
 	JButton Membresia, Menu, Perfil, Pedido, Historial;
 
 	public MainPanel(Controller _ctrl) {
@@ -97,10 +98,10 @@ public class MainPanel extends JPanel {
 
 		panel.add(createButton(Pedido = new JButton(), "Realizar Pedido"));
 		Pedido.addActionListener((e) -> {
-			if (MakeOrderView == null)
-				MakeOrderView = new MakeOrderView((JFrame) Utils.getWindow(MainPanel.this), _ctrl);
-
-			MakeOrderView.open();
+			if (MenuOption == null)
+				MenuOption = new MenuOption((JFrame)Utils.getWindow(MainPanel.this));
+			
+			MenuOption.open();
 		});
 
 		return panel;
