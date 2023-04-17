@@ -24,9 +24,12 @@ public class SARegistry {
 		try {
 			client = new Cliente(datos);
 			if (client != null) {
-				DBHelper.getInstance().createClient(client);
-				_ctrl.toMainPanel();
-				_ctrl.setCliente(client);
+				if (!DBHelper.getInstance().exists(datos.get("Nombre"))) {
+					DBHelper.getInstance().setClient(client);
+					_ctrl.toMainPanel();
+					_ctrl.setCliente(client);
+				} else
+					Utils.showErrorMsg("Usuario ya existe");
 			}
 		} catch (Exception e) {
 			Utils.showErrorMsg("Datos incorrecta");
@@ -38,7 +41,12 @@ public class SARegistry {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					registry(_reg.getInfo());
+					Map<String, String> datos = _reg.getInfo();
+					for(String str : datos.values()) {
+						if(str.equals(""))
+							throw new IllegalArgumentException();
+					}
+					registry(datos);
 				} catch (Exception ex) {
 					Utils.showErrorMsg("Los datos no pueden ser vacio");
 				}

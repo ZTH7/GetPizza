@@ -14,6 +14,7 @@ import javax.swing.ScrollPaneConstants;
 
 import getpizza.control.Controller;
 import getpizza.misc.Utils;
+import getpizza.model.Cliente;
 
 public class Profile extends JScrollPane {
 
@@ -43,15 +44,19 @@ public class Profile extends JScrollPane {
 		setOpaque(false);
 		
 		setSaveButton();
-		addTextField(Nombre, "Nombre:", x, y, 120, 20);
-		addTextField(Apellido, "Apellido:", x + 140, y, 120, 20);
-		addTextField(Correo, "Correo:", x, y + 40, 160, 20);
-		addTextField(Tel, "Tel.:", x + 180, y + 40, 80, 20);
-		addTextField(Password, "Contraseña:", x, y + 80, 150, 20);
-		addTextField(Direccion, "Direccion:", x, y + 120, 260, 20);
-		addTextField(Ciudad, "Ciudad:", x, y + 160, 120, 20);
-		addTextField(Provincia, "Provincia:", x + 140, y + 160, 120, 20);
-		addTextField(CodigoPostal, "Codigo Postal:", x, y + 200, 100, 20);
+		
+		//Cliente cliente = _ctrl.getCliente();
+		addTextField(Nombre = new JTextField(8), "Nombre:", x, y, 120, 20);
+		//Nombre.setText(cliente.getId());
+		Nombre.setEnabled(false);
+		addTextField(Apellido = new JTextField(8), "Apellido:", x + 140, y, 120, 20);
+		addTextField(Correo = new JTextField(8), "Correo:", x, y + 40, 160, 20);
+		addTextField(Tel = new JTextField(8), "Tel.:", x + 180, y + 40, 80, 20);
+		addTextField(Password = new JTextField(8), "Contraseña:", x, y + 80, 150, 20);
+		addTextField(Direccion = new JTextField(8), "Direccion:", x, y + 120, 260, 20);
+		addTextField(Ciudad = new JTextField(8), "Ciudad:", x, y + 160, 120, 20);
+		addTextField(Provincia = new JTextField(8), "Provincia:", x + 140, y + 160, 120, 20);
+		addTextField(CodigoPostal = new JTextField(8), "Codigo Postal:", x, y + 200, 100, 20);
 	}
 	
 	void setSaveButton() {
