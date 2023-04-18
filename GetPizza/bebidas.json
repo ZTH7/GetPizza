@@ -1,46 +1,46 @@
 {
-  "bebidas": {
-    "agua_mineral": {
+  "bebidas": [
+    {
       "nombre": "Agua Mineral",
-      "precio": 1.50,
+      "precio": 1.5,
       "desc": "Agua Mineral sin gas",
       "id": "agua_mineral",
       "tamanyo": "Grande"
     },
-    "fanta_naranja": {
+    {
       "nombre": "Fanta Naranja",
-      "precio": 2.00,
+      "precio": 2.0,
       "desc": "Refresco de naranja",
       "id": "fanta_naranja",
       "tamanyo": "Pequenyo"
     },
-    "fanta_limon": {
+    {
       "nombre": "Fanta Limón",
-      "precio": 2.00,
+      "precio": 2.0,
       "desc": "Refresco de limón",
       "id": "fanta_limon",
       "tamanyo": "Mediano"
     },
-    "coca_cola": {
+    {
       "nombre": "Coca Cola",
-      "precio": 2.50,
+      "precio": 2.5,
       "desc": "Refresco de cola",
       "id": "coca_cola",
       "tamanyo": "Grande"
     },
-    "nestea": {
+    {
       "nombre": "Nestea",
-      "precio": 2.00,
+      "precio": 2.0,
       "desc": "Té frío",
       "id": "nestea",
       "tamanyo": "Pequenyo"
     },
-    "zumo_frutas": {
+    {
       "nombre": "Zumo de Frutas",
-      "precio": 2.50,
+      "precio": 2.5,
       "desc": "Zumo de frutas variadas",
       "id": "zumo_frutas",
       "tamanyo": "Mediano"
     }
-  }
+  ]
 }

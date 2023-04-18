@@ -3,18 +3,11 @@ package getpizza.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 
+import getpizza.control.Controller;
 import getpizza.model.Bebida;
 import getpizza.model.Pizza;
 import getpizza.model.Postre;
@@ -24,12 +17,15 @@ public class Carta extends JScrollPane {
 
 	private static final long serialVersionUID = 1L;
 
+	Controller _ctrl;
 	JPanel contentPanel;
 	List<Pizza> pizza;
 	List<Bebida> bebida;
 	List<Postre> postre;
 
-	public Carta() {
+	public Carta(Controller ctrl) {
+		this._ctrl = ctrl;
+		
 		contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 		contentPanel.setBackground(new Color(255, 255, 255, 160));
@@ -48,15 +44,9 @@ public class Carta extends JScrollPane {
 	}
 
 	void InitProducts() {
-		pizza = new ArrayList<>();
-//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-//		pizza.add(new Producto("Barbacoa_Gourmet-2603", "Barbacoa Gourmet", "test, test, test", 10));
-		bebida = new ArrayList<>();
-		postre = new ArrayList<>();
+		pizza = _ctrl.getPizzas();
+		bebida = _ctrl.getBebidas();
+		postre = _ctrl.getPostres();
 	}
 
 	void InitProdutPanel() {
@@ -94,12 +84,16 @@ public class Carta extends JScrollPane {
 	JPanel createProductPanel(Producto producto) {
 		JPanel prod = new JPanel();
 		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
-		prod.setBackground(new Color(255, 255, 255, 160)); // TODO change a color
+		prod.setBackground(new Color(255, 255, 255, 160));
 
 		JLabel nombre = new JLabel("<html>" + "<p><center>" + producto.getNombre() + "</center></p>"
 				+ "<p><center>Precio: " + Float.toString(producto.getPrecio()) + "</center></p>" + "</html>");
-
-		JLabel desc = new JLabel(producto.getDesc());
+		nombre.setPreferredSize(new Dimension(120, 80));
+		
+		JTextArea desc = new JTextArea(producto.getDesc());
+		desc.setLineWrap(true);
+		desc.setWrapStyleWord(true);
+		desc.setOpaque(false);
 
 		JLabel ImgLabel = new JLabel();
 		ImgLabel.setPreferredSize(new Dimension(80, 80));

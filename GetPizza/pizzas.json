@@ -1,6 +1,6 @@
 {
-  "pizzas": {
-    "p1": {
+  "pizzas": [
+    {
       "nombre": "Pizza Margarita",
       "precio": 9.99,
       "desc": "Margarita",
@@ -14,7 +14,7 @@
         "Albahaca fresca"
       ]
     },
-    "p2": {
+    {
       "nombre": "Pizza Pepperoni",
       "precio": 12.99,
       "desc": "Pepperoni",
@@ -28,7 +28,7 @@
         "Pepperoni en rodajas"
       ]
     },
-    "p3": {
+    {
       "nombre": "Pizza Hawaiana",
       "precio": 14.99,
       "desc": "Hawaiana",
@@ -36,14 +36,9 @@
       "masa": "Romana",
       "tamanyo": "Grande",
       "base": "Tomate",
-      "ingredientes": [
-        "Salsa de tomate",
-        "Queso mozzarella",
-        "Jamón",
-        "Piña"
-      ]
+      "ingredientes": ["Salsa de tomate", "Queso mozzarella", "Jamón", "Piña"]
     },
-    "p4": {
+    {
       "nombre": "Pizza Napolitana",
       "precio": 11.99,
       "desc": "Napolitana",
@@ -58,7 +53,7 @@
         "Aceitunas negras"
       ]
     },
-    "p5": {
+    {
       "nombre": "Pizza Cuatro Quesos",
       "precio": 13.99,
       "desc": "Cuatro Quesos",
@@ -74,7 +69,7 @@
         "Queso provolone"
       ]
     },
-    "p6": {
+    {
       "nombre": "Pizza Vegetariana",
       "precio": 10.99,
       "desc": "Vegetariana",
@@ -92,4 +87,5 @@
         "Aceitunas negras"
       ]
     }
+  ]
 }
