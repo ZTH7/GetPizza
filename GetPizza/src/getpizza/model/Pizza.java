@@ -7,6 +7,8 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("7ede2093-d9fb-4857-a0f5-77008361800b")
 public class Pizza extends Producto {
+	// Los datos de una pizza predefinada se obtienen de la base de datos
+	
     @objid ("04aa9ee6-f871-46de-9c12-f91000140890")
     Masa masa;
 

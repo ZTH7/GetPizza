@@ -5,7 +5,6 @@ import java.util.Map;
 import javax.swing.*;
 
 import getpizza.misc.DBHelper;
-import getpizza.model.Carrito;
 import getpizza.model.Cliente;
 import getpizza.model.Observer;
 import getpizza.view.*;
@@ -89,6 +88,10 @@ public class Controller {
 	public Object tryToPay() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public void selectMenu(int option) {
+		sacliente.selectMenu(option);
 	}
 
 }

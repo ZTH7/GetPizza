@@ -90,6 +90,7 @@ public class MenuOption extends JDialog {
 		confirm.addActionListener((e) -> {
 			MakeOrderView MakeOrderView = new MakeOrderView(_parent, _ctrl);
 			MakeOrderView.open();
+			_ctrl.selectMenu(getOption());
 			this.close();
 		});
 
@@ -100,7 +101,7 @@ public class MenuOption extends JDialog {
 		cancel.setBounds(150, 170, 100, 30);
 		cancel.setBackground(new Color(134, 144, 138));
 		cancel.addActionListener(e -> {
-			this.dispose(); // TODO reset carrito
+			this.dispose(); 
 		});
 
 		_panel.add(cancel);

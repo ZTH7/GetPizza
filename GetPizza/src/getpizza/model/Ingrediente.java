@@ -12,7 +12,7 @@ public class Ingrediente {
     
     public Ingrediente(String nombre, float precio) {
     	this.nombre = nombre;
-    	this.precio = precio;
+    	this.setPrecio(precio);
     }
 
     @objid ("3f3fdac8-1a21-421a-a108-3a8f6354f267")
@@ -26,5 +26,13 @@ public class Ingrediente {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.nombre = value;
     }
+
+	public float getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(float precio) {
+		this.precio = precio;
+	}
 
 }
