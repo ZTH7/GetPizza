@@ -20,7 +20,12 @@ public class Pizza extends Producto {
     
     List<Ingrediente> ingredientes = new ArrayList<Ingrediente> ();
     
-    public Pizza() {}
+    public Pizza() {
+    	super("p", "Pizza", "Pizzaaaa", (float) 10.99);
+    	masa = Masa.Napolitana;
+    	tamanyo = Tamanyo.Grande;
+    	base = Base.Tomate;
+    }
 
     @objid ("5dabd3d7-e3ba-48ec-bf37-60f71cca1ac3")
     Masa getMasa() {

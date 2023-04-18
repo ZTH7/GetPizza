@@ -35,7 +35,7 @@ public class MakeOrderView extends JDialog implements Observer {
 	JScrollPane _centralPanel;
 	TrolleyPanel trolley;
 	Controller _ctrl;
-	JPanel _selection;
+	SelectionPanel _selection;
 	
 	/*TODO: RESET, resetear el carrito en caso de cancelar el pedido*/
 
@@ -63,7 +63,7 @@ public class MakeOrderView extends JDialog implements Observer {
 	}
 
 	void setTitle() {
-		JLabel title = new JLabel("<html><center>Personalizar</center></html>");
+		JLabel title = new JLabel("<html><center>Seleccione los productos que quiera</center></html>");
 		title.setForeground(new Color(238, 120, 31));
 		title.setFont(new Font(null, 1, 30));
 		title.setBounds(0, 10, 854, 30);
@@ -107,8 +107,7 @@ public class MakeOrderView extends JDialog implements Observer {
 	}
 
 	void setCentralPanel() {
-		_selection = new JPanel(new GridLayout(10, 2));
-		_selection.setBackground(new Color(255, 204, 153));
+		_selection = new SelectionPanel(_ctrl);
 
 		_centralPanel = new JScrollPane();
 		_centralPanel.setViewportView(_selection);
