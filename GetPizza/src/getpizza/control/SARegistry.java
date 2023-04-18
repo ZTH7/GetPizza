@@ -37,7 +37,7 @@ public class SARegistry {
 	}
 
 	void setRegistryAction() {
-		ActionListener al = new ActionListener() {
+		ActionListener reg = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -52,7 +52,15 @@ public class SARegistry {
 				}
 			}
 		};
-		_reg.setRegistryAction(al);
+		_reg.setRegistryAction(reg);
+		
+		ActionListener volver = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				_ctrl.run();
+			}
+		};
+		_reg.setCancelAction(volver);
 	}
 
 }

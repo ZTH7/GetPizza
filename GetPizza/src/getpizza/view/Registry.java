@@ -12,7 +12,7 @@ public class Registry extends JPanel {
 
 	JTextField Usuario, Nombre, Apellido, Correo, Tel, Direccion, Ciudad, Provincia, CodigoPostal;
 	JPasswordField Password;
-	JButton registry;
+	JButton registry, cancel;
 	int x = 222, y = 125;
 	
 	public Registry() {
@@ -26,7 +26,7 @@ public class Registry extends JPanel {
 		setOpaque(false);
 
 		setTitle();
-		setRegistryButton();
+		setButton();
 		addTextField(Usuario = new JTextField(8), "Nombre de usuario:", x, y - 40, 120, 20);
 		addTextField(Nombre = new JTextField(8), "Nombre:", x, y, 120, 20);
 		addTextField(Apellido = new JTextField(8), "Apellido:", x + 140, y, 120, 20);
@@ -50,12 +50,19 @@ public class Registry extends JPanel {
 		add(title);
 	}
 
-	void setRegistryButton() {
-		registry = new JButton("Registry");
+	void setButton() {
+		registry = new JButton("Registrar");
 		registry.setForeground(new Color(0, 0, 0));
-		registry.setBounds(272, 380, 160, 40);
+		registry.setBounds(362, 380, 120, 35);
 		registry.setBackground(new Color(255, 204, 153));
 		add(registry);
+		
+		cancel = new JButton("Volver");
+		cancel.setForeground(new Color(0, 0, 0));
+		cancel.setBounds(222, 380, 120, 35);
+		cancel.setBackground(new Color(134, 144, 138));
+
+		add(cancel);
 	}
 
 	void setBackground() {
@@ -107,6 +114,10 @@ public class Registry extends JPanel {
 
 	public void setRegistryAction(ActionListener al) {
 		registry.addActionListener(al);
+	}
+
+	public void setCancelAction(ActionListener al) {
+		cancel.addActionListener(al);
 	}
 
 }

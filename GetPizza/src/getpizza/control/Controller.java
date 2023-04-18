@@ -36,7 +36,7 @@ public class Controller {
 		sacliente = new SACliente(mainWindow);
 	}
 
-	public void run() throws Exception {
+	public void run() {
 		setMainWindowPanel(login);
 	}
 
