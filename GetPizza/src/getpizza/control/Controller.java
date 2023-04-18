@@ -1,12 +1,16 @@
 package getpizza.control;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.*;
 
 import getpizza.misc.DBHelper;
+import getpizza.model.Bebida;
 import getpizza.model.Cliente;
 import getpizza.model.Observer;
+import getpizza.model.Pizza;
+import getpizza.model.Postre;
 import getpizza.view.*;
 
 public class Controller {
@@ -92,6 +96,18 @@ public class Controller {
 	
 	public void selectMenu(int option) {
 		sacliente.selectMenu(option);
+	}
+
+	public List<Pizza> getPizzas() {
+		return this.sacliente.getPizzas();
+	}
+
+	public List<Bebida> getBebidas() {
+		return this.sacliente.getBebidas();
+	}
+
+	public List<Postre> getPostres() {
+		return this.sacliente.getPostres();
 	}
 
 }

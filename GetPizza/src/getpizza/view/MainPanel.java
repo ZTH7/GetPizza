@@ -130,7 +130,7 @@ public class MainPanel extends JPanel {
 		cardsPanel.setBounds(60, 50, 408, 390);
 		cardsPanel.setOpaque(false);
 
-		cardsPanel.add(new Carta(), "Menú");
+		cardsPanel.add(new Carta(_ctrl), "Menú");
 		cardsPanel.add(profilePanel = new Profile(_ctrl), "Perfil");
 		cardsPanel.add(membresiaPanel = new Membership(_ctrl), "Membresía");
 
