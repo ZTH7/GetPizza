@@ -2,15 +2,12 @@ package getpizza.control;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JFrame;
-
 import getpizza.model.Menu;
 import getpizza.model.MenuPersonalizado;
 import getpizza.model.MenuPredefinido;
 import getpizza.model.Observable;
 import getpizza.model.Observer;
-import getpizza.view.PayConfirm;
 
 public class SACliente implements Observable<Observer> {
 	List<Observer> observadores;
