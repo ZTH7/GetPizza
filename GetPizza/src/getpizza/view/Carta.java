@@ -38,7 +38,7 @@ public class Carta extends JScrollPane {
 	void InitGUI() {
 		setViewportView(contentPanel);
 		getVerticalScrollBar().setBackground(new Color(255, 255, 255, 160));
-		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		setBounds(60, 50, 408, 390);
 		setOpaque(false);
 	}
@@ -50,22 +50,22 @@ public class Carta extends JScrollPane {
 	}
 
 	void InitProdutPanel() {
-		contentPanel.add(createTitle("<html>" + "<a><center>Pizza</center></a>"
-				+ "<HR align=center width=300 color=#153C46 size=1>" + "</html>"));
+		contentPanel.add(createTitle("<html><a><center>Pizza</center></a>"
+				+ "<HR align=center width=300 color=#153C46 size=1></html>"));
 		for (Producto p : pizza) {
 			contentPanel.add(createProductPanel(p));
 			contentPanel.add(Box.createVerticalStrut(10));
 		}
 
-		contentPanel.add(createTitle("<html>" + "<a><center>Postre</center></a>"
-				+ "<HR align=center width=300 color=#153C46 size=1>" + "</html>"));
+		contentPanel.add(createTitle("<html><a><center>Postre</center></a>"
+				+ "<HR align=center width=300 color=#153C46 size=1></html>"));
 		for (Producto p : postre) {
 			contentPanel.add(createProductPanel(p));
 			contentPanel.add(Box.createVerticalStrut(10));
 		}
 
-		contentPanel.add(createTitle("<html>" + "<a><center>Bebida</center></a>"
-				+ "<HR align=center width=300 color=#153C46 size=1>" + "</html>"));
+		contentPanel.add(createTitle("<html><a><center>Bebida</center></a>"
+				+ "<HR align=center width=300 color=#153C46 size=1></html>"));
 		for (Producto p : bebida) {
 			contentPanel.add(createProductPanel(p));
 			contentPanel.add(Box.createVerticalStrut(10));
@@ -84,11 +84,11 @@ public class Carta extends JScrollPane {
 	JPanel createProductPanel(Producto producto) {
 		JPanel prod = new JPanel();
 		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
-		prod.setBackground(new Color(255, 255, 255, 160));
+		prod.setBackground(new Color(234, 216, 154));
 
-		JLabel nombre = new JLabel("<html>" + "<p><center>" + producto.getNombre() + "</center></p>"
-				+ "<p><center>Precio: " + Float.toString(producto.getPrecio()) + "</center></p>" + "</html>");
-		nombre.setPreferredSize(new Dimension(120, 80));
+		JLabel nombre = new JLabel("<html><p><center>" + producto.getNombre() + "</center></p>"
+				+ "<p><center>Precio: " + Float.toString(producto.getPrecio()) + "</center></p></html>");
+		nombre.setPreferredSize(new Dimension(140, 80));
 		
 		JTextArea desc = new JTextArea(producto.getDesc());
 		desc.setLineWrap(true);
@@ -105,7 +105,7 @@ public class Carta extends JScrollPane {
 
 		prod.add(nombre);
 		prod.add(desc);
-		prod.add(Box.createHorizontalStrut(40));
+		prod.add(Box.createHorizontalStrut(20));
 		prod.add(Box.createHorizontalGlue());
 		prod.add(ImgLabel);
 		prod.setMaximumSize(new Dimension(408, 80));

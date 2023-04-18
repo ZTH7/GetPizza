@@ -67,7 +67,7 @@ public class SACliente implements Observable<Observer> {
 		pizza = new ArrayList<>();
 		JsonArray AllPizza = pizzajson.getAsJsonArray("pizzas");
 		for (JsonElement p : AllPizza) {
-			//pizza.add(gson.fromJson(p, Pizza.class));
+			pizza.add(gson.fromJson(p, Pizza.class));
 		}
 
 		JsonObject bebidajson = gson.fromJson(DBHelper.getInstance().get("bebidas"), JsonObject.class);
