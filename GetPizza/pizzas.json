@@ -1,6 +1,6 @@
 {
-  "pizzas": {
-    "p1": {
+  "pizzas": [
+    {
       "nombre": "Pizza Margarita",
       "precio": 9.99,
       "desc": "Deliciosa pizza clásica con salsa de tomate, mozzarella fresca y albahaca fresca",
@@ -14,7 +14,7 @@
         {"nombre": "Albahaca fresca", "precio": 0.75}
       ]
     },
-    "p2": {
+    {
       "nombre": "Pizza Pepperoni",
       "precio": 12.99,
       "desc": "Deliciosa pizza con salsa de tomate, queso mozzarella y pepperoni en rodajas",
@@ -28,7 +28,7 @@
         {"nombre": "Pepperoni en rodajas", "precio": 2.0}
       ]
     },
-    "p3": {
+    {
       "nombre": "Pizza Hawaiana",
       "precio": 14.99,
       "desc": "Deliciosa pizza tropical con salsa de tomate, queso mozzarella, jamón y piña",
@@ -36,14 +36,18 @@
       "masa": "Romana",
       "tamanyo": "Grande",
       "base": "Tomate",
+<<<<<<< HEAD
       "ingredientes": [
         {"nombre": "Salsa de tomate", "precio": 0.5},
         {"nombre": "Queso mozzarella", "precio": 1.5},
         {"nombre": "Jamón", "precio": 2.0},
         {"nombre": "Piña", "precio": 1.5}
       ]
+=======
+      "ingredientes": ["Salsa de tomate", "Queso mozzarella", "Jamón", "Piña"]
+>>>>>>> 4810382251689310f0965303de1670cd3264c2b0
     },
-    "p4": {
+    {
       "nombre": "Pizza Napolitana",
       "precio": 11.99,
       "desc": "Deliciosa pizza con salsa de tomate, mozzarella fresca, anchoas y aceitunas negras",
@@ -58,7 +62,7 @@
         {"nombre": "Aceitunas negras", "precio": 1.0}
       ]
     },
-    "p5": {
+    {
       "nombre": "Pizza Cuatro Quesos",
       "precio": 13.99,
       "desc": "Deliciosa pizza con salsa de tomate, queso mozzarella, queso gorgonzola, queso parmesano y queso provolone",
@@ -73,6 +77,7 @@
         {"nombre": "Queso parmesano", "precio": 1.0},
         {"nombre": "Queso provolone", "precio": 1.0}
       ]
+<<<<<<< HEAD
       },
       "p6": {
         "nombre": "Pizza Vegetariana",
@@ -93,4 +98,26 @@
         ]
       }
   }
+=======
+    },
+    {
+      "nombre": "Pizza Vegetariana",
+      "precio": 10.99,
+      "desc": "Vegetariana",
+      "id": "p6",
+      "masa": "Americana",
+      "tamanyo": "Pequenyo",
+      "base": "Sin_base",
+      "ingredientes": [
+        "Salsa de tomate",
+        "Queso mozzarella",
+        "Espinacas",
+        "Tomate",
+        "Cebolla",
+        "Pimiento",
+        "Aceitunas negras"
+      ]
+    }
+  ]
+>>>>>>> 4810382251689310f0965303de1670cd3264c2b0
 }
