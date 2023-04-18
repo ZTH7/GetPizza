@@ -63,7 +63,7 @@ public class MakeOrderView extends JDialog implements Observer {
 	}
 
 	void setTitle() {
-		JLabel title = new JLabel("<html><center>Seleccione los productos que quiera</center></html>");
+		JLabel title = new JLabel("<html><center>Seleccione los productos que desee</center></html>");
 		title.setForeground(new Color(238, 120, 31));
 		title.setFont(new Font(null, 1, 30));
 		title.setBounds(0, 10, 854, 30);

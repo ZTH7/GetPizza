@@ -6,10 +6,12 @@ import java.util.List;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
@@ -32,6 +34,12 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	List<Bebida> cartaBebida;
 	List<Postre> cartaPostre;
 	JPanel _panel;
+	
+	JRadioButton p, m, g, n, a, r, q, t, qt, sb;
+	String tam[] = { "Pequeño", "Mediano", "Grande" };
+	String masa[] = { "Napolitana", "Americana", "Romana" };
+	String base[] = { "Queso", "Tomate", "Queso y tomate", "Sin base" };
+	
 	
 	public SelectionPanel(Controller ctrl) {
 		_ctrl = ctrl;
@@ -68,13 +76,17 @@ public class SelectionPanel extends JScrollPane implements Observer {
 				+ "</html>");
 
 		JLabel precio = new JLabel("<html>"
-				+ "<p><center>" + Float.toString(p.getPrecio()) + "</center></p>"
+				+ "<p><center>" + Float.toString(p.getPrecio()) + " euros" + "</center></p>"
 				+ "</html>");
 		
+		JButton add = new JButton("+");
+		
+		// TODO: add.addActionListener()
+		
 		prod.add(nombre);
-		prod.add(Box.createHorizontalStrut(20));
 		prod.add(precio);
-		prod.add(Box.createHorizontalGlue());
+		prod.add(add);
+		
 		
 		// Opciones de masa, base y tamanyo
 		JPanel options = new JPanel();
@@ -82,64 +94,82 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		
 		// Opciones de masa
 		
-		JPanel checkBoxMasa = new JPanel();
-		checkBoxMasa.setLayout(new BoxLayout(checkBoxMasa, BoxLayout.X_AXIS));
+		n = new JRadioButton(this.masa[0]);
+		a = new JRadioButton(this.masa[1]);
+		r = new JRadioButton(this.masa[2]);
+		
+		
+		
+		ButtonGroup selectmasa = new ButtonGroup();
+		selectmasa.add(n);
+		selectmasa.add(a);
+		selectmasa.add(r);
+		
+		JPanel selectMasa = new JPanel();
+		selectMasa.setLayout(new BoxLayout(selectMasa, BoxLayout.X_AXIS));
 		
 		JLabel masa = new JLabel("<html>"
 				+ "<p><center>Elegir masa</center></p>"
 				+ "</html>");
 		
-		JCheckBox masa1 = new JCheckBox("Napolitana");
-		JCheckBox masa2 = new JCheckBox("Americana");
-		JCheckBox masa3 = new JCheckBox("Romana");
+		selectMasa.add(masa);
+		selectMasa.add(n);
+		selectMasa.add(a);
+		selectMasa.add(r);
 		
-		checkBoxMasa.add(masa);
-		checkBoxMasa.add(masa1);
-		checkBoxMasa.add(masa2);
-		checkBoxMasa.add(masa3);
+		// Opciones de tam
 		
-		// Opciones de base
-
-		JPanel checkBoxBase = new JPanel();
-		checkBoxBase.setLayout(new BoxLayout(checkBoxBase, BoxLayout.X_AXIS));
+		this.g = new JRadioButton(this.tam[0]);
+		this.m = new JRadioButton(tam[1]);
+		this.p = new JRadioButton(tam[2]);
 		
-		JLabel base = new JLabel("<html>"
-				+ "<p><center>Elegir base</center></p>"
-				+ "</html>");
+		ButtonGroup tamanyo = new ButtonGroup();
+		tamanyo.add(g);
+		tamanyo.add(this.m);
+		tamanyo.add(this.p);
 		
-		JCheckBox base1 = new JCheckBox("Queso");
-		JCheckBox base2 = new JCheckBox("Tomate");
-		JCheckBox base3 = new JCheckBox("Queso y tomate");
-		JCheckBox base4 = new JCheckBox("Queso y tomate");
+		JPanel selectTam = new JPanel();
+		selectTam.setLayout(new BoxLayout(selectTam, BoxLayout.X_AXIS));
 		
-		
-		checkBoxBase.add(base);
-		checkBoxBase.add(base1);
-		checkBoxBase.add(base2);
-		checkBoxBase.add(base3);
-		
-		// Opciones de tamaño
-
-		JPanel checkBoxtam = new JPanel();
-		checkBoxtam.setLayout(new BoxLayout(checkBoxtam, BoxLayout.X_AXIS));
-		
-		JLabel tam = new JLabel("<html>"
+		JLabel elegirtam = new JLabel("<html>"
 				+ "<p><center>Elegir tamaño</center></p>"
 				+ "</html>");
 		
-		JCheckBox tam1 = new JCheckBox("Napolitana");
-		JCheckBox tam2 = new JCheckBox("Americana");
-		JCheckBox tam3 = new JCheckBox("Romana");
+		selectTam.add(elegirtam);
+		selectTam.add(g);
+		selectTam.add(m);
+		selectTam.add(this.p);
 		
-		checkBoxtam.add(tam);
-		checkBoxtam.add(tam1);
-		checkBoxtam.add(tam2);
-		checkBoxtam.add(tam3);
+		// Opciones de base
+		
+		this.q = new JRadioButton(this.base[0]);
+		this.t = new JRadioButton(base[1]);
+		this.qt = new JRadioButton(base[2]);
+		this.sb = new JRadioButton(base[3]);
+		
+		ButtonGroup base = new ButtonGroup();
+		base.add(q);
+		base.add(this.t);
+		base.add(this.qt);
+		base.add(this.sb);
+		
+		JPanel selectBase = new JPanel();
+		selectBase.setLayout(new BoxLayout(selectBase, BoxLayout.X_AXIS));
+		
+		JLabel elegirbase = new JLabel("<html>"
+				+ "<p><center>Elegir base</center></p>"
+				+ "</html>");
+		
+		selectBase.add(elegirbase);
+		selectBase.add(q);
+		selectBase.add(t);
+		selectBase.add(qt);
+		selectBase.add(sb);
 
 		
-		options.add(checkBoxtam);
-		options.add(checkBoxMasa);
-		options.add(checkBoxBase);
+		options.add(selectTam);
+		options.add(selectMasa);
+		options.add(selectBase);
 		
 		
 		prodtotal.add(prod);

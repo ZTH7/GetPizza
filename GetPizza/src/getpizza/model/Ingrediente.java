@@ -2,10 +2,9 @@ package getpizza.model;
 
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
-@objid ("799e1ae9-018a-4717-8abd-879e2e5c9ce0")
+
 public class Ingrediente {
 
-    @objid ("521b37b1-44b7-461f-b874-bbd80c72aac9")
     private String nombre;
     
     private float precio;
