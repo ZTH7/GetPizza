@@ -3,93 +3,94 @@
     "p1": {
       "nombre": "Pizza Margarita",
       "precio": 9.99,
-      "desc": "Margarita",
+      "desc": "Deliciosa pizza clásica con salsa de tomate, mozzarella fresca y albahaca fresca",
       "id": "p1",
       "masa": "Napolitana",
       "tamanyo": "Mediano",
       "base": "Queso",
       "ingredientes": [
-        "Salsa de tomate",
-        "Mozzarella fresca",
-        "Albahaca fresca"
+        {"nombre": "Salsa de tomate", "precio": 0.5},
+        {"nombre": "Mozzarella fresca", "precio": 1.5},
+        {"nombre": "Albahaca fresca", "precio": 0.75}
       ]
     },
     "p2": {
       "nombre": "Pizza Pepperoni",
       "precio": 12.99,
-      "desc": "Pepperoni",
+      "desc": "Deliciosa pizza con salsa de tomate, queso mozzarella y pepperoni en rodajas",
       "id": "p2",
       "masa": "Americana",
       "tamanyo": "Grande",
       "base": "Queso",
       "ingredientes": [
-        "Salsa de tomate",
-        "Queso mozzarella",
-        "Pepperoni en rodajas"
+        {"nombre": "Salsa de tomate", "precio": 0.5},
+        {"nombre": "Queso mozzarella", "precio": 1.5},
+        {"nombre": "Pepperoni en rodajas", "precio": 2.0}
       ]
     },
     "p3": {
       "nombre": "Pizza Hawaiana",
       "precio": 14.99,
-      "desc": "Hawaiana",
+      "desc": "Deliciosa pizza tropical con salsa de tomate, queso mozzarella, jamón y piña",
       "id": "p3",
       "masa": "Romana",
       "tamanyo": "Grande",
       "base": "Tomate",
       "ingredientes": [
-        "Salsa de tomate",
-        "Queso mozzarella",
-        "Jamón",
-        "Piña"
+        {"nombre": "Salsa de tomate", "precio": 0.5},
+        {"nombre": "Queso mozzarella", "precio": 1.5},
+        {"nombre": "Jamón", "precio": 2.0},
+        {"nombre": "Piña", "precio": 1.5}
       ]
     },
     "p4": {
       "nombre": "Pizza Napolitana",
       "precio": 11.99,
-      "desc": "Napolitana",
+      "desc": "Deliciosa pizza con salsa de tomate, mozzarella fresca, anchoas y aceitunas negras",
       "id": "p4",
       "masa": "Napolitana",
       "tamanyo": "Mediano",
       "base": "Tomate",
       "ingredientes": [
-        "Salsa de tomate",
-        "Mozzarella fresca",
-        "Anchoas",
-        "Aceitunas negras"
+        {"nombre": "Salsa de tomate", "precio": 0.5},
+        {"nombre": "Mozzarella fresca", "precio": 1.5},
+        {"nombre": "Anchoas", "precio": 2.5},
+        {"nombre": "Aceitunas negras", "precio": 1.0}
       ]
     },
     "p5": {
       "nombre": "Pizza Cuatro Quesos",
       "precio": 13.99,
-      "desc": "Cuatro Quesos",
+      "desc": "Deliciosa pizza con salsa de tomate, queso mozzarella, queso gorgonzola, queso parmesano y queso provolone",
       "id": "p5",
       "masa": "Romana",
       "tamanyo": "Grande",
       "base": "Queso_y_tomate",
       "ingredientes": [
-        "Salsa de tomate",
-        "Queso mozzarella",
-        "Queso gorgonzola",
-        "Queso parmesano",
-        "Queso provolone"
+        {"nombre": "Salsa de tomate", "precio": 0.5},
+        {"nombre": "Queso mozzarella", "precio": 1.5},
+        {"nombre": "Queso gorgonzola", "precio": 2.5},
+        {"nombre": "Queso parmesano", "precio": 1.0},
+        {"nombre": "Queso provolone", "precio": 1.0}
       ]
-    },
-    "p6": {
-      "nombre": "Pizza Vegetariana",
-      "precio": 10.99,
-      "desc": "Vegetariana",
-      "id": "p6",
-      "masa": "Americana",
-      "tamanyo": "Pequenyo",
-      "base": "Sin_base",
-      "ingredientes": [
-        "Salsa de tomate",
-        "Queso mozzarella",
-        "Espinacas",
-        "Tomate",
-        "Cebolla",
-        "Pimiento",
-        "Aceitunas negras"
-      ]
-    }
+      },
+      "p6": {
+        "nombre": "Pizza Vegetariana",
+        "precio": 10.99,
+        "desc": "Deliciosa pizza con variedad de vegetales frescos, salsa de tomate y queso mozzarella.",
+        "id": "p6",
+        "masa": "Americana",
+        "tamanyo": "Pequenyo",
+        "base": "Sin_base",
+        "ingredientes": [
+          {"nombre": "Salsa de tomate", "precio": 0.5},
+          {"nombre": "Queso mozzarella", "precio": 1.5},
+          {"nombre": "Espinacas", "precio": 1.0},
+          {"nombre": "Tomate", "precio": 1.0},
+          {"nombre": "Cebolla", "precio": 0.5},
+          {"nombre": "Pimiento", "precio": 0.5},
+          {"nombre": "Aceitunas negras", "precio": 1.5}
+        ]
+      }
+  }
 }
