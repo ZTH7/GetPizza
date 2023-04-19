@@ -65,11 +65,7 @@ public class SelectionPanel extends JScrollPane implements Observer {
 
 		JLabel nombre = new JLabel("<html><p><center>" + p.getNombre() + "</center></p></html>");
 
-		JLabel precio = new JLabel("<html><p><center>" + Float.toString(p.getPrecio()) + "</center></p></html>");
-
-		JLabel precio = new JLabel("<html>"
-				+ "<p><center>" + Float.toString(p.getPrecio()) + " euros" + "</center></p>"
-				+ "</html>");
+		JLabel precio = new JLabel("<html><p><center>" + Float.toString(p.getPrecio()) + " euros</center></p></html>");
 		
 		JButton add = new JButton("+");
 		
