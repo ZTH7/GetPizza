@@ -77,8 +77,8 @@ public class MenuOption extends JDialog {
 		_panel.add(personalizada);
 	}
 
-	public int getOption() {
-		return group.getSelection() == personalizada.getModel() ? 1 : 0;
+	public boolean getOption() {
+		return group.getSelection() == personalizada.getModel() ? true : false;
 	}
 
 	void setButton() {

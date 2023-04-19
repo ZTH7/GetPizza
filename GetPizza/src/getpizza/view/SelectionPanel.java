@@ -32,8 +32,15 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	List<Bebida> cartaBebida;
 	List<Postre> cartaPostre;
 	JPanel _panel;
+
+	private boolean _personalizada;
+	
 	public SelectionPanel(Controller ctrl) {
 		_ctrl = ctrl;
+		
+		cartaPizza = _ctrl.getPizzas();
+		cartaBebida = _ctrl.getBebidas();
+		cartaPostre = _ctrl.getPostres();
 
 		InitGUI();
 	}
@@ -43,46 +50,41 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		_panel.setLayout(new BoxLayout(_panel, BoxLayout.Y_AXIS));
 		_panel.setBackground(new Color(255, 204, 153));
 
-		// carta = _ctrl.obtenerCarta()
-
 		// Hacer un for de cada producto de cada carta, crear el JPanel con
 		// createProduct y añadirlo al _panel
-
-		_panel.add(createProduct(new Pizza()));
+		
+		JLabel pizzaTitle = new JLabel("<html><center>Pizzas</center></html>");
+		
+		_panel.add(pizzaTitle);
+		
+		for (Pizza p : cartaPizza) {
+			_panel.add(createPizza(p));
+		}
+		
+		
+		JLabel postreTitle = new JLabel("<html><center>Postres</center></html>");
+		
+		_panel.add(postreTitle);
+		
+		for (Postre po : cartaPostre) {
+			_panel.add(createPostre(po));
+		}
+		
+		JLabel bebidaTitle = new JLabel("<html><center>Bebidas</center></html>");
+		
+		_panel.add(bebidaTitle);
+		
+		for (Bebida b : cartaBebida) {
+			_panel.add(createBebida(b));
+		}
 
 		setViewportView(_panel);
 		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		setBounds(40, 60, 520, 390);
 	}
 
-	JPanel createProduct(Producto p) {
-		JPanel prodtotal = new JPanel();
-		prodtotal.setLayout(new BoxLayout(prodtotal, BoxLayout.Y_AXIS));
-
-		JPanel prod = new JPanel();
-		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
-		prod.setBackground(new Color(255, 255, 255, 160)); // TODO change a color
-
-		JLabel nombre = new JLabel("<html><p><center>" + p.getNombre() + "</center></p></html>");
-
-		JLabel precio = new JLabel("<html><p><center>" + Float.toString(p.getPrecio()) + "</center></p></html>");
-
-		JLabel precio = new JLabel("<html>"
-				+ "<p><center>" + Float.toString(p.getPrecio()) + " euros" + "</center></p>"
-				+ "</html>");
-		
-		JButton add = new JButton("+");
-		
-		// TODO: add.addActionListener()
-		
-		prod.add(nombre);
-		prod.add(precio);
-		prod.add(add);
-		prod.add(Box.createHorizontalGlue());
-		
-		// Opciones de masa, base y tamanyo
-		JPanel options = new JPanel();
-		options.setLayout(new BoxLayout(options, BoxLayout.Y_AXIS));
+	JPanel createPizza(Producto p) {
+		JPanel prodtotal = createBebida(p);
 
 		// Opciones de masa
 
@@ -133,6 +135,22 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		radioButtonBase.add(base4);
 		radioButtonBase.add(Box.createHorizontalGlue());
 
+		
+		prodtotal.add(radioButtonMasa);
+		prodtotal.add(radioButtonBase);
+
+		prodtotal.setMaximumSize(new Dimension(500, 130));
+		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
+		return prodtotal;
+	}
+	
+	JPanel createBebida(Producto p) {
+		JPanel prodtotal = createPostre(p);
+		
+		// Opcion de tamanyo
+		JPanel options = new JPanel();
+		options.setLayout(new BoxLayout(options, BoxLayout.Y_AXIS));
+
 		// Opciones de tamaño
 
 		JPanel radioButtonTam = new JPanel();
@@ -143,11 +161,11 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		tam.setMaximumSize(new Dimension(140, 30));
 
 		ButtonGroup tamgroup = new ButtonGroup();
-		JRadioButton tam1 = new JRadioButton("Napolitana");
+		JRadioButton tam1 = new JRadioButton("Grande");
 		tamgroup.add(tam1);
-		JRadioButton tam2 = new JRadioButton("Americana");
+		JRadioButton tam2 = new JRadioButton("Mediana");
 		tamgroup.add(tam2);
-		JRadioButton tam3 = new JRadioButton("Romana");
+		JRadioButton tam3 = new JRadioButton("Pequeña");
 		tamgroup.add(tam3);
 
 		radioButtonTam.add(tam);
@@ -157,11 +175,39 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		radioButtonTam.add(Box.createHorizontalGlue());
 
 		options.add(radioButtonTam);
-		options.add(radioButtonMasa);
-		options.add(radioButtonBase);
+
+		prodtotal.add(options);
+
+		prodtotal.setMaximumSize(new Dimension(500, 130));
+		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
+		return prodtotal;
+	}
+	
+	JPanel createPostre(Producto p) {
+		JPanel prodtotal = new JPanel();
+		prodtotal.setLayout(new BoxLayout(prodtotal, BoxLayout.Y_AXIS));
+
+		JPanel prod = new JPanel();
+		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
+		prod.setBackground(new Color(255, 255, 255, 160)); // TODO change a color
+
+		JLabel nombre = new JLabel("<html><p><center>" + p.getNombre() + "</center></p></html>");
+
+		JLabel precio = new JLabel("<html><p><center>" + Float.toString(p.getPrecio()) + " euros</center></p></html>");
+
+		
+		JButton add = new JButton("+");
+		
+		add.addActionListener((e) -> {
+			_ctrl.addProducto(p);
+		});
+		
+		prod.add(nombre);
+		prod.add(precio);
+		prod.add(add);
+		prod.add(Box.createHorizontalGlue());
 
 		prodtotal.add(prod);
-		prodtotal.add(options);
 
 		prodtotal.setMaximumSize(new Dimension(500, 130));
 		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
@@ -169,13 +215,12 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	}
 
 	@Override
-	public void onProductAdded(List<Producto> products, Producto p) {
-		// TODO Auto-generated method stub
-
+	public void onProductAdded(Producto p) {
+		
 	}
 
 	@Override
-	public void onProductRemoved(List<Producto> products, Producto p) {
+	public void onProductRemoved(Producto p) {
 		// TODO Auto-generated method stub
 
 	}
@@ -190,6 +235,11 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	public void onOrderSended(Pedido pedido) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void onMenuOptionChanged(boolean personalizado) {
+		_personalizada = personalizado;
 	}
 
 }

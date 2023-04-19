@@ -18,11 +18,13 @@ import getpizza.model.Observable;
 import getpizza.model.Observer;
 import getpizza.model.Pizza;
 import getpizza.model.Postre;
+import getpizza.model.Producto;
 
 public class SACliente implements Observable<Observer> {
 	List<Observer> observadores;
 	Menu carrito;
 	JFrame mainWindow;
+	// carta
 	List<Pizza> pizza;
 	List<Bebida> bebida;
 	List<Postre> postre;
@@ -34,11 +36,15 @@ public class SACliente implements Observable<Observer> {
 		importProductos();
 	}
 
-	public void selectMenu(int option) {
-		if (option == 1) {
+	public void selectMenu(boolean personalizado) {
+		if (personalizado) {
 			carrito = new MenuPersonalizado();
 		} else {
 			carrito = new MenuPredefinido();
+		}
+		
+		for (Observer o : observadores) {
+			o.onMenuOptionChanged(false);
 		}
 	}
 
@@ -95,6 +101,22 @@ public class SACliente implements Observable<Observer> {
 
 	public List<Postre> getPostres() {
 		return this.postre;
+	}
+	
+	public void addProduct(Producto p) {
+		carrito.addProducto(p);
+		
+		for (Observer o : observadores) {
+			o.onProductAdded(p);
+		}
+	}
+
+	public void removeProducto(Producto p) {
+		carrito.removeProducto(p);
+		
+		for (Observer o : observadores) {
+			o.onProductRemoved(p);
+		}
 	}
 
 }

@@ -177,13 +177,13 @@ public class PayConfirm extends JDialog implements Observer {
 	}
 
 	@Override
-	public void onProductAdded(List<Producto> products, Producto p) {
+	public void onProductAdded(Producto p) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void onProductRemoved(List<Producto> products, Producto p) {
+	public void onProductRemoved(Producto p) {
 		// TODO Auto-generated method stub
 
 	}
@@ -202,5 +202,11 @@ public class PayConfirm extends JDialog implements Observer {
 
 	public static void main(String[] arg) {
 		new PayConfirm(null, null);
+	}
+
+	@Override
+	public void onMenuOptionChanged(boolean personalizado) {
+		// TODO Auto-generated method stub
+		
 	}
 }

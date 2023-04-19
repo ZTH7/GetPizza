@@ -39,13 +39,13 @@ public class Historia extends JScrollPane implements Observer {
 	}
 
 	@Override
-	public void onProductAdded(List<Producto> products, Producto p) {
+	public void onProductAdded(Producto p) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void onProductRemoved(List<Producto> products, Producto p) {
+	public void onProductRemoved( Producto p) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -58,6 +58,12 @@ public class Historia extends JScrollPane implements Observer {
 
 	@Override
 	public void onOrderSended(Pedido pedido) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onMenuOptionChanged(boolean personalizado) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -11,6 +11,7 @@ import getpizza.model.Cliente;
 import getpizza.model.Observer;
 import getpizza.model.Pizza;
 import getpizza.model.Postre;
+import getpizza.model.Producto;
 import getpizza.view.*;
 
 public class Controller {
@@ -94,8 +95,8 @@ public class Controller {
 		return null;
 	}
 	
-	public void selectMenu(int option) {
-		sacliente.selectMenu(option);
+	public void selectMenu(boolean personalizado) {
+		sacliente.selectMenu(personalizado);
 	}
 
 	public List<Pizza> getPizzas() {
@@ -108,6 +109,14 @@ public class Controller {
 
 	public List<Postre> getPostres() {
 		return this.sacliente.getPostres();
+	}
+	
+	public void addProducto(Producto p) {
+		sacliente.addProduct(p);
+	}
+
+	public void removeProducto(Producto p) {
+		sacliente.removeProducto(p);
 	}
 
 }

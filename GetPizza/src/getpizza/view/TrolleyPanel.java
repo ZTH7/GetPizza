@@ -20,18 +20,23 @@ public class TrolleyPanel extends JScrollPane implements Observer {
 	List<Producto> productos;
 	JPanel _panel;
 
-	public TrolleyPanel(Controller _ctrl) {
+	public TrolleyPanel(Controller ctrl) {
 		
 		productos = new ArrayList<>();
+		_ctrl = ctrl;
 		InitGUI();
 		
-		//_ctrl.addClientObserver(this);
+		_ctrl.addClientObserver(this);
 	}
 	
 	void InitGUI() {
 		_panel = new JPanel();
 		_panel.setLayout(new BoxLayout(_panel, BoxLayout.Y_AXIS));
 		_panel.setBackground(new Color(255, 204, 153));
+		
+		for (Producto p : productos) {
+			_panel.add(createProduct(p));
+		}
 
 		setViewportView(_panel);
 		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -55,11 +60,10 @@ public class TrolleyPanel extends JScrollPane implements Observer {
 				+ "<p><center>" + Float.toString(p.getPrecio()) + "</center></p>"
 				+ "</html>");
 
-		JButton remove = new JButton("Eliminar");
+		JButton remove = new JButton("-");
 		remove.setPreferredSize(new Dimension(50, 20));
 		remove.addActionListener(e -> {
-			productos.remove(p);
-			repaint();
+			_ctrl.removeProducto(p);
 		});
 		
 		prod.add(nombre);
@@ -67,19 +71,21 @@ public class TrolleyPanel extends JScrollPane implements Observer {
 		prod.add(precio);
 		prod.add(Box.createHorizontalGlue());
 		prod.add(remove);
-		prod.setMaximumSize(new Dimension(240, 20));
+		prod.setMaximumSize(new Dimension(240, 40));
 		prod.setAlignmentX(Box.CENTER_ALIGNMENT);
 		return prod;
 	}
 
 	@Override
-	public void onProductAdded(List<Producto> products, Producto p) {
+	public void onProductAdded(Producto p) {
 		productos.add(p);
+		InitGUI();
 	}
 
 	@Override
-	public void onProductRemoved(List<Producto> products, Producto p) {
+	public void onProductRemoved(Producto p) {
 		productos.remove(p);
+		InitGUI();
 	}
 
 	@Override
@@ -88,5 +94,11 @@ public class TrolleyPanel extends JScrollPane implements Observer {
 
 	@Override
 	public void onOrderSended(Pedido pedido) {
+	}
+
+	@Override
+	public void onMenuOptionChanged(boolean personalizado) {
+		// TODO Auto-generated method stub
+		
 	}
 }
