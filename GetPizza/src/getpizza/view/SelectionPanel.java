@@ -83,35 +83,8 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		setBounds(40, 60, 520, 390);
 	}
 
-<<<<<<< HEAD
 	JPanel createPizza(Producto p) {
 		JPanel prodtotal = createBebida(p);
-=======
-	JPanel createProduct(Producto p) {
-		JPanel prodtotal = new JPanel();
-		prodtotal.setLayout(new BoxLayout(prodtotal, BoxLayout.Y_AXIS));
-
-		JPanel prod = new JPanel();
-		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
-		prod.setBackground(new Color(255, 255, 255, 160)); // TODO change a color
-
-		JLabel nombre = new JLabel("<html><p><center>" + p.getNombre() + "</center></p></html>");
-
-		JLabel precio = new JLabel("<html><p><center>" + Float.toString(p.getPrecio()) + " euros</center></p></html>");
-		
-		JButton add = new JButton("+");
-		
-		// TODO: add.addActionListener()
-		
-		prod.add(nombre);
-		prod.add(precio);
-		prod.add(add);
-		prod.add(Box.createHorizontalGlue());
-		
-		// Opciones de masa, base y tamanyo
-		JPanel options = new JPanel();
-		options.setLayout(new BoxLayout(options, BoxLayout.Y_AXIS));
->>>>>>> c4399e5cc79492ffc161cf9b26b2855624bc482b
 
 		// Opciones de masa
 
@@ -124,7 +97,6 @@ public class SelectionPanel extends JScrollPane implements Observer {
 
 		ButtonGroup masagroup = new ButtonGroup();
 		JRadioButton masa1 = new JRadioButton("Napolitana");
-		masa1.setSelected(true);
 		masagroup.add(masa1);
 		JRadioButton masa2 = new JRadioButton("Americana");
 		masagroup.add(masa2);
@@ -148,7 +120,6 @@ public class SelectionPanel extends JScrollPane implements Observer {
 
 		ButtonGroup basegroup = new ButtonGroup();
 		JRadioButton base1 = new JRadioButton("Queso");
-		base1.setSelected(true);
 		basegroup.add(base1);
 		JRadioButton base2 = new JRadioButton("Tomate");
 		basegroup.add(base2);
@@ -190,12 +161,7 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		tam.setMaximumSize(new Dimension(140, 30));
 
 		ButtonGroup tamgroup = new ButtonGroup();
-<<<<<<< HEAD
 		JRadioButton tam1 = new JRadioButton("Grande");
-=======
-		JRadioButton tam1 = new JRadioButton("Napolitana");
-		tam1.setSelected(true);
->>>>>>> c4399e5cc79492ffc161cf9b26b2855624bc482b
 		tamgroup.add(tam1);
 		JRadioButton tam2 = new JRadioButton("Mediana");
 		tamgroup.add(tam2);
