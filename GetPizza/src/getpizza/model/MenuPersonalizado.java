@@ -14,11 +14,13 @@ public class MenuPersonalizado extends Menu {
 
 	@Override
 	public void addProducto(Producto p) {
+		precioTotal += p.getPrecio();
 		productos.add(p);
 	}
 
 	@Override
 	public void removeProducto(Producto p) {
+		precioTotal -= p.getPrecio();
 		productos.remove(p);
 	}
 

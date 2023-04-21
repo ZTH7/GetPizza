@@ -31,6 +31,8 @@ public class MenuPredefinido extends Menu {
 				throw new IllegalArgumentException("Ya tiene un producto de tipo postre");
 			postre = true;
 		}
+		
+		precioTotal += p.getPrecio();
 		productos.add(p);
 	}
 
@@ -43,6 +45,7 @@ public class MenuPredefinido extends Menu {
 		else if (p.getClass() == Postre.class)
 			postre = false;
 
+		precioTotal -= p.getPrecio();
 		productos.remove(p);
 	}
 }
