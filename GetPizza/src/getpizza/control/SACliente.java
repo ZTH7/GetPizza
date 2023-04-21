@@ -21,7 +21,6 @@ import getpizza.model.Pedido;
 import getpizza.model.Pizza;
 import getpizza.model.Postre;
 import getpizza.model.Producto;
-import getpizza.view.PayConfirm;
 
 public class SACliente implements Observable<Observer> {
 	List<Observer> observadores;
@@ -56,13 +55,7 @@ public class SACliente implements Observable<Observer> {
 		observadores.remove(o);
 	}
 
-	public void tryToPay() {
-		new PayConfirm(mainWindow, this, carrito);
-		// TODO show payConfirm panel
-	}
-
 	public void sendOrder(Pedido pedido) {
-		// TODO
 		for (Observer o : observadores) {
 			o.onOrderSended(pedido);
 		}
@@ -103,6 +96,10 @@ public class SACliente implements Observable<Observer> {
 
 	public List<Postre> getPostres() {
 		return this.postre;
+	}
+
+	public Menu getMenu() {
+		return this.carrito;
 	}
 
 	public void addProduct(Producto p) {

@@ -92,11 +92,13 @@ public class Controller {
 	}
 
 	public void tryToPay() {
-		sacliente.tryToPay();
+		new PayConfirm(mainWindow, this, sacliente.getMenu());
 	}
 	
 	public void sendOrder(Pedido pedido) {
+		cliente.addHistoria(pedido);
 		sacliente.sendOrder(pedido);
+		DBHelper.getInstance().setClient(cliente);
 	}
 	
 	public void selectMenu(boolean personalizado) {

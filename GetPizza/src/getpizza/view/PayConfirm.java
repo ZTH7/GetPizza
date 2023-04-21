@@ -7,16 +7,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.time.LocalDate;
+import java.util.UUID;
 
 import javax.swing.*;
-import getpizza.control.SACliente;
-import getpizza.model.Codigo;
-import getpizza.model.Menu;
-import getpizza.model.Observer;
-import getpizza.model.Pedido;
-import getpizza.model.Producto;
 
-public class PayConfirm extends JDialog implements Observer {
+import getpizza.control.Controller;
+import getpizza.model.Menu;
+import getpizza.model.Pedido;
+
+public class PayConfirm extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
@@ -25,7 +24,7 @@ public class PayConfirm extends JDialog implements Observer {
 	Menu carrito;
 	JFrame _parent;
 	JButton confirm;
-	SACliente sacliente;
+	Controller _ctrl;
 	ButtonGroup group;
 	JPanel _panel, contentPanel;
 	JRadioButton efectivo, tarjeta;
@@ -33,15 +32,13 @@ public class PayConfirm extends JDialog implements Observer {
 	JLabel preTotal, prefinal, descuentoTips;
 	float precioTotal, precioFinal, numDescuento;
 
-	public PayConfirm(JFrame parent, SACliente sacliente, Menu carrito) {
+	public PayConfirm(JFrame parent, Controller _ctrl, Menu carrito) {
 		super(parent);
 		this._parent = parent;
-		this.sacliente = sacliente;
+		this._ctrl = _ctrl;
 		this.carrito = carrito;
 
 		InitGUI();
-
-		// sacliente.addObserver(this);
 	}
 
 	void InitGUI() {
@@ -185,12 +182,14 @@ public class PayConfirm extends JDialog implements Observer {
 		confirm = new JButton("Confirm");
 		confirm.addActionListener(e -> {
 			pedido = new Pedido();
+			pedido.setId(UUID.randomUUID().toString());
 			pedido.setDireccion(direccion.getText());
 			pedido.setPrecio(precioTotal);
 			pedido.setPrecioFinal(precioFinal);
 			pedido.setConDatafono(rootPaneCheckingEnabled);
 			pedido.setConDatafono(tarjeta.isSelected());
-			sacliente.sendOrder(pedido);
+			_ctrl.sendOrder(pedido);
+			this.dispose();
 		});
 		confirm.setForeground(new Color(21, 60, 70));
 		confirm.setBounds(60, 410, 100, 30);
@@ -237,30 +236,6 @@ public class PayConfirm extends JDialog implements Observer {
 		_panel.setLayout(null);
 		_panel.setBackground(new Color(248, 247, 240));
 		this.setContentPane(_panel);
-	}
-
-	@Override
-	public void onProductAdded(Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onProductRemoved(Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onCodeUsed(Codigo codigo) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onOrderSended(Pedido pedido) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

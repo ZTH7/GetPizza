@@ -65,20 +65,14 @@ public class Membership extends JPanel implements Observer {
 
 	@Override
 	public void onProductAdded(Producto p) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void onProductRemoved(Producto p) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void onCodeUsed(Codigo codigo) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
