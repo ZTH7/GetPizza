@@ -42,6 +42,8 @@ public class Cliente {
 
     @objid ("ba205d83-959a-4812-b16d-7695a2fd404e")
     public List<Codigo> codigosUsados;
+
+    public List<Pedido> historia;
     
     public Cliente(Map<String, String> datos){
     	this.id = datos.get("Usuario");
@@ -55,8 +57,9 @@ public class Cliente {
 		this.codigoPostal = datos.get("CodigoPostal");
 		this.password = datos.get("Password");
 		this.membresia = new Membresia();
-		this.codigo = new ArrayList<Codigo> ();
-		this.codigosUsados = new ArrayList<Codigo> ();
+		this.codigo = new ArrayList<> ();
+		this.codigosUsados = new ArrayList<> ();
+		this.historia = new ArrayList<>();
     }
 
     @objid ("a2ae45fd-4184-43bd-807f-6b74f126be9f")
@@ -164,6 +167,14 @@ public class Cliente {
     
     public void setPassword(String password) {
     	this.password = password;
+    }
+    
+    public void addHistoria(Pedido pedido) {
+    	this.historia.add(pedido);
+    }
+    
+    public List<Pedido> getHistoria() {
+    	return this.historia;
     }
 
 }

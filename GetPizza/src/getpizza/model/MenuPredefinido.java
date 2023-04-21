@@ -12,10 +12,6 @@ public class MenuPredefinido extends Menu {
 		productos = new ArrayList<>();
 	}
 
-	public float getPrecioTotal() {
-		return precioTotal;
-	}
-
 	@Override
 	public void addProducto(Producto p) {
 		if (p.getClass() == Pizza.class) {

@@ -118,6 +118,12 @@ public class MainPanel extends JPanel {
 			MenuOption.open();
 		});
 
+		panel.add(createButton(Historial = new JButton(), "Historial"));
+		Historial.addActionListener((e) -> {
+			CardLayout cl = (CardLayout) cardsPanel.getLayout();
+			cl.show(cardsPanel, "Historial");
+		});
+		
 		panel.add(createButton(cerraSesion = new JButton(), "Cerrar Sesión"));
 		cerraSesion.addActionListener((e) -> {
 			_ctrl.run();
@@ -137,6 +143,7 @@ public class MainPanel extends JPanel {
 		cardsPanel.add(new Carta(_ctrl), "Menú");
 		cardsPanel.add(profilePanel = new Profile(_ctrl), "Perfil");
 		cardsPanel.add(membresiaPanel = new Membership(_ctrl), "Membresía");
+		cardsPanel.add(new Historial(_ctrl), "Historial");
 
 		panel.add(cardsPanel);
 

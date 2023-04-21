@@ -88,6 +88,7 @@ public class MenuOption extends JDialog {
 		confirm.setBackground(new Color(250, 192, 61));
 		
 		confirm.addActionListener((e) -> {
+			// TODO how to close MakeOrderView
 			MakeOrderView MakeOrderView = new MakeOrderView(_parent, _ctrl);
 			MakeOrderView.open();
 			_ctrl.selectMenu(getOption());

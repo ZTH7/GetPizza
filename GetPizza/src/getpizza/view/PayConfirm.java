@@ -1,42 +1,44 @@
 package getpizza.view;
 
-import java.awt.*;
-import java.awt.event.ActionListener;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.time.LocalDate;
+import java.util.UUID;
+
 import javax.swing.*;
 
 import getpizza.control.Controller;
-import getpizza.model.Codigo;
-import getpizza.model.Observer;
+import getpizza.model.Menu;
 import getpizza.model.Pedido;
-import getpizza.model.Producto;
 
-public class PayConfirm extends JDialog implements Observer {
+public class PayConfirm extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
 	int x, y;
-	float precioTotal, precioFinal;
+	Pedido pedido;
+	Menu carrito;
 	JFrame _parent;
-	JPanel _panel, contentPanel;
 	JButton confirm;
-	JLabel preTotal, prefinal;
-	JTextField codigoDescuento, direccion;
-	ActionListener confirmListener;
-	ButtonGroup group;
-	JRadioButton efectivo, tarjeta;
 	Controller _ctrl;
+	ButtonGroup group;
+	JPanel _panel, contentPanel;
+	JRadioButton efectivo, tarjeta;
+	JTextField codigoDescuento, direccion;
+	JLabel preTotal, prefinal, descuentoTips;
+	float precioTotal, precioFinal, numDescuento;
 
-	public PayConfirm(JFrame parent, Controller ctrl) {
+	public PayConfirm(JFrame parent, Controller _ctrl, Menu carrito) {
 		super(parent);
 		this._parent = parent;
-		this._ctrl = ctrl;
+		this._ctrl = _ctrl;
+		this.carrito = carrito;
 
 		InitGUI();
-
-		//ctrl.addClientObserver(this);
 	}
 
 	void InitGUI() {
@@ -44,7 +46,6 @@ public class PayConfirm extends JDialog implements Observer {
 		setButton();
 		setupMouse();
 		setTitle();
-		_panel.setBackground(new Color(248, 247, 240));
 		setResizable(false);
 		setUndecorated(true);
 		setCentralPanel();
@@ -63,33 +64,49 @@ public class PayConfirm extends JDialog implements Observer {
 	}
 
 	void setPrecioTotal() {
-		JLabel text = new JLabel("Precio Total: " + precioTotal);
-		text.setForeground(new Color(0, 0, 0));
-		text.setBounds(10, 10, 180, 20);
-		contentPanel.add(text);
+		precioTotal = carrito.getPrecioTotal();
+		JLabel preTotal = new JLabel("Precio Total: " + precioTotal);
+		preTotal.setForeground(new Color(0, 0, 0));
+		preTotal.setBounds(10, 10, 180, 20);
+		contentPanel.add(preTotal);
 	}
 
 	void setDescuentoOption() {
-		preTotal = new JLabel("¿Desea aplicar descuento?");
-		preTotal.setForeground(new Color(0, 0, 0));
-		preTotal.setBounds(10, 40, 180, 20);
-		contentPanel.add(preTotal);
-		
+		JLabel text = new JLabel("¿Desea aplicar descuento?");
+		text.setForeground(new Color(0, 0, 0));
+		text.setBounds(10, 40, 180, 20);
+		contentPanel.add(text);
+
 		JComboBox<String> descuentoOption = new JComboBox<>();
 		descuentoOption.setBounds(10, 70, 180, 20);
-        descuentoOption.addItem("Sin descuento");
-        descuentoOption.addItem("Descuento por día");
-        descuentoOption.addItem("Descuento por membresía");
-        descuentoOption.addItem("Descuento por puntos");
-        descuentoOption.addItem("Descuento por código");
-        //TODO
-        descuentoOption.addActionListener(e -> {
-        	
-        });
+		descuentoOption.addItem("Sin descuento");
+		descuentoOption.addItem("Descuento por día");
+		descuentoOption.addItem("Descuento por membresía");
+		descuentoOption.addItem("Descuento por puntos");
+		descuentoOption.addItem("Descuento por código");
+		// TODO
+		descuentoOption.addActionListener(e -> {
+			switch(descuentoOption.getSelectedIndex()) {
+			case 0:
+				numDescuento = 0;
+			case 1:
+				if(LocalDate.now().getDayOfWeek().getValue() == 5)
+					numDescuento = 5;
+				else
+					numDescuento = 0;
+				precioFinal = precioTotal - numDescuento;
+				descuentoTips.setText("Se ha aplicado un descuento del " + numDescuento);
+				prefinal.setText("Precio Final: " + precioFinal);
+			case 2:
+				// TODO
+			case 3:
+				// TODO
+			}
+		});
 
-        contentPanel.add(descuentoOption);
+		contentPanel.add(descuentoOption);
 	}
-	
+
 	void setCodigoDescuento() {
 		JLabel text = new JLabel("Cógido descuento: ");
 		text.setForeground(new Color(0, 0, 0));
@@ -99,18 +116,19 @@ public class PayConfirm extends JDialog implements Observer {
 		codigoDescuento = new JTextField(8);
 		codigoDescuento.setBounds(130, 100, 120, 20);
 		codigoDescuento.setBackground(new Color(255, 255, 255, 220));
-		//textField.setText(_ctrl.getCliente().getDireccion());
 		contentPanel.add(codigoDescuento);
 	}
 
 	void setDescuentoTips() {
-		prefinal = new JLabel("Se ha aplicado un descuento del " + precioFinal);
-		prefinal.setForeground(new Color(0, 0, 0));
-		prefinal.setBounds(10, 130, 230, 20);
-		contentPanel.add(prefinal);
+		numDescuento = 0;
+		descuentoTips = new JLabel("Se ha aplicado un descuento del " + numDescuento);
+		descuentoTips.setForeground(new Color(0, 0, 0));
+		descuentoTips.setBounds(10, 130, 230, 20);
+		contentPanel.add(descuentoTips);
 	}
 
 	void setPrecioFinal() {
+		precioFinal = carrito.getPrecioTotal();
 		prefinal = new JLabel("Precio Final: " + precioFinal);
 		prefinal.setForeground(new Color(0, 0, 0));
 		prefinal.setBounds(10, 160, 180, 20);
@@ -126,7 +144,7 @@ public class PayConfirm extends JDialog implements Observer {
 		direccion = new JTextField(8);
 		direccion.setBounds(10, 220, 230, 20);
 		direccion.setBackground(new Color(255, 255, 255, 220));
-		//textField.setText(_ctrl.getCliente().getDireccion());
+		// textField.setText(_ctrl.getCliente().getDireccion());
 		contentPanel.add(direccion);
 	}
 
@@ -162,7 +180,17 @@ public class PayConfirm extends JDialog implements Observer {
 
 	void setButton() {
 		confirm = new JButton("Confirm");
-		confirm.addActionListener(confirmListener);
+		confirm.addActionListener(e -> {
+			pedido = new Pedido();
+			pedido.setId(UUID.randomUUID().toString());
+			pedido.setDireccion(direccion.getText());
+			pedido.setPrecio(precioTotal);
+			pedido.setPrecioFinal(precioFinal);
+			pedido.setConDatafono(rootPaneCheckingEnabled);
+			pedido.setConDatafono(tarjeta.isSelected());
+			_ctrl.sendOrder(pedido);
+			this.dispose();
+		});
 		confirm.setForeground(new Color(21, 60, 70));
 		confirm.setBounds(60, 410, 100, 30);
 		confirm.setBackground(new Color(250, 192, 61));
@@ -206,39 +234,8 @@ public class PayConfirm extends JDialog implements Observer {
 	void setContentPanel() {
 		_panel = new JPanel();
 		_panel.setLayout(null);
+		_panel.setBackground(new Color(248, 247, 240));
 		this.setContentPane(_panel);
 	}
 
-	public void setConfirmListener(ActionListener al) {
-		confirm.addActionListener(al);
-	}
-
-	@Override
-	public void onProductAdded(Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onProductRemoved(Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onCodeUsed(Codigo codigo) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onOrderSended(Pedido pedido) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public static void main(String[] arg) {
-		new PayConfirm(null, null);
-	}
-	
 }

@@ -17,6 +17,7 @@ import getpizza.model.MenuPersonalizado;
 import getpizza.model.MenuPredefinido;
 import getpizza.model.Observable;
 import getpizza.model.Observer;
+import getpizza.model.Pedido;
 import getpizza.model.Pizza;
 import getpizza.model.Postre;
 import getpizza.model.Producto;
@@ -54,9 +55,10 @@ public class SACliente implements Observable<Observer> {
 		observadores.remove(o);
 	}
 
-	public void tryToPay() {
-		// JDialog payConfirm = new PayConfirm(mainWindow, this);
-		// TODO show payConfirm panel
+	public void sendOrder(Pedido pedido) {
+		for (Observer o : observadores) {
+			o.onOrderSended(pedido);
+		}
 	}
 
 	public void importProductos() {
@@ -94,6 +96,10 @@ public class SACliente implements Observable<Observer> {
 
 	public List<Postre> getPostres() {
 		return this.postre;
+	}
+
+	public Menu getMenu() {
+		return this.carrito;
 	}
 
 	public void addProduct(Producto p) {

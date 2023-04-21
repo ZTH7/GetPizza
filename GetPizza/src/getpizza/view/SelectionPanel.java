@@ -32,10 +32,10 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	List<Bebida> cartaBebida;
 	List<Postre> cartaPostre;
 	JPanel _panel;
-	
+
 	public SelectionPanel(Controller ctrl) {
 		_ctrl = ctrl;
-		
+
 		cartaPizza = _ctrl.getPizzas();
 		cartaBebida = _ctrl.getBebidas();
 		cartaPostre = _ctrl.getPostres();
@@ -50,28 +50,27 @@ public class SelectionPanel extends JScrollPane implements Observer {
 
 		// Hacer un for de cada producto de cada carta, crear el JPanel con
 		// createProduct y añadirlo al _panel
-		
+
 		JLabel pizzaTitle = new JLabel("<html><center>Pizzas</center></html>");
-		
+
 		_panel.add(pizzaTitle);
-		
+
 		for (Pizza p : cartaPizza) {
 			_panel.add(createPizza(p));
 		}
-		
-		
+
 		JLabel postreTitle = new JLabel("<html><center>Postres</center></html>");
-		
+
 		_panel.add(postreTitle);
-		
+
 		for (Postre po : cartaPostre) {
 			_panel.add(createPostre(po));
 		}
-		
+
 		JLabel bebidaTitle = new JLabel("<html><center>Bebidas</center></html>");
-		
+
 		_panel.add(bebidaTitle);
-		
+
 		for (Bebida b : cartaBebida) {
 			_panel.add(createBebida(b));
 		}
@@ -135,7 +134,6 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		radioButtonBase.add(base4);
 		radioButtonBase.add(Box.createHorizontalGlue());
 
-		
 		prodtotal.add(radioButtonMasa);
 		prodtotal.add(radioButtonBase);
 
@@ -143,10 +141,10 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
 		return prodtotal;
 	}
-	
+
 	JPanel createBebida(Producto p) {
 		JPanel prodtotal = createPostre(p);
-		
+
 		// Opcion de tamanyo
 		JPanel options = new JPanel();
 		options.setLayout(new BoxLayout(options, BoxLayout.Y_AXIS));
@@ -183,7 +181,7 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
 		return prodtotal;
 	}
-	
+
 	JPanel createPostre(Producto p) {
 		JPanel prodtotal = new JPanel();
 		prodtotal.setLayout(new BoxLayout(prodtotal, BoxLayout.Y_AXIS));
@@ -196,13 +194,12 @@ public class SelectionPanel extends JScrollPane implements Observer {
 
 		JLabel precio = new JLabel("<html><p><center>" + Float.toString(p.getPrecio()) + " euros</center></p></html>");
 
-		
 		JButton add = new JButton("+");
-		
+
 		add.addActionListener((e) -> {
 			_ctrl.addProducto(p);
 		});
-		
+
 		prod.add(nombre);
 		prod.add(precio);
 		prod.add(add);
@@ -217,7 +214,8 @@ public class SelectionPanel extends JScrollPane implements Observer {
 
 	@Override
 	public void onProductAdded(Producto p) {
-		
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override

@@ -8,10 +8,6 @@ public class MenuPersonalizado extends Menu {
 		productos = new ArrayList<>();
 	}
 
-	public float getPrecioTotal() {
-		return precioTotal;
-	}
-
 	@Override
 	public void addProducto(Producto p) {
 		precioTotal += p.getPrecio();
