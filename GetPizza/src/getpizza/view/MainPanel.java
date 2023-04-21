@@ -14,7 +14,7 @@ public class MainPanel extends JPanel {
 	Profile profilePanel;
 	MakeOrderView MakeOrderView;
 	MenuOption MenuOption;
-	JButton Membresia, Menu, Perfil, Pedido, Historial;
+	JButton Membresia, Menu, Perfil, Pedido, Historial, cerraSesion;
 	Membership membresiaPanel;
 
 	public MainPanel(Controller _ctrl) {
@@ -36,8 +36,8 @@ public class MainPanel extends JPanel {
 	JPanel createAvatarImg() {
 		JPanel panel = new JPanel();
 		panel.setOpaque(false);
-		panel.setMaximumSize(new Dimension(176, 150));
-		panel.setPreferredSize(new Dimension(176, 150));
+		panel.setMaximumSize(new Dimension(176, 140));
+		panel.setPreferredSize(new Dimension(176, 140));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
 		JLabel title = new JLabel();
@@ -48,8 +48,8 @@ public class MainPanel extends JPanel {
 		title.setIcon(Icon);
 
 		title.setAlignmentX(CENTER_ALIGNMENT);
-		title.setMaximumSize(new Dimension(176, 70));
-		title.setPreferredSize(new Dimension(176, 70));
+		title.setMaximumSize(new Dimension(176, 60));
+		title.setPreferredSize(new Dimension(176, 60));
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 
 		panel.add(title);
@@ -75,12 +75,12 @@ public class MainPanel extends JPanel {
 
 		avatar = createAvatarImg();
 
-		panel.add(Box.createVerticalStrut(10));
+		//panel.add(Box.createVerticalStrut(10));
 
 		panel.add(avatar);
 		
 		JLabel nombre = new JLabel(_ctrl.getCliente().getNombre());
-		nombre.setForeground(new Color(255, 204, 153));
+		nombre.setForeground(new Color(255, 255, 255));
 		nombre.setFont(new Font(null, 1, 16));
 		nombre.setAlignmentX(CENTER_ALIGNMENT);
 		nombre.setMaximumSize(new Dimension(176, 30));
@@ -88,7 +88,7 @@ public class MainPanel extends JPanel {
 		nombre.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(nombre);
 
-		panel.add(Box.createVerticalStrut(10));
+		panel.add(Box.createVerticalStrut(5));
 
 		panel.add(createButton(Menu = new JButton(), "Menú"));
 		Menu.addActionListener((e) -> {
@@ -113,10 +113,14 @@ public class MainPanel extends JPanel {
 		panel.add(createButton(Pedido = new JButton(), "Realizar Pedido"));
 		Pedido.addActionListener((e) -> {
 			if (MenuOption == null)
-
 				MenuOption = new MenuOption((JFrame) Utils.getWindow(MainPanel.this), _ctrl);
 
 			MenuOption.open();
+		});
+
+		panel.add(createButton(cerraSesion = new JButton(), "Cerrar Sesión"));
+		cerraSesion.addActionListener((e) -> {
+			_ctrl.run();
 		});
 
 		return panel;
