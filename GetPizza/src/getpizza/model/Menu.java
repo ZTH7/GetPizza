@@ -9,5 +9,8 @@ public class Menu {
 	
 	public void addProducto(Producto p) {}
 	public void removeProducto(Producto p) {};
-	
+
+	public float getPrecioTotal() {
+		return precioTotal;
+	}
 }

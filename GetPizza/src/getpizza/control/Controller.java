@@ -9,6 +9,7 @@ import getpizza.misc.DBHelper;
 import getpizza.model.Bebida;
 import getpizza.model.Cliente;
 import getpizza.model.Observer;
+import getpizza.model.Pedido;
 import getpizza.model.Pizza;
 import getpizza.model.Postre;
 import getpizza.model.Producto;
@@ -90,9 +91,12 @@ public class Controller {
 		DBHelper.getInstance().setClient(cliente);
 	}
 
-	public Object tryToPay() {
-		// TODO Auto-generated method stub
-		return null;
+	public void tryToPay() {
+		sacliente.tryToPay();
+	}
+	
+	public void sendOrder(Pedido pedido) {
+		sacliente.sendOrder(pedido);
 	}
 	
 	public void selectMenu(boolean personalizado) {
