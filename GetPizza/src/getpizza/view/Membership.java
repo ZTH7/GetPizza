@@ -2,10 +2,8 @@ package getpizza.view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import getpizza.control.Controller;
 import getpizza.model.Codigo;
 import getpizza.model.Observer;
@@ -85,12 +83,6 @@ public class Membership extends JPanel implements Observer {
 
 	@Override
 	public void onOrderSended(Pedido pedido) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onMenuOptionChanged(boolean personalizado) {
 		// TODO Auto-generated method stub
 		
 	}

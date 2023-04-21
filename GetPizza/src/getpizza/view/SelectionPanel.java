@@ -32,8 +32,6 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	List<Bebida> cartaBebida;
 	List<Postre> cartaPostre;
 	JPanel _panel;
-
-	private boolean _personalizada;
 	
 	public SelectionPanel(Controller ctrl) {
 		_ctrl = ctrl;
@@ -97,6 +95,7 @@ public class SelectionPanel extends JScrollPane implements Observer {
 
 		ButtonGroup masagroup = new ButtonGroup();
 		JRadioButton masa1 = new JRadioButton("Napolitana");
+		masa1.setSelected(true);
 		masagroup.add(masa1);
 		JRadioButton masa2 = new JRadioButton("Americana");
 		masagroup.add(masa2);
@@ -120,6 +119,7 @@ public class SelectionPanel extends JScrollPane implements Observer {
 
 		ButtonGroup basegroup = new ButtonGroup();
 		JRadioButton base1 = new JRadioButton("Queso");
+		base1.setSelected(true);
 		basegroup.add(base1);
 		JRadioButton base2 = new JRadioButton("Tomate");
 		basegroup.add(base2);
@@ -162,6 +162,7 @@ public class SelectionPanel extends JScrollPane implements Observer {
 
 		ButtonGroup tamgroup = new ButtonGroup();
 		JRadioButton tam1 = new JRadioButton("Grande");
+		tam1.setSelected(true);
 		tamgroup.add(tam1);
 		JRadioButton tam2 = new JRadioButton("Mediana");
 		tamgroup.add(tam2);
@@ -235,11 +236,6 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	public void onOrderSended(Pedido pedido) {
 		// TODO Auto-generated method stub
 
-	}
-
-	@Override
-	public void onMenuOptionChanged(boolean personalizado) {
-		_personalizada = personalizado;
 	}
 
 }

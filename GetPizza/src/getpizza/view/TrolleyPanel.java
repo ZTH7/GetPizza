@@ -95,10 +95,5 @@ public class TrolleyPanel extends JScrollPane implements Observer {
 	@Override
 	public void onOrderSended(Pedido pedido) {
 	}
-
-	@Override
-	public void onMenuOptionChanged(boolean personalizado) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

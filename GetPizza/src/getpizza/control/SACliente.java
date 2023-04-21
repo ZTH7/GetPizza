@@ -10,6 +10,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import getpizza.misc.DBHelper;
+import getpizza.misc.Utils;
 import getpizza.model.Bebida;
 import getpizza.model.Menu;
 import getpizza.model.MenuPersonalizado;
@@ -37,15 +38,7 @@ public class SACliente implements Observable<Observer> {
 	}
 
 	public void selectMenu(boolean personalizado) {
-		if (personalizado) {
-			carrito = new MenuPersonalizado();
-		} else {
-			carrito = new MenuPredefinido();
-		}
-		
-		for (Observer o : observadores) {
-			o.onMenuOptionChanged(false);
-		}
+		carrito = personalizado ? new MenuPersonalizado() : new MenuPredefinido();
 	}
 
 	@Override
@@ -102,18 +95,20 @@ public class SACliente implements Observable<Observer> {
 	public List<Postre> getPostres() {
 		return this.postre;
 	}
-	
+
 	public void addProduct(Producto p) {
-		carrito.addProducto(p);
-		
-		for (Observer o : observadores) {
-			o.onProductAdded(p);
+		try {
+			carrito.addProducto(p);
+			for (Observer o : observadores)
+				o.onProductAdded(p);
+		} catch (IllegalArgumentException e) {
+			Utils.showErrorMsg(e.getMessage());
 		}
 	}
 
 	public void removeProducto(Producto p) {
 		carrito.removeProducto(p);
-		
+
 		for (Observer o : observadores) {
 			o.onProductRemoved(p);
 		}

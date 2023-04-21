@@ -5,8 +5,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.util.List;
-
 import javax.swing.*;
 
 import getpizza.control.Controller;
@@ -20,9 +18,12 @@ public class PayConfirm extends JDialog implements Observer {
 	private static final long serialVersionUID = 1L;
 
 	int x, y;
+	float precioTotal, precioFinal;
 	JFrame _parent;
 	JPanel _panel, contentPanel;
 	JButton confirm;
+	JLabel preTotal, prefinal;
+	JTextField codigoDescuento, direccion;
 	ActionListener confirmListener;
 	ButtonGroup group;
 	JRadioButton efectivo, tarjeta;
@@ -35,7 +36,7 @@ public class PayConfirm extends JDialog implements Observer {
 
 		InitGUI();
 
-		// sacliente.addObserver(this);
+		//ctrl.addClientObserver(this);
 	}
 
 	void InitGUI() {
@@ -48,67 +49,103 @@ public class PayConfirm extends JDialog implements Observer {
 		setUndecorated(true);
 		setCentralPanel();
 
-		setBounds(300, 200, 340, 460);
-		setLocationRelativeTo(null);
-		setVisible(true);
-
 		setPayMethod();
 		setPrecioTotal();
 		setDescuentoOption();
+		setCodigoDescuento();
+		setDescuentoTips();
 		setPrecioFinal();
 		setDireccion();
+
+		setBounds(300, 200, 340, 460);
+		setLocationRelativeTo(null);
+		setVisible(true);
 	}
 
 	void setPrecioTotal() {
-		JLabel text = new JLabel("Precio Total: ");
+		JLabel text = new JLabel("Precio Total: " + precioTotal);
 		text.setForeground(new Color(0, 0, 0));
 		text.setBounds(10, 10, 180, 20);
 		contentPanel.add(text);
 	}
 
 	void setDescuentoOption() {
-		JLabel text = new JLabel("¿Desea aplicar descuento?");
+		preTotal = new JLabel("¿Desea aplicar descuento?");
+		preTotal.setForeground(new Color(0, 0, 0));
+		preTotal.setBounds(10, 40, 180, 20);
+		contentPanel.add(preTotal);
+		
+		JComboBox<String> descuentoOption = new JComboBox<>();
+		descuentoOption.setBounds(10, 70, 180, 20);
+        descuentoOption.addItem("Sin descuento");
+        descuentoOption.addItem("Descuento por día");
+        descuentoOption.addItem("Descuento por membresía");
+        descuentoOption.addItem("Descuento por puntos");
+        descuentoOption.addItem("Descuento por código");
+        //TODO
+        descuentoOption.addActionListener(e -> {
+        	
+        });
+
+        contentPanel.add(descuentoOption);
+	}
+	
+	void setCodigoDescuento() {
+		JLabel text = new JLabel("Cógido descuento: ");
 		text.setForeground(new Color(0, 0, 0));
-		text.setBounds(10, 40, 180, 20);
+		text.setBounds(10, 100, 120, 20);
 		contentPanel.add(text);
+
+		codigoDescuento = new JTextField(8);
+		codigoDescuento.setBounds(130, 100, 120, 20);
+		codigoDescuento.setBackground(new Color(255, 255, 255, 220));
+		//textField.setText(_ctrl.getCliente().getDireccion());
+		contentPanel.add(codigoDescuento);
+	}
+
+	void setDescuentoTips() {
+		prefinal = new JLabel("Se ha aplicado un descuento del " + precioFinal);
+		prefinal.setForeground(new Color(0, 0, 0));
+		prefinal.setBounds(10, 130, 230, 20);
+		contentPanel.add(prefinal);
 	}
 
 	void setPrecioFinal() {
-		JLabel text = new JLabel("Precio Final: ");
-		text.setForeground(new Color(0, 0, 0));
-		text.setBounds(10, 100, 180, 20);
-		contentPanel.add(text);
+		prefinal = new JLabel("Precio Final: " + precioFinal);
+		prefinal.setForeground(new Color(0, 0, 0));
+		prefinal.setBounds(10, 160, 180, 20);
+		contentPanel.add(prefinal);
 	}
 
 	void setDireccion() {
-		JLabel text = new JLabel("Dirección");
+		JLabel text = new JLabel("Dirección:");
 		text.setForeground(new Color(0, 0, 0));
-		text.setBounds(10, 140, 230, 20);
+		text.setBounds(10, 190, 230, 20);
 		contentPanel.add(text);
 
-		JTextField textField = new JTextField(8);
-		textField.setBounds(10, 170, 230, 20);
-		textField.setBackground(new Color(255, 255, 255, 220));
+		direccion = new JTextField(8);
+		direccion.setBounds(10, 220, 230, 20);
+		direccion.setBackground(new Color(255, 255, 255, 220));
 		//textField.setText(_ctrl.getCliente().getDireccion());
-		contentPanel.add(textField);
+		contentPanel.add(direccion);
 	}
 
 	void setPayMethod() {
 		JLabel text = new JLabel("¿Como desea pagar?");
 		text.setForeground(new Color(0, 0, 0));
-		text.setBounds(10, 200, 180, 20);
+		text.setBounds(10, 250, 180, 20);
 		contentPanel.add(text);
 
 		group = new ButtonGroup();
 		tarjeta = new JRadioButton("Con tarjeta");
-		tarjeta.setBounds(10, 230, 180, 30);
+		tarjeta.setBounds(20, 275, 180, 30);
 		tarjeta.setOpaque(false);
 		tarjeta.setSelected(true);
 		group.add(tarjeta);
 		contentPanel.add(tarjeta);
 
 		efectivo = new JRadioButton("Efectivo");
-		efectivo.setBounds(10, 260, 180, 30);
+		efectivo.setBounds(20, 295, 180, 30);
 		efectivo.setOpaque(false);
 		group.add(efectivo);
 		contentPanel.add(efectivo);
@@ -203,10 +240,5 @@ public class PayConfirm extends JDialog implements Observer {
 	public static void main(String[] arg) {
 		new PayConfirm(null, null);
 	}
-
-	@Override
-	public void onMenuOptionChanged(boolean personalizado) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
