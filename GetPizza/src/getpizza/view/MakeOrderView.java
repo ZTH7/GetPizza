@@ -179,10 +179,4 @@ public class MakeOrderView extends JDialog implements Observer {
 
 	}
 
-	@Override
-	public void onMenuOptionChanged(boolean personalizado) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

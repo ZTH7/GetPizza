@@ -1,26 +1,23 @@
 package getpizza.view;
 
 import java.awt.Color;
-import java.util.List;
-
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
-
 import getpizza.control.Controller;
 import getpizza.model.Codigo;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
 import getpizza.model.Producto;
 
-public class Historia extends JScrollPane implements Observer {
+public class Historial extends JScrollPane implements Observer {
 
 	private static final long serialVersionUID = 1L;
 
 	JPanel contentPanel;
 
-	public Historia(Controller ctrl) {
+	public Historial(Controller ctrl) {
 		contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 		contentPanel.setBackground(new Color(255, 255, 255, 160));
@@ -58,12 +55,6 @@ public class Historia extends JScrollPane implements Observer {
 
 	@Override
 	public void onOrderSended(Pedido pedido) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onMenuOptionChanged(boolean personalizado) {
 		// TODO Auto-generated method stub
 		
 	}

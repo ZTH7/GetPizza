@@ -1,7 +1,6 @@
 package getpizza.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MenuPersonalizado extends Menu {
 

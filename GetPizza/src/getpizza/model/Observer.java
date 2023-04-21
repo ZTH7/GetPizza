@@ -1,6 +1,5 @@
 package getpizza.model;
 
-import java.util.List;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("e5354d22-a112-4ab1-85d7-ea4bafda9922")
@@ -14,7 +13,5 @@ public interface Observer {
     public void onCodeUsed(Codigo codigo);
     
     public void onOrderSended(Pedido pedido);
-    
-    public void onMenuOptionChanged(boolean personalizado);
 
 }

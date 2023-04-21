@@ -32,8 +32,6 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	List<Bebida> cartaBebida;
 	List<Postre> cartaPostre;
 	JPanel _panel;
-
-	private boolean _personalizada;
 	
 	public SelectionPanel(Controller ctrl) {
 		_ctrl = ctrl;
@@ -235,11 +233,6 @@ public class SelectionPanel extends JScrollPane implements Observer {
 	public void onOrderSended(Pedido pedido) {
 		// TODO Auto-generated method stub
 
-	}
-
-	@Override
-	public void onMenuOptionChanged(boolean personalizado) {
-		_personalizada = personalizado;
 	}
 
 }

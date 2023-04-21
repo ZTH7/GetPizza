@@ -215,10 +215,5 @@ public class PayConfirm extends JDialog implements Observer {
 	public static void main(String[] arg) {
 		new PayConfirm(null, null);
 	}
-
-	@Override
-	public void onMenuOptionChanged(boolean personalizado) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
