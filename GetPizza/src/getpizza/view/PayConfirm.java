@@ -12,6 +12,8 @@ import java.util.UUID;
 import javax.swing.*;
 
 import getpizza.control.Controller;
+import getpizza.misc.DBHelper;
+import getpizza.misc.Utils;
 import getpizza.model.Descuento;
 import getpizza.model.DescuentoPorCodigo;
 import getpizza.model.DescuentoPorDia;
@@ -28,7 +30,7 @@ public class PayConfirm extends JDialog {
 	Pedido pedido;
 	Menu carrito;
 	JFrame _parent;
-	JButton confirm;
+	JButton confirm, aplicarDescuento;
 	Controller _ctrl;
 	ButtonGroup group;
 	JPanel _panel, contentPanel;
@@ -108,7 +110,7 @@ public class PayConfirm extends JDialog {
 				descuento = new DescuentoPorCodigo();
 				break;
 			}
-			updateTipsPanel();
+			setDescuentoArea();
 		});
 
 		contentPanel.add(descuentoOption);
@@ -138,7 +140,7 @@ public class PayConfirm extends JDialog {
 		direccion = new JTextField(8);
 		direccion.setBounds(10, 220, 230, 20);
 		direccion.setBackground(new Color(255, 255, 255, 220));
-		// textField.setText(_ctrl.getCliente().getDireccion());
+		direccion.setText(_ctrl.getCliente().getDireccion());
 		contentPanel.add(direccion);
 	}
 
@@ -228,6 +230,10 @@ public class PayConfirm extends JDialog {
 	void updateTipsPanel() {
 		descuento.aplicarDescuento(precioTotal);
 		precioFinal = (float) Math.round((precioTotal - descuento.getPrecioDescontado()) * 100) / 100f;
+		if(precioFinal < 0) {
+			precioFinal = 0;
+			
+		}
 		descuentoTips.setText("Se ha aplicado un descuento del " + descuento.getPorcentaje() * 100 + "%");
 		prefinal.setText("Precio Final: " + precioFinal);
 	}
@@ -236,40 +242,83 @@ public class PayConfirm extends JDialog {
 		if (descuentoArea == null && codigoDescuento == null) {
 			descuentoArea = new JLabel();
 			descuentoArea.setForeground(new Color(0, 0, 0));
-			descuentoArea.setBounds(10, 100, 90, 20);
+			descuentoArea.setBounds(10, 100, 60, 20);
 			contentPanel.add(descuentoArea);
 
 			codigoDescuento = new JTextField(8);
-			codigoDescuento.setBounds(100, 100, 120, 20);
+			codigoDescuento.setBounds(70, 100, 90, 20);
 			codigoDescuento.setBackground(new Color(255, 255, 255, 220));
-			codigoDescuento.addActionListener(e -> {
-				codigoDescuento.getText();// TODO
-			});
 			contentPanel.add(codigoDescuento);
+
+			aplicarDescuento = new JButton("<html><center>Aplicar</center></html>");
+			aplicarDescuento.setForeground(new Color(21, 60, 70));
+			aplicarDescuento.setBounds(170, 100, 80, 20);
+			aplicarDescuento.setBackground(new Color(250, 192, 61));
+			contentPanel.add(aplicarDescuento);
 		}
 
 		if (descuento.getClass() == DescuentoPorCodigo.class) {
+			for (ActionListener al : aplicarDescuento.getActionListeners())
+				aplicarDescuento.removeActionListener(al);
+			aplicarDescuento.addActionListener(e -> {
+				boolean ok = true;
+				String code = codigoDescuento.getText();
+				for (String str : _ctrl.getCliente().getCodigosUsados()) {
+					if (code.equals(str)) {
+						ok = false;
+						break;
+					}
+				}
+				if (ok) {
+					for (DescuentoPorCodigo codigo : DBHelper.getInstance().getCodigo()) {
+						if (code.equals(codigo.getCodigo())) {
+							descuento = codigo;
+							ok = false;
+							break;
+						}
+					}
+					if (!ok)
+						updateTipsPanel();
+					else
+						Utils.showErrorMsg("El Codigo no existe.");
+				} else
+					Utils.showErrorMsg("El Codigo ya está utilizado.");
+			});
 			descuentoArea.setText("Cógido: ");
-			for (ActionListener al : codigoDescuento.getActionListeners())
-				codigoDescuento.removeActionListener(al);
-			codigoDescuento.addActionListener(e -> {
-				_ctrl.getCliente();
-				codigoDescuento.getText();
-			});
+			codigoDescuento.setVisible(true);
+			descuentoArea.setVisible(true);
+			aplicarDescuento.setVisible(true);
 		} else if (descuento.getClass() == DescuentoPorPuntos.class) {
-			descuentoArea.setText("Puntos: ");
-			for (ActionListener al : codigoDescuento.getActionListeners())
-				codigoDescuento.removeActionListener(al);
-			codigoDescuento.addActionListener(e -> {
-
+			for (ActionListener al : aplicarDescuento.getActionListeners())
+				aplicarDescuento.removeActionListener(al);
+			aplicarDescuento.addActionListener(e -> {
+				try {
+					int punt = Integer.parseInt(codigoDescuento.getText());
+					if(punt < 0)
+						Utils.showErrorMsg("Los puntos introducidos no pueden ser negativos");
+					else if(punt > _ctrl.getCliente().getMembresia().getPunto()){
+						Utils.showErrorMsg("No tiene puntos suficientes");
+					}
+					else {
+						((DescuentoPorPuntos)descuento).setPuntos(punt);
+						updateTipsPanel();
+					}
+				}catch(Exception ex) {
+					Utils.showErrorMsg("Solo se admite cifras numéricas");
+				}
 			});
+			descuentoArea.setText("Puntos: ");
+			codigoDescuento.setVisible(true);
+			descuentoArea.setVisible(true);
+			aplicarDescuento.setVisible(true);
 		} else {
-			for (ActionListener al : codigoDescuento.getActionListeners())
-				codigoDescuento.removeActionListener(al);
-
 			codigoDescuento.setVisible(false);
 			descuentoArea.setVisible(false);
+			aplicarDescuento.setVisible(false);
 		}
+
+		validate();
+		repaint();
 	}
 
 	void setContentPanel() {
