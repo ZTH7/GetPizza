@@ -192,5 +192,9 @@ public class Cliente {
     public void removePuntos(int puntos) {
     	membresia.removePunto(puntos);
     }
+
+	public Rango getRango() {
+		return membresia.getRango();
+	}
     
 }

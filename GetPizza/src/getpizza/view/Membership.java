@@ -5,10 +5,6 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import getpizza.control.Controller;
-import getpizza.model.Observer;
-import getpizza.model.Pedido;
-import getpizza.model.Producto;
-import getpizza.model.Rango;
 
 public class Membership extends JPanel {
 
@@ -44,10 +40,10 @@ public class Membership extends JPanel {
     
 	public void setData() {
 		rango.setText("<html><p><center>Rango: "
-				+ ctrl.getCliente().getMembresia().rango.name()
+				+ ctrl.getRangoCliente().name()
 				+ "</center></p></html>");
 		punto.setText("<html><p><center>Puntos: "
-				+ ctrl.getCliente().getMembresia().puntos
+				+ ctrl.getCliente().getMembresia().getPunto()
 				+ "</center></p></html>");
     }
 

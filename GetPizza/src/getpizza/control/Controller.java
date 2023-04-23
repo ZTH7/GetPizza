@@ -16,6 +16,7 @@ import getpizza.model.Pedido;
 import getpizza.model.Pizza;
 import getpizza.model.Postre;
 import getpizza.model.Producto;
+import getpizza.model.Rango;
 import getpizza.view.*;
 
 public class Controller {
@@ -101,7 +102,6 @@ public class Controller {
 
 	public void sendOrder(Pedido pedido, Descuento descuento) {
 		cliente.addHistoria(pedido);
-		cliente.getMembresia().addPunto((int) pedido.getPrecioFinal());
 		sacliente.sendOrder(pedido);
 		
 		if(descuento.getClass() == DescuentoPorCodigo.class) {
@@ -137,6 +137,10 @@ public class Controller {
 
 	public void removeProducto(Producto p) {
 		sacliente.removeProducto(p);
+	}
+	
+	public Rango getRangoCliente() {
+		return cliente.getRango();
 	}
 
 }

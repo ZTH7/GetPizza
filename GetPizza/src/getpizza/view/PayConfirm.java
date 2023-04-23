@@ -101,7 +101,7 @@ public class PayConfirm extends JDialog {
 				descuento = new DescuentoPorDia();
 				break;
 			case 2:
-				descuento = new DescuentoPorMembresia();
+				descuento = new DescuentoPorMembresia(_ctrl.getRangoCliente());
 				break;
 			case 3:
 				descuento = new DescuentoPorPuntos();

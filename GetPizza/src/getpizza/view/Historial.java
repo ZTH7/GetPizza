@@ -3,6 +3,7 @@ package getpizza.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.text.DecimalFormat;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -67,13 +68,15 @@ public class Historial extends JScrollPane implements Observer {
 		JPanel prod = new JPanel();
 		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
 		prod.setBackground(new Color(234, 216, 154));
+		
+		DecimalFormat df = new DecimalFormat("#.##");
 
 		JLabel nombre = new JLabel("<html><p><center> ID: " + pedido.getId() + "</center></p>"
 				+ "<p> Precio: <strike>" + Float.toString(pedido.getPrecio()) + "</strike>  "
 				+ pedido.getPrecioFinal() + "</p>"
-				+ "<p> Descuento: " + (pedido.getPrecio() - pedido.getPrecioFinal()) + "</p>"
+				+ "<p> Precio descontado: " + df.format((pedido.getPrecio() - pedido.getPrecioFinal())) + "</p>"
 				+ "<p> Dirección: " + pedido.getDireccion() + "</p>"
-				+ "<p> ConDataFono: " + (pedido.getConDatafono() ? "True" : "False") + "</p>"
+				+ "<p> Método de pago: " + (pedido.getConDatafono() ? "Tarjeta de crédito" : "Efectivo") + "</p>"
 				+ "</html>");
 		nombre.setPreferredSize(new Dimension(140, 100));
 		
