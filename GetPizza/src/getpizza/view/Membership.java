@@ -10,7 +10,7 @@ import getpizza.model.Pedido;
 import getpizza.model.Producto;
 import getpizza.model.Rango;
 
-public class Membership extends JPanel implements Observer {
+public class Membership extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
@@ -21,7 +21,6 @@ public class Membership extends JPanel implements Observer {
 		this.ctrl = ctrl;
 		
 		InitGUI();
-		ctrl.addClientObserver(this);
 	}
 
 	void InitGUI() {
@@ -42,42 +41,14 @@ public class Membership extends JPanel implements Observer {
 		punto.setOpaque(false);
 		add(punto);
 	}
-	
-	public void setRango(Rango rango) {
-		this.rango.setText("Rango: " + rango.name());
-        repaint();
-    }
-
-    public void setPunto(int punto) {
-        this.punto.setText("Punto: " + punto);
-        repaint();
-    }
     
 	public void setData() {
 		rango.setText("<html><p><center>Rango: "
 				+ ctrl.getCliente().getMembresia().rango.name()
 				+ "</center></p></html>");
-		punto.setText("<html><p><center>Punto: "
+		punto.setText("<html><p><center>Puntos: "
 				+ ctrl.getCliente().getMembresia().puntos
 				+ "</center></p></html>");
     }
-
-	@Override
-	public void onProductAdded(Producto p) {
-	}
-
-	@Override
-	public void onProductRemoved(Producto p) {
-	}
-
-	@Override
-	public void onCodeUsed(String codigo) {
-	}
-
-	@Override
-	public void onOrderSended(Pedido pedido) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
