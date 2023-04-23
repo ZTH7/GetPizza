@@ -9,7 +9,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import getpizza.control.Controller;
-import getpizza.model.Codigo;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
 import getpizza.model.Producto;
@@ -54,7 +53,7 @@ public class Historial extends JScrollPane implements Observer {
 		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
 		prod.setBackground(new Color(234, 216, 154));
 
-		JLabel nombre = new JLabel("<html><p><center>" + pedido.getId() + "</center></p>" + "<p><center>Precio: <strike>"
+		JLabel nombre = new JLabel("<html><p><center>  " + pedido.getId() + "</center></p>" + "<p><center>Precio: <strike>"
 				+ Float.toString(pedido.getPrecio()) + "</strike>  " + pedido.getPrecioFinal() + "</center></p>"
 				+ "<p>" + pedido.getDireccion() + "</p>"
 				+ "</html>");
@@ -76,7 +75,7 @@ public class Historial extends JScrollPane implements Observer {
 	}
 
 	@Override
-	public void onCodeUsed(Codigo codigo) {
+	public void onCodeUsed(String codigo) {
 	}
 
 	@Override

@@ -16,14 +16,11 @@ import javax.swing.ScrollPaneConstants;
 
 import getpizza.control.Controller;
 import getpizza.model.Bebida;
-import getpizza.model.Codigo;
-import getpizza.model.Observer;
-import getpizza.model.Pedido;
 import getpizza.model.Pizza;
 import getpizza.model.Postre;
 import getpizza.model.Producto;
 
-public class SelectionPanel extends JScrollPane implements Observer {
+public class SelectionPanel extends JScrollPane {
 
 	private static final long serialVersionUID = 1L;
 
@@ -210,30 +207,6 @@ public class SelectionPanel extends JScrollPane implements Observer {
 		prodtotal.setMaximumSize(new Dimension(500, 130));
 		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
 		return prodtotal;
-	}
-
-	@Override
-	public void onProductAdded(Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onProductRemoved(Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onCodeUsed(Codigo codigo) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onOrderSended(Pedido pedido) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

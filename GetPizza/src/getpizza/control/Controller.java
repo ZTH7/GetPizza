@@ -22,10 +22,11 @@ public class Controller {
 	SALogin salogin;
 	SARegistry sareg;
 	SACliente sacliente;
-	
-	/*TODO:
-	 * El controller debe de tener todos los metodos de los SA, ya que es el que controla sus acciones
-	 * Hay que hacer anyadir Observer de cada tipo*/
+
+	/*
+	 * TODO: El controller debe de tener todos los metodos de los SA, ya que es el
+	 * que controla sus acciones Hay que hacer anyadir Observer de cada tipo
+	 */
 
 	public Controller() {
 		login = new Login();
@@ -69,15 +70,15 @@ public class Controller {
 	public void removeClientObserver(Observer o) {
 		sacliente.removeObserver(o);
 	}
-	
+
 	public Cliente getCliente() {
 		return this.cliente;
 	}
-	
+
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	
+
 	public void changeClient(Map<String, String> datos) {
 		cliente.setNombre(datos.get("Nombre"));
 		cliente.setApellido(datos.get("Apellido"));
@@ -94,13 +95,14 @@ public class Controller {
 	public void tryToPay() {
 		new PayConfirm(mainWindow, this, sacliente.getMenu());
 	}
-	
+
 	public void sendOrder(Pedido pedido) {
 		cliente.addHistoria(pedido);
+		cliente.getMembresia().addPunto((int) pedido.getPrecioFinal());
 		sacliente.sendOrder(pedido);
 		DBHelper.getInstance().setClient(cliente);
 	}
-	
+
 	public void selectMenu(boolean personalizado) {
 		sacliente.selectMenu(personalizado);
 	}
@@ -116,7 +118,7 @@ public class Controller {
 	public List<Postre> getPostres() {
 		return this.sacliente.getPostres();
 	}
-	
+
 	public void addProducto(Producto p) {
 		sacliente.addProduct(p);
 	}

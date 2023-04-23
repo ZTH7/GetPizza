@@ -38,10 +38,10 @@ public class Cliente {
     public Membresia membresia;
 
     @objid ("707524e3-d751-45a7-8a61-79a20fd4fcb0")
-    public List<Codigo> codigo;
+    public List<String> codigo;
 
     @objid ("ba205d83-959a-4812-b16d-7695a2fd404e")
-    public List<Codigo> codigosUsados;
+    public List<String> codigosUsados;
 
     public List<Pedido> historia;
     
@@ -177,4 +177,8 @@ public class Cliente {
     	return this.historia;
     }
 
+    public List<String> getCodigosUsados(){
+    	return this.codigosUsados;
+    }
+    
 }

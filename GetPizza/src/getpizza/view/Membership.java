@@ -5,7 +5,6 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import getpizza.control.Controller;
-import getpizza.model.Codigo;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
 import getpizza.model.Producto;
@@ -72,7 +71,7 @@ public class Membership extends JPanel implements Observer {
 	}
 
 	@Override
-	public void onCodeUsed(Codigo codigo) {
+	public void onCodeUsed(String codigo) {
 	}
 
 	@Override

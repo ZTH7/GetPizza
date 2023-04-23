@@ -99,6 +99,10 @@ public class SACliente implements Observable<Observer> {
 	}
 
 	public Menu getMenu() {
+		if(this.carrito.getClass() == MenuPredefinido.class) {
+			if(!((MenuPredefinido)this.carrito).isFull())
+				throw new IllegalArgumentException("Debe añadir el producto restante para completar el menú");
+		}
 		return this.carrito;
 	}
 

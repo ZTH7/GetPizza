@@ -3,15 +3,20 @@ package getpizza.view;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Point;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.time.LocalDate;
 import java.util.UUID;
 
 import javax.swing.*;
 
 import getpizza.control.Controller;
+import getpizza.model.Descuento;
+import getpizza.model.DescuentoPorCodigo;
+import getpizza.model.DescuentoPorDia;
+import getpizza.model.DescuentoPorMembresia;
+import getpizza.model.DescuentoPorPuntos;
 import getpizza.model.Menu;
 import getpizza.model.Pedido;
 
@@ -29,8 +34,9 @@ public class PayConfirm extends JDialog {
 	JPanel _panel, contentPanel;
 	JRadioButton efectivo, tarjeta;
 	JTextField codigoDescuento, direccion;
-	JLabel preTotal, prefinal, descuentoTips;
-	float precioTotal, precioFinal, numDescuento;
+	JLabel preTotal, prefinal, descuentoTips, descuentoArea;
+	float precioTotal, precioFinal;
+	Descuento descuento = new Descuento();
 
 	public PayConfirm(JFrame parent, Controller _ctrl, Menu carrito) {
 		super(parent);
@@ -53,7 +59,6 @@ public class PayConfirm extends JDialog {
 		setPayMethod();
 		setPrecioTotal();
 		setDescuentoOption();
-		setCodigoDescuento();
 		setDescuentoTips();
 		setPrecioFinal();
 		setDireccion();
@@ -86,42 +91,31 @@ public class PayConfirm extends JDialog {
 		descuentoOption.addItem("Descuento por código");
 		// TODO
 		descuentoOption.addActionListener(e -> {
-			switch(descuentoOption.getSelectedIndex()) {
+			switch (descuentoOption.getSelectedIndex()) {
 			case 0:
-				numDescuento = 0;
+				descuento = new Descuento();
+				break;
 			case 1:
-				if(LocalDate.now().getDayOfWeek().getValue() == 5)
-					numDescuento = 5;
-				else
-					numDescuento = 0;
-				precioFinal = precioTotal - numDescuento;
-				descuentoTips.setText("Se ha aplicado un descuento del " + numDescuento);
-				prefinal.setText("Precio Final: " + precioFinal);
+				descuento = new DescuentoPorDia();
+				break;
 			case 2:
-				// TODO
+				descuento = new DescuentoPorMembresia();
+				break;
 			case 3:
-				// TODO
+				descuento = new DescuentoPorPuntos();
+				break;
+			case 4:
+				descuento = new DescuentoPorCodigo();
+				break;
 			}
+			updateTipsPanel();
 		});
 
 		contentPanel.add(descuentoOption);
 	}
 
-	void setCodigoDescuento() {
-		JLabel text = new JLabel("Cógido descuento: ");
-		text.setForeground(new Color(0, 0, 0));
-		text.setBounds(10, 100, 120, 20);
-		contentPanel.add(text);
-
-		codigoDescuento = new JTextField(8);
-		codigoDescuento.setBounds(130, 100, 120, 20);
-		codigoDescuento.setBackground(new Color(255, 255, 255, 220));
-		contentPanel.add(codigoDescuento);
-	}
-
 	void setDescuentoTips() {
-		numDescuento = 0;
-		descuentoTips = new JLabel("Se ha aplicado un descuento del " + numDescuento);
+		descuentoTips = new JLabel("Se ha aplicado un descuento del 0.0%");
 		descuentoTips.setForeground(new Color(0, 0, 0));
 		descuentoTips.setBounds(10, 130, 230, 20);
 		contentPanel.add(descuentoTips);
@@ -229,6 +223,53 @@ public class PayConfirm extends JDialog {
 				setLocation(p.x + e.getX() - x, p.y + e.getY() - y);
 			}
 		});
+	}
+
+	void updateTipsPanel() {
+		descuento.aplicarDescuento(precioTotal);
+		precioFinal = (float) Math.round((precioTotal - descuento.getPrecioDescontado()) * 100) / 100f;
+		descuentoTips.setText("Se ha aplicado un descuento del " + descuento.getPorcentaje() * 100 + "%");
+		prefinal.setText("Precio Final: " + precioFinal);
+	}
+
+	void setDescuentoArea() {
+		if (descuentoArea == null && codigoDescuento == null) {
+			descuentoArea = new JLabel();
+			descuentoArea.setForeground(new Color(0, 0, 0));
+			descuentoArea.setBounds(10, 100, 90, 20);
+			contentPanel.add(descuentoArea);
+
+			codigoDescuento = new JTextField(8);
+			codigoDescuento.setBounds(100, 100, 120, 20);
+			codigoDescuento.setBackground(new Color(255, 255, 255, 220));
+			codigoDescuento.addActionListener(e -> {
+				codigoDescuento.getText();// TODO
+			});
+			contentPanel.add(codigoDescuento);
+		}
+
+		if (descuento.getClass() == DescuentoPorCodigo.class) {
+			descuentoArea.setText("Cógido: ");
+			for (ActionListener al : codigoDescuento.getActionListeners())
+				codigoDescuento.removeActionListener(al);
+			codigoDescuento.addActionListener(e -> {
+				_ctrl.getCliente();
+				codigoDescuento.getText();
+			});
+		} else if (descuento.getClass() == DescuentoPorPuntos.class) {
+			descuentoArea.setText("Puntos: ");
+			for (ActionListener al : codigoDescuento.getActionListeners())
+				codigoDescuento.removeActionListener(al);
+			codigoDescuento.addActionListener(e -> {
+
+			});
+		} else {
+			for (ActionListener al : codigoDescuento.getActionListeners())
+				codigoDescuento.removeActionListener(al);
+
+			codigoDescuento.setVisible(false);
+			descuentoArea.setVisible(false);
+		}
 	}
 
 	void setContentPanel() {

@@ -11,6 +11,6 @@ public class Menu {
 	public void removeProducto(Producto p) {};
 
 	public float getPrecioTotal() {
-		return precioTotal;
+		return Math.round(precioTotal * 100) / 100f;
 	}
 }

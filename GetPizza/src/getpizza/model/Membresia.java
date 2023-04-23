@@ -30,4 +30,16 @@ public class Membresia {
     public void actualizarMembresia() {
     }
 
+    public void addPunto(int value) {
+    	this.puntos += value;
+    	this.puntosTotales += value;
+    }
+    
+    public int getPunto() {
+    	return this.puntos;
+    }
+    
+    public int getPuntoTotal() {
+    	return this.puntosTotales;
+    }
 }

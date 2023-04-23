@@ -10,7 +10,7 @@ public interface Observer {
     @objid ("12f7aaae-eeb3-4328-9a91-96e038fd55dd")
     public void onProductRemoved(Producto p);
     
-    public void onCodeUsed(Codigo codigo);
+    public void onCodeUsed(String codigo);
     
     public void onOrderSended(Pedido pedido);
 
