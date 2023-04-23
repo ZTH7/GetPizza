@@ -18,12 +18,10 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
 import getpizza.control.Controller;
-import getpizza.model.Codigo;
-import getpizza.model.Observer;
-import getpizza.model.Pedido;
+import getpizza.misc.Utils;
 import getpizza.model.Producto;
 
-public class MakeOrderView extends JDialog implements Observer {
+public class MakeOrderView extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
@@ -35,8 +33,6 @@ public class MakeOrderView extends JDialog implements Observer {
 	TrolleyPanel trolley;
 	Controller _ctrl;
 	SelectionPanel _selection;
-	
-	/*TODO: RESET, resetear el carrito en caso de cancelar el pedido*/
 
 	public MakeOrderView(JFrame parent, Controller ctrl) {
 		super(parent);
@@ -58,7 +54,7 @@ public class MakeOrderView extends JDialog implements Observer {
 		setTrolleyPanel();
 
 		setBounds(300, 200, 854, 480);
-		
+
 	}
 
 	void setTitle() {
@@ -90,8 +86,15 @@ public class MakeOrderView extends JDialog implements Observer {
 		confirm.setForeground(new Color(21, 60, 70));
 		confirm.setBounds(600, 420, 100, 30);
 		confirm.setBackground(new Color(250, 192, 61));
-		confirm.addActionListener(e -> _ctrl.tryToPay());
-		
+		confirm.addActionListener(e -> {
+			try {
+				_ctrl.tryToPay();
+				this.dispose();
+			} catch (IllegalArgumentException ex) {
+				Utils.showErrorMsg(ex.getMessage());
+			}
+		});
+
 		_panel.add(confirm);
 
 		JButton cancel = new JButton("Cancel");
@@ -99,7 +102,7 @@ public class MakeOrderView extends JDialog implements Observer {
 		cancel.setBounds(720, 420, 100, 30);
 		cancel.setBackground(new Color(134, 144, 138));
 		cancel.addActionListener(e -> {
-			this.dispose(); // TODO reset carrito
+			this.dispose();
 		});
 
 		_panel.add(cancel);
@@ -133,13 +136,14 @@ public class MakeOrderView extends JDialog implements Observer {
 			}
 		});
 	}
-	
+
 	public void open() {
-		// Establecer la posición de la ventana de diálogo de tal manera que se abra en el centro de la ventana principal
+		// Establecer la posición de la ventana de diálogo de tal manera que se abra en
+		// el centro de la ventana principal
 		setLocationRelativeTo(this.getParent());
 		setVisible(true);
 	}
-	
+
 	public void close() {
 		dispose();
 	}
@@ -153,30 +157,6 @@ public class MakeOrderView extends JDialog implements Observer {
 	void setTrolleyPanel() {
 		trolley = new TrolleyPanel(_ctrl);
 		_panel.add(trolley);
-	}
-
-	@Override
-	public void onProductAdded( Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onProductRemoved(Producto p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onCodeUsed(Codigo codigo) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onOrderSended(Pedido pedido) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

@@ -44,7 +44,7 @@ public class Pedido {
     @objid ("8a1be3e2-fa2f-4fa4-976c-4f31c9db1a62")
     public float getPrecio() {
         // Automatically generated method. Please delete this comment before entering specific code.
-        return this.precio;
+        return Math.round(precio * 100) / 100f;
     }
 
     @objid ("8b974c82-45c8-477c-b260-7581de511bc2")

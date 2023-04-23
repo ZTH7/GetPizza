@@ -7,7 +7,6 @@ import java.util.List;
 import javax.swing.*;
 
 import getpizza.control.Controller;
-import getpizza.model.Codigo;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
 import getpizza.model.Producto;
@@ -89,7 +88,7 @@ public class TrolleyPanel extends JScrollPane implements Observer {
 	}
 
 	@Override
-	public void onCodeUsed(Codigo codigo) {
+	public void onCodeUsed(String codigo) {
 	}
 
 	@Override

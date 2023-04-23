@@ -44,4 +44,8 @@ public class MenuPredefinido extends Menu {
 		precioTotal -= p.getPrecio();
 		productos.remove(p);
 	}
+	
+	public boolean isFull() {
+		return pizza && bebida && postre;
+	}
 }
