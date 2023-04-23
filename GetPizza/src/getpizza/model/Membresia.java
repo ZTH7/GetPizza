@@ -8,10 +8,10 @@ public class Membresia {
     public Rango rango = Rango.Sin_rango;
 
     @objid ("178f85de-dfcf-4441-9571-803205f01770")
-    public int puntos = 0;
+    public int puntos = 0; //puntos para descontar por descuentos
 
     @objid ("b26571fe-f9f8-4ab7-8826-ddad0d73c365")
-    public int puntosTotales = 0;
+    public int puntosTotales = 0; // puntos que sirven para determinar el rango
     
     public Membresia() {
     }
@@ -22,17 +22,19 @@ public class Membresia {
     	this.puntosTotales = puntosTotales;
     }
 
-    @objid ("e04b9609-153c-4fa7-bb4a-06a9e974239a")
-    public void verDescuentos() {
-    }
-
-    @objid ("50989220-d630-40e9-93bd-aca75b55e272")
-    public void actualizarMembresia() {
-    }
-
     public void addPunto(int value) {
     	this.puntos += value;
     	this.puntosTotales += value;
+    	if (puntosTotales >= 10 && puntosTotales < 25) {
+    		rango = Rango.Bronce;
+    	}
+    	else if (puntosTotales >= 25 && puntosTotales < 50) {
+    		rango = Rango.Plata;
+    	}
+    	
+    	else if (puntosTotales >= 50) {
+    		rango = Rango.Oro;
+    	}
     }
     
     public int getPunto() {

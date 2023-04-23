@@ -24,8 +24,8 @@ public class Controller {
 	SACliente sacliente;
 
 	/*
-	 * TODO: El controller debe de tener todos los metodos de los SA, ya que es el
-	 * que controla sus acciones Hay que hacer anyadir Observer de cada tipo
+	 * El controller debe de tener todos los metodos de los SA, ya que es el
+	 * que controla sus acciones
 	 */
 
 	public Controller() {
@@ -100,6 +100,7 @@ public class Controller {
 		cliente.addHistoria(pedido);
 		cliente.getMembresia().addPunto((int) pedido.getPrecioFinal());
 		sacliente.sendOrder(pedido);
+		cliente.addPuntos((int)pedido.getPrecioFinal());
 		DBHelper.getInstance().setClient(cliente);
 	}
 
