@@ -181,4 +181,8 @@ public class Cliente {
     	return this.codigosUsados;
     }
     
+    public void addPuntos(int puntos) {
+    	membresia.addPunto(puntos);
+    }
+    
 }
