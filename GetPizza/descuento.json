@@ -1,0 +1,24 @@
+{
+  "descuentoPorCodigo": [
+    {
+      "porcentaje": 0.05,
+      "precioDescontado": 0,
+      "codigo": "PIZZA5FF"
+    },
+    {
+      "porcentaje": 0.1,
+      "precioDescontado": 0,
+      "codigo": "PIZZA10FF"
+    },
+    {
+      "porcentaje": 0.15,
+      "precioDescontado": 0,
+      "codigo": "PIZZA15FF"
+    },
+    {
+      "porcentaje": 0.1,
+      "precioDescontado": 0,
+      "codigo": "WELCOME10"
+    }
+  ]
+}
