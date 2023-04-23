@@ -37,6 +37,10 @@ public class Membresia {
     	}
     }
     
+    public void removePunto(int value) {
+    	this.puntos -= value;
+    }
+    
     public int getPunto() {
     	return this.puntos;
     }

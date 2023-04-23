@@ -184,7 +184,7 @@ public class PayConfirm extends JDialog {
 			pedido.setPrecioFinal(precioFinal);
 			pedido.setConDatafono(rootPaneCheckingEnabled);
 			pedido.setConDatafono(tarjeta.isSelected());
-			_ctrl.sendOrder(pedido);
+			_ctrl.sendOrder(pedido, descuento);
 			this.dispose();
 		});
 		confirm.setForeground(new Color(21, 60, 70));
@@ -315,6 +315,7 @@ public class PayConfirm extends JDialog {
 			codigoDescuento.setVisible(false);
 			descuentoArea.setVisible(false);
 			aplicarDescuento.setVisible(false);
+			updateTipsPanel();
 		}
 
 		validate();

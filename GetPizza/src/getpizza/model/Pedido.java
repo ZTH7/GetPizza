@@ -77,6 +77,11 @@ public class Pedido {
         this.conDatafono = value;
     }
 
+    public boolean getConDatafono() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.conDatafono;
+    }
+
     @objid ("3ee1bc3e-7cd1-4f4a-810b-395ab3ac69d7")
     public void escogerDescuento() {
     }

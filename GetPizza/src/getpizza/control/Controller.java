@@ -8,6 +8,9 @@ import javax.swing.*;
 import getpizza.misc.DBHelper;
 import getpizza.model.Bebida;
 import getpizza.model.Cliente;
+import getpizza.model.Descuento;
+import getpizza.model.DescuentoPorCodigo;
+import getpizza.model.DescuentoPorPuntos;
 import getpizza.model.Observer;
 import getpizza.model.Pedido;
 import getpizza.model.Pizza;
@@ -96,10 +99,18 @@ public class Controller {
 		new PayConfirm(mainWindow, this, sacliente.getMenu());
 	}
 
-	public void sendOrder(Pedido pedido) {
+	public void sendOrder(Pedido pedido, Descuento descuento) {
 		cliente.addHistoria(pedido);
 		cliente.getMembresia().addPunto((int) pedido.getPrecioFinal());
 		sacliente.sendOrder(pedido);
+		
+		if(descuento.getClass() == DescuentoPorCodigo.class) {
+			cliente.addCodigosUsados(((DescuentoPorCodigo)descuento).getCodigo());
+		}
+		else if(descuento.getClass() == DescuentoPorPuntos.class) {
+			cliente.removePuntos(((DescuentoPorPuntos)descuento).getPuntos());
+		}
+		
 		cliente.addPuntos((int)pedido.getPrecioFinal());
 		DBHelper.getInstance().setClient(cliente);
 	}

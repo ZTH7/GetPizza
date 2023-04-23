@@ -14,7 +14,7 @@ public class MainPanel extends JPanel {
 	Profile profilePanel;
 	MakeOrderView MakeOrderView;
 	MenuOption MenuOption;
-	JButton Membresia, Menu, Perfil, Pedido, Historial, cerraSesion;
+	JButton Membresia, Carta, Perfil, Pedido, Historial, cerraSesion;
 	Membership membresiaPanel;
 
 	public MainPanel(Controller _ctrl) {
@@ -90,10 +90,10 @@ public class MainPanel extends JPanel {
 
 		panel.add(Box.createVerticalStrut(5));
 
-		panel.add(createButton(Menu = new JButton(), "Menú"));
-		Menu.addActionListener((e) -> {
+		panel.add(createButton(Carta = new JButton(), "Carta"));
+		Carta.addActionListener((e) -> {
 			CardLayout cl = (CardLayout) cardsPanel.getLayout();
-			cl.show(cardsPanel, "Menú");
+			cl.show(cardsPanel, "Carta");
 		});
 
 		panel.add(createButton(Perfil = new JButton(), "Perfil"));
@@ -140,7 +140,7 @@ public class MainPanel extends JPanel {
 		cardsPanel.setBounds(60, 50, 408, 390);
 		cardsPanel.setOpaque(false);
 
-		cardsPanel.add(new Carta(_ctrl), "Menú");
+		cardsPanel.add(new Carta(_ctrl), "Carta");
 		cardsPanel.add(profilePanel = new Profile(_ctrl), "Perfil");
 		cardsPanel.add(membresiaPanel = new Membership(_ctrl), "Membresía");
 		cardsPanel.add(new Historial(_ctrl), "Historial");

@@ -185,4 +185,12 @@ public class Cliente {
     	membresia.addPunto(puntos);
     }
     
+    public void addCodigosUsados(String codigo){
+    	this.codigosUsados.add(codigo);
+    }
+    
+    public void removePuntos(int puntos) {
+    	membresia.removePunto(puntos);
+    }
+    
 }
