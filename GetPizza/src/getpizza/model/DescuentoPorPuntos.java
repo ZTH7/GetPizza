@@ -10,8 +10,13 @@ public class DescuentoPorPuntos extends Descuento {
 		this.puntos = values;
 	}
 	
+	public int getPuntos() {
+		return this.puntos;
+	}
+	
 	@Override
 	public void aplicarDescuento(float precio) {
     	precioDescontado = Math.round(puntos * 25) / 100f;
+    	this.porcentaje = Math.round(precioDescontado / precio * 10) / 10.0;
     }
 }
