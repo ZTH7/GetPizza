@@ -2,9 +2,7 @@ package getpizza.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -22,7 +20,6 @@ import getpizza.control.Controller;
 import getpizza.misc.DBHelper;
 import getpizza.model.Base;
 import getpizza.model.Bebida;
-import getpizza.model.Cliente;
 import getpizza.model.Ingrediente;
 import getpizza.model.Masa;
 import getpizza.model.Pizza;
@@ -35,9 +32,6 @@ public class SelectionPanel extends JScrollPane {
 
 	private static final long serialVersionUID = 1L;
 
-//	Map<String, Integer> bases = Map.of("Sin base", 0, "Queso", 1, "Tomate", 2, "Queso y Tomate", 3);
-//	Map<String, Integer> masas = Map.of("Napolitana", 0, "Romana", 1, "Americana", 2);
-//	Map<String, Integer> tamanyos = Map.of("Pequeña", 0, "Mediana", 1, "Grande", 2);
 	Controller _ctrl;
 	List<Pizza> cartaPizza;
 	List<Bebida> cartaBebida;
@@ -139,7 +133,7 @@ public class SelectionPanel extends JScrollPane {
 			pp.setMasa(Masa.values()[Integer.parseInt(masagroup.getSelection().getActionCommand())]);
 			pp.setBase(Base.values()[Integer.parseInt(basegroup.getSelection().getActionCommand())]);
 			Gson gson = new Gson();
-			_ctrl.addProducto(gson.fromJson(gson.toJson(pp), Bebida.class));
+			_ctrl.addProducto(gson.fromJson(gson.toJson(pp), PizzaPersonalizada.class));
 		});
 		titulo.add(add);
 		titulo.add(Box.createHorizontalGlue());
