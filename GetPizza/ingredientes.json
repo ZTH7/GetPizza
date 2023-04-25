@@ -1,0 +1,72 @@
+{
+  "ingredientes": [
+    {
+      "nombre": "Salsa de tomate",
+      "precio": 0.5
+    },
+    {
+      "nombre": "Mozzarella fresca",
+      "precio": 1.5
+    },
+    {
+      "nombre": "Albahaca fresca",
+      "precio": 0.75
+    },
+    {
+      "nombre": "Queso mozzarella",
+      "precio": 1.5
+    },
+    {
+      "nombre": "Pepperoni en rodajas",
+      "precio": 2.0
+    },
+    {
+      "nombre": "Jamón",
+      "precio": 2.0
+    },
+    {
+      "nombre": "Piña",
+      "precio": 1.5
+    },
+    {
+      "nombre": "Anchoas",
+      "precio": 2.5
+    },
+    {
+      "nombre": "Aceitunas negras",
+      "precio": 1.0
+    },
+    {
+      "nombre": "Queso gorgonzola",
+      "precio": 2.5
+    },
+    {
+      "nombre": "Queso parmesano",
+      "precio": 1.0
+    },
+    {
+      "nombre": "Queso provolone",
+      "precio": 1.0
+    },
+    {
+      "nombre": "Espinacas",
+      "precio": 1.0
+    },
+    {
+      "nombre": "Tomate",
+      "precio": 1.0
+    },
+    {
+      "nombre": "Cebolla",
+      "precio": 0.5
+    },
+    {
+      "nombre": "Pimiento",
+      "precio": 0.5
+    },
+    {
+      "nombre": "Aceitunas negras",
+      "precio": 1.5
+    }
+  ]
+}
