@@ -8,13 +8,13 @@ public class Bebida extends Producto {
     private Tamanyo tamanyo;
 
     @objid ("88a25535-e17a-4250-ba03-9da627626150")
-    Tamanyo getTamanyo() {
+    public Tamanyo getTamanyo() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.tamanyo;
     }
 
     @objid ("fb45f0f7-7911-46b8-83e9-0017d77ee6e5")
-    void setTamanyo(Tamanyo value) {
+    public void setTamanyo(Tamanyo value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.tamanyo = value;
     }
