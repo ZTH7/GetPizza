@@ -14,7 +14,7 @@ public class MenuPredefinido extends Menu {
 
 	@Override
 	public void addProducto(Producto p) {
-		if (p.getClass() == Pizza.class) {
+		if (p.getClass() == Pizza.class || p.getClass() == PizzaPersonalizada.class) {
 			if (pizza)
 				throw new IllegalArgumentException("Ya tiene un producto de tipo pizza");
 			pizza = true;
@@ -34,7 +34,7 @@ public class MenuPredefinido extends Menu {
 
 	@Override
 	public void removeProducto(Producto p) {
-		if (p.getClass() == Pizza.class)
+		if (p.getClass() == Pizza.class || p.getClass() == PizzaPersonalizada.class)
 			pizza = false;
 		else if (p.getClass() == Bebida.class)
 			bebida = false;
