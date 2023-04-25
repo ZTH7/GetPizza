@@ -15,6 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
 import getpizza.control.Controller;
+import getpizza.misc.DBHelper;
 import getpizza.model.Bebida;
 import getpizza.model.Ingrediente;
 import getpizza.model.Pizza;
@@ -217,7 +218,7 @@ public class SelectionPanel extends JScrollPane {
 		PizzaPersonalizada pp = new PizzaPersonalizada();
 		JPanel prodtotal = createPizza(pp);
 		
-		List<Ingrediente> ingredientes;
+		List<Ingrediente> ingredientes = DBHelper.getInstance().getIngrediente();
 		
 		for(Ingrediente i : ingredientes) {
 			
