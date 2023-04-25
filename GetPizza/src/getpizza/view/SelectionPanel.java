@@ -15,8 +15,11 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
 import getpizza.control.Controller;
+import getpizza.misc.DBHelper;
 import getpizza.model.Bebida;
+import getpizza.model.Ingrediente;
 import getpizza.model.Pizza;
+import getpizza.model.PizzaPersonalizada;
 import getpizza.model.Postre;
 import getpizza.model.Producto;
 
@@ -55,6 +58,8 @@ public class SelectionPanel extends JScrollPane {
 		for (Pizza p : cartaPizza) {
 			_panel.add(createPizza(p));
 		}
+		
+		//_panel.add(createPizzaPers());
 
 		JLabel postreTitle = new JLabel("<html><center>Postres</center></html>");
 
@@ -185,7 +190,7 @@ public class SelectionPanel extends JScrollPane {
 
 		JPanel prod = new JPanel();
 		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
-		prod.setBackground(new Color(255, 255, 255, 160)); // TODO change a color
+		prod.setBackground(new Color(255, 255, 255, 160));
 
 		JLabel nombre = new JLabel("<html><p><center>" + p.getNombre() + "</center></p></html>");
 
@@ -194,7 +199,7 @@ public class SelectionPanel extends JScrollPane {
 		JButton add = new JButton("+");
 
 		add.addActionListener((e) -> {
-			_ctrl.addProducto(p);
+			_ctrl.addProducto(p); // TODO las opciones no se guarda.
 		});
 
 		prod.add(nombre);
@@ -209,4 +214,42 @@ public class SelectionPanel extends JScrollPane {
 		return prodtotal;
 	}
 
+	JPanel createPizzaPers() {
+		PizzaPersonalizada pp = new PizzaPersonalizada();
+		JPanel prodtotal = createPizza(pp);
+		
+		List<Ingrediente> ingredientes = DBHelper.getInstance().getIngrediente();
+		
+		for(Ingrediente i : ingredientes) {
+			
+		}
+		
+		return prodtotal;
+	}
+	
+	JPanel createIngrediente(Ingrediente ing) {
+		JPanel ingrePanel = new JPanel();
+		ingrePanel.setLayout(new BoxLayout(ingrePanel, BoxLayout.X_AXIS));
+
+		JLabel NombreYPrecio = new JLabel("<html><center>" + ing.getNombre()
+				+ "     Precio: " + ing.getPrecio() + "</center></html>");
+		NombreYPrecio.setPreferredSize(new Dimension(140, 30));
+		NombreYPrecio.setMaximumSize(new Dimension(140, 30));
+
+		JButton resta = new JButton("-");
+		resta.addActionListener(e -> {
+			
+		});
+		JLabel masa2 = new JLabel("Americana");
+		JButton suma = new JButton("+");
+
+		ingrePanel.add(NombreYPrecio);
+		ingrePanel.add(resta);
+		ingrePanel.add(masa2);
+		ingrePanel.add(suma);
+		ingrePanel.add(Box.createHorizontalGlue());
+		
+		return ingrePanel;
+	}
+	
 }
