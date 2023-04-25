@@ -28,25 +28,25 @@ public class Pizza extends Producto {
     }
 
     @objid ("5dabd3d7-e3ba-48ec-bf37-60f71cca1ac3")
-    Masa getMasa() {
+    public Masa getMasa() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.masa;
     }
 
     @objid ("563cf7e8-6780-492f-8d57-4f2cabc7f7e2")
-    void setMasa(Masa value) {
+    public void setMasa(Masa value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.masa = value;
     }
 
     @objid ("7fad91a2-fbdb-4785-9bc1-e3aa4f6a2c47")
-    Tamanyo getTamanyo() {
+    public Tamanyo getTamanyo() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.tamanyo;
     }
 
     @objid ("78e91a70-e315-42a2-893f-5ee5e793a9a1")
-    void setTamanyo(Tamanyo value) {
+    public void setTamanyo(Tamanyo value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.tamanyo = value;
     }
@@ -58,7 +58,7 @@ public class Pizza extends Producto {
     }
 
     @objid ("620d8e50-17de-4f1f-b508-b2c830eb67da")
-    void setBase(Base value) {
+    public void setBase(Base value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.base = value;
     }

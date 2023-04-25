@@ -34,7 +34,7 @@ public abstract class Producto implements Cloneable {
 	}
 
 	@objid("896067bd-0e60-4b5b-9e74-9032de321e39")
-	void setNombre(String value) {
+	public void setNombre(String value) {
 		// Automatically generated method. Please delete this comment before entering
 		// specific code.
 		this.nombre = value;
