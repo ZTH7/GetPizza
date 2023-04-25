@@ -58,8 +58,8 @@ public class SelectionPanel extends JScrollPane {
 		for (Pizza p : cartaPizza) {
 			_panel.add(createPizza(p));
 		}
-		
-		//_panel.add(createPizzaPers());
+
+		// _panel.add(createPizzaPers());
 
 		JLabel postreTitle = new JLabel("<html><center>Postres</center></html>");
 
@@ -82,35 +82,102 @@ public class SelectionPanel extends JScrollPane {
 		setBounds(40, 60, 520, 390);
 	}
 
-	JPanel createPizza(Producto p) {
-		JPanel prodtotal = createBebida(p);
+	JPanel createPizza(Pizza p) {// buttongroup
+		JPanel prodtotal = new JPanel();
+		prodtotal.setLayout(new BoxLayout(prodtotal, BoxLayout.Y_AXIS));
+		
+		JPanel titulo = createTitulo(p);
+		prodtotal.add(titulo);
+		prodtotal.add(createTamanyo());
+		prodtotal.add(createMasa());
+		prodtotal.add(createBase());
 
-		// Opciones de masa
+		prodtotal.setMaximumSize(new Dimension(500, 130));
+		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
+		return prodtotal;
+	}
 
-		JPanel radioButtonMasa = new JPanel();
-		radioButtonMasa.setLayout(new BoxLayout(radioButtonMasa, BoxLayout.X_AXIS));
+	JPanel createBebida(Bebida p) {
+		JPanel prodtotal = new JPanel();
+		prodtotal.setLayout(new BoxLayout(prodtotal, BoxLayout.Y_AXIS));
+		
+		JPanel titulo = createTitulo(p);
+		prodtotal.add(titulo);
+		prodtotal.add(createTamanyo());
+		
+		prodtotal.setMaximumSize(new Dimension(500, 130));
+		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
+		return prodtotal;
+	}
 
-		JLabel masa = new JLabel("<html><center>Elegir masa</center></html>");
-		masa.setPreferredSize(new Dimension(140, 30));
-		masa.setMaximumSize(new Dimension(140, 30));
+	JPanel createPostre(Postre p) {
+		JPanel prodtotal = new JPanel();
+		prodtotal.setLayout(new BoxLayout(prodtotal, BoxLayout.Y_AXIS));
+		
+		JPanel titulo = createTitulo(p);
+		prodtotal.add(titulo);
 
-		ButtonGroup masagroup = new ButtonGroup();
-		JRadioButton masa1 = new JRadioButton("Napolitana");
-		masa1.setSelected(true);
-		masagroup.add(masa1);
-		JRadioButton masa2 = new JRadioButton("Americana");
-		masagroup.add(masa2);
-		JRadioButton masa3 = new JRadioButton("Romana");
-		masagroup.add(masa3);
+		prodtotal.setMaximumSize(new Dimension(500, 130));
+		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
+		return prodtotal;
+	}
 
-		radioButtonMasa.add(masa);
-		radioButtonMasa.add(masa1);
-		radioButtonMasa.add(masa2);
-		radioButtonMasa.add(masa3);
-		radioButtonMasa.add(Box.createHorizontalGlue());
+	JPanel createPizzaPers() {// Utiliza lambda expression
+		PizzaPersonalizada pp = new PizzaPersonalizada();
+		JPanel prodtotal = new JPanel();
+		prodtotal.setLayout(new BoxLayout(prodtotal, BoxLayout.Y_AXIS));
 
-		// Opciones de base
+		List<Ingrediente> ingredientes = DBHelper.getInstance().getIngrediente();
 
+		for (Ingrediente i : ingredientes) {
+
+		}
+
+		JPanel titulo = createTitulo(pp);
+		prodtotal.add(titulo);
+		prodtotal.add(createTamanyo());
+		
+		prodtotal.setMaximumSize(new Dimension(500, 130));
+		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
+		return prodtotal;
+	}
+
+	JPanel createIngrediente(Ingrediente ing, PizzaPersonalizada pp, Runnable refresh) {
+		JPanel ingrePanel = new JPanel();
+		ingrePanel.setLayout(new BoxLayout(ingrePanel, BoxLayout.X_AXIS));
+
+		JLabel NombreYPrecio = new JLabel(
+				"<html><center>" + ing.getNombre() + "     Precio: " + ing.getPrecio() + "</center></html>");
+		NombreYPrecio.setPreferredSize(new Dimension(140, 30));
+		NombreYPrecio.setMaximumSize(new Dimension(140, 30));
+
+		JLabel num = new JLabel("0");
+		JButton resta = new JButton("-");
+		resta.addActionListener(e -> {
+			int tmp = Integer.parseInt(num.getText());
+			if(tmp > 0) {
+				pp.removeIngrediente(ing);
+				num.setText(Integer.toString(tmp - 1));
+				refresh.run();
+			}
+		});
+		JButton suma = new JButton("+");
+		suma.addActionListener(e -> {
+			pp.addIngrediente(ing);
+			num.setText(Integer.toString(Integer.parseInt(num.getText()) + 1));
+			refresh.run();
+		});
+
+		ingrePanel.add(NombreYPrecio);
+		ingrePanel.add(resta);
+		ingrePanel.add(num);
+		ingrePanel.add(suma);
+		ingrePanel.add(Box.createHorizontalGlue());
+
+		return ingrePanel;
+	}
+
+	JPanel createBase() {
 		JPanel radioButtonBase = new JPanel();
 		radioButtonBase.setLayout(new BoxLayout(radioButtonBase, BoxLayout.X_AXIS));
 
@@ -135,24 +202,10 @@ public class SelectionPanel extends JScrollPane {
 		radioButtonBase.add(base3);
 		radioButtonBase.add(base4);
 		radioButtonBase.add(Box.createHorizontalGlue());
-
-		prodtotal.add(radioButtonMasa);
-		prodtotal.add(radioButtonBase);
-
-		prodtotal.setMaximumSize(new Dimension(500, 130));
-		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
-		return prodtotal;
+		return radioButtonBase;
 	}
 
-	JPanel createBebida(Producto p) {
-		JPanel prodtotal = createPostre(p);
-
-		// Opcion de tamanyo
-		JPanel options = new JPanel();
-		options.setLayout(new BoxLayout(options, BoxLayout.Y_AXIS));
-
-		// Opciones de tamaño
-
+	JPanel createTamanyo() {
 		JPanel radioButtonTam = new JPanel();
 		radioButtonTam.setLayout(new BoxLayout(radioButtonTam, BoxLayout.X_AXIS));
 
@@ -174,20 +227,35 @@ public class SelectionPanel extends JScrollPane {
 		radioButtonTam.add(tam2);
 		radioButtonTam.add(tam3);
 		radioButtonTam.add(Box.createHorizontalGlue());
-
-		options.add(radioButtonTam);
-
-		prodtotal.add(options);
-
-		prodtotal.setMaximumSize(new Dimension(500, 130));
-		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
-		return prodtotal;
+		return radioButtonTam;
 	}
 
-	JPanel createPostre(Producto p) {
-		JPanel prodtotal = new JPanel();
-		prodtotal.setLayout(new BoxLayout(prodtotal, BoxLayout.Y_AXIS));
+	JPanel createMasa() {
+		JPanel radioButtonMasa = new JPanel();
+		radioButtonMasa.setLayout(new BoxLayout(radioButtonMasa, BoxLayout.X_AXIS));
 
+		JLabel masa = new JLabel("<html><center>Elegir masa</center></html>");
+		masa.setPreferredSize(new Dimension(140, 30));
+		masa.setMaximumSize(new Dimension(140, 30));
+
+		ButtonGroup masagroup = new ButtonGroup();
+		JRadioButton masa1 = new JRadioButton("Napolitana");
+		masa1.setSelected(true);
+		masagroup.add(masa1);
+		JRadioButton masa2 = new JRadioButton("Americana");
+		masagroup.add(masa2);
+		JRadioButton masa3 = new JRadioButton("Romana");
+		masagroup.add(masa3);
+
+		radioButtonMasa.add(masa);
+		radioButtonMasa.add(masa1);
+		radioButtonMasa.add(masa2);
+		radioButtonMasa.add(masa3);
+		radioButtonMasa.add(Box.createHorizontalGlue());
+		return radioButtonMasa;
+	}
+	
+	JPanel createTitulo(Producto p) {
 		JPanel prod = new JPanel();
 		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
 		prod.setBackground(new Color(255, 255, 255, 160));
@@ -196,60 +264,17 @@ public class SelectionPanel extends JScrollPane {
 
 		JLabel precio = new JLabel("<html><p><center>" + Float.toString(p.getPrecio()) + " euros</center></p></html>");
 
-		JButton add = new JButton("+");
-
-		add.addActionListener((e) -> {
-			_ctrl.addProducto(p); // TODO las opciones no se guarda.
-		});
+//		JButton add = new JButton("+");
+//
+//		add.addActionListener((e) -> {
+//			_ctrl.addProducto(p); // TODO las opciones no se guarda.
+//		});
 
 		prod.add(nombre);
 		prod.add(precio);
-		prod.add(add);
-		prod.add(Box.createHorizontalGlue());
-
-		prodtotal.add(prod);
-
-		prodtotal.setMaximumSize(new Dimension(500, 130));
-		prodtotal.setAlignmentX(Box.CENTER_ALIGNMENT);
-		return prodtotal;
+//		prod.add(add);
+//		prod.add(Box.createHorizontalGlue());
+		
+		return prod;
 	}
-
-	JPanel createPizzaPers() {
-		PizzaPersonalizada pp = new PizzaPersonalizada();
-		JPanel prodtotal = createPizza(pp);
-		
-		List<Ingrediente> ingredientes = DBHelper.getInstance().getIngrediente();
-		
-		for(Ingrediente i : ingredientes) {
-			
-		}
-		
-		return prodtotal;
-	}
-	
-	JPanel createIngrediente(Ingrediente ing) {
-		JPanel ingrePanel = new JPanel();
-		ingrePanel.setLayout(new BoxLayout(ingrePanel, BoxLayout.X_AXIS));
-
-		JLabel NombreYPrecio = new JLabel("<html><center>" + ing.getNombre()
-				+ "     Precio: " + ing.getPrecio() + "</center></html>");
-		NombreYPrecio.setPreferredSize(new Dimension(140, 30));
-		NombreYPrecio.setMaximumSize(new Dimension(140, 30));
-
-		JButton resta = new JButton("-");
-		resta.addActionListener(e -> {
-			
-		});
-		JLabel masa2 = new JLabel("Americana");
-		JButton suma = new JButton("+");
-
-		ingrePanel.add(NombreYPrecio);
-		ingrePanel.add(resta);
-		ingrePanel.add(masa2);
-		ingrePanel.add(suma);
-		ingrePanel.add(Box.createHorizontalGlue());
-		
-		return ingrePanel;
-	}
-	
 }
