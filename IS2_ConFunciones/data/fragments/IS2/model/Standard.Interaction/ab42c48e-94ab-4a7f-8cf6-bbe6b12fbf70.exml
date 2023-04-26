@@ -35,11 +35,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="52e9d9e3-e37c-4143-805b-39efc4982787"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="finalizarPedido" mc="Standard.Operation" uid="67d48332-e23d-4c0a-bf0a-affed297af33"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -128,11 +123,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="b9dc27d9-b458-41a0-83f3-c0b171799414"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="escogerDescuento" mc="Standard.Operation" uid="3ee1bc3e-7cd1-4f4a-810b-395ab3ac69d7"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>
@@ -225,11 +215,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="1863a25d-89ee-4522-a54d-d50b50b103fb"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="escogerDatosFacturacion" mc="Standard.Operation" uid="ff5ddb3c-fd8b-4e16-a2a5-31a5e42fd210"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -278,11 +263,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="c9aa8f6f-1be9-4060-ae21-cda2a925a38b"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="generarFactura" mc="Standard.Operation" uid="c49708c5-db10-4dae-934d-720a908ef1e3"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>

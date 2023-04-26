@@ -320,11 +320,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="71c319e7-dade-4dcc-acc7-cc3bcd086c6e"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="removeMenuPredef" mc="Standard.Operation" uid="3f43091d-7cf3-4def-bc19-d7a6e41a781e"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -480,11 +475,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="ca4de754-e561-434e-96a4-f0c2872f2c02"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="visualizarCarrito" mc="Standard.Operation" uid="a443cc58-d442-4d73-950f-8b7e56eba091"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -583,11 +573,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="6b3eafbd-6d9d-4324-ab89-9c8eac5b1099"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="addMenuPredef" mc="Standard.Operation" uid="dbeef1fd-a234-44ef-990b-74441e71730c"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>
@@ -748,7 +733,7 @@
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <LINK relation="Base">
-                    <ID name="Carrito" mc="Standard.Class" uid="95f99c76-705c-46ef-8680-cb164fdf96ce"/>
+                    <ID name="Menu" mc="Standard.Class" uid="95f99c76-705c-46ef-8680-cb164fdf96ce"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>

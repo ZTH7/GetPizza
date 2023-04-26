@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Finalizar pedido" version="4">
+  <OBJECT>
+    <ID name="Finalizar pedido" mc="Standard.SequenceDiagram" uid="81ac3b4a-f239-41ee-b94d-aef4dfdf071d"/>
+    <PID name="Finalizar pedido" mc="Standard.Interaction" uid="6aa2af33-4f18-489a-804d-be86b0a72981"/>
+    <ATTRIBUTES>
+      <ATT name="UiDataVersion">0</ATT>
+      <ATT name="UiData"></ATT>
+      <ATT name="PreviewData"></ATT>
+      <ATT name="Name"><![CDATA[Finalizar pedido]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

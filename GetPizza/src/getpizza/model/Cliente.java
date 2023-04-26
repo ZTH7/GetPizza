@@ -37,9 +37,6 @@ public class Cliente {
     @objid ("f6293778-a65b-4f9c-9c9a-6f8eb96bb60e")
     public Membresia membresia;
 
-    @objid ("707524e3-d751-45a7-8a61-79a20fd4fcb0")
-    public List<String> codigo;
-
     @objid ("ba205d83-959a-4812-b16d-7695a2fd404e")
     public List<String> codigosUsados;
 
@@ -57,7 +54,6 @@ public class Cliente {
 		this.codigoPostal = datos.get("CodigoPostal");
 		this.password = datos.get("Password");
 		this.membresia = new Membresia();
-		this.codigo = new ArrayList<> ();
 		this.codigosUsados = new ArrayList<> ();
 		this.historia = new ArrayList<>();
     }
@@ -118,10 +114,6 @@ public class Cliente {
     public void setCorreo(String value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.correo = value;
-    }
-
-    @objid ("c5145b16-aa5f-4cfd-8a71-cb4c26eac9a3")
-    public void cambiarDatos() {
     }
     
     public Membresia getMembresia() {

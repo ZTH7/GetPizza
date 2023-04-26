@@ -15,6 +15,11 @@
     <DEPENDENCIES>
       <COMP relation="OwnedProfile">
         <COMPID name="LocalProfile" mc="Infrastructure.Profile" uid="49608dad-1501-4467-ac4d-a8719cba9dc0"/>
+        <COMPID name="" mc="Infrastructure.Profile" uid="7efd38c8-b107-4f02-8c65-e096cecd741a"/>
+        <COMPID name="" mc="Infrastructure.Profile" uid="ab2aed5b-0df4-42ea-aec5-3096098fbdbd"/>
+        <COMPID name="" mc="Infrastructure.Profile" uid="f6fec615-f9c5-4958-9928-7133a983339d"/>
+        <COMPID name="" mc="Infrastructure.Profile" uid="0a4758e3-3146-4118-8c6e-848cacd3b50b"/>
+        <COMPID name="" mc="Infrastructure.Profile" uid="a3431c34-91d1-4749-8d84-1d7e5d4558e4"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
