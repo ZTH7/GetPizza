@@ -11,6 +11,7 @@ public class MainPanel extends JPanel {
 
 	Controller _ctrl;
 	JPanel avatar, buttonsPanel, cardsPanel;
+	Carta menuPanel;
 	Profile profilePanel;
 	MakeOrderView MakeOrderView;
 	MenuOption MenuOption;
@@ -92,6 +93,7 @@ public class MainPanel extends JPanel {
 
 		panel.add(createButton(Carta = new JButton(), "Carta"));
 		Carta.addActionListener((e) -> {
+			menuPanel.getVerticalScrollBar().setValue(0);
 			CardLayout cl = (CardLayout) cardsPanel.getLayout();
 			cl.show(cardsPanel, "Carta");
 		});
@@ -140,7 +142,7 @@ public class MainPanel extends JPanel {
 		cardsPanel.setBounds(60, 50, 408, 390);
 		cardsPanel.setOpaque(false);
 
-		cardsPanel.add(new Carta(_ctrl), "Carta");
+		cardsPanel.add(menuPanel = new Carta(_ctrl), "Carta");
 		cardsPanel.add(profilePanel = new Profile(_ctrl), "Perfil");
 		cardsPanel.add(membresiaPanel = new Membership(_ctrl), "Membresía");
 		cardsPanel.add(new Historial(_ctrl), "Historial");
