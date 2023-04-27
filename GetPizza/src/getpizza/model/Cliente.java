@@ -142,7 +142,7 @@ public class Cliente {
     }
     
     public void setCiudad(String ciudad) {
-    	this.ciudad = telefono;
+    	this.ciudad = ciudad;
     }
     
     public String getProvincia() {
