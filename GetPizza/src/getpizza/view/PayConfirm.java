@@ -286,7 +286,7 @@ public class PayConfirm extends JDialog {
 					if (!ok)
 						updateTipsPanel();
 					else
-						Utils.showErrorMsg("El Codigo no existe.");
+						Utils.showErrorMsg("El Codigo no existe o ya se ha utilizado.");
 				} else
 					Utils.showErrorMsg("El Codigo ya está utilizado.");
 			});

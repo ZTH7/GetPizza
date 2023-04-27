@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Subsistema Gestion de pedidos" version="4">
+  <OBJECT>
+    <ID name="Subsistema Gestion de pedidos" mc="Standard.Package" uid="1b9feaed-de58-45b1-976f-b8295feee2c3"/>
+    <PID name="is2" mc="Standard.Package" uid="2bf0a5b9-86e5-4959-8e83-068a2699d87d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Subsistema Gestion de pedidos]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Visualizar carta" mc="Standard.Interaction" uid="c814127f-09bf-45bd-8168-663f4a2a1cf3"/>
+        <COMPID name="Realizar pedido" mc="Standard.Interaction" uid="ab9a0fe2-4eb2-4bcb-8271-1e9458491543"/>
+        <COMPID name="Ver estado del pedido" mc="Standard.Interaction" uid="89128080-1039-4442-ac1f-cd20e3f9cf6c"/>
+        <COMPID name="Finalizar pedido" mc="Standard.Interaction" uid="6aa2af33-4f18-489a-804d-be86b0a72981"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="Cliente" mc="Standard.Actor" uid="4f6de98f-e72a-4e38-97f8-5a5b63765813"/>
+        <COMPID name="Base De Datos" mc="Standard.Actor" uid="cf270ed8-d758-4680-ab9b-8dfaeba64e4f"/>
+        <COMPID name="Visualizar carta " mc="Standard.UseCase" uid="c0acc292-6802-41b2-b539-ce04006ced59"/>
+        <COMPID name="Ver estado del pedido " mc="Standard.UseCase" uid="53e9b4b9-9fdb-4979-8836-fd3486503ff3"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Product">
+        <COMPID name="Subsistema Gestion de pedidos Use Case diagram" mc="Standard.UseCaseDiagram" uid="00110ad5-c8be-4dfe-b555-70f4c10371a9"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

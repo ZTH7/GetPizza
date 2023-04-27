@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:JavaExtensions="http:///schemas/JavaExtensions/_MiWaIOQ4Ee23jPxD9wHiGQ/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/JavaExtensions/_MiWaIOQ4Ee23jPxD9wHiGQ/0 JavaExtensions.profile.xmi#_MidH1-Q4Ee23jPxD9wHiGQ">
+  <uml:Model xmi:id="_MiHwoOQ4Ee23jPxD9wHiGQ" name="Subsistema Gestion de usuarios ">
+    <eAnnotations xmi:id="_MiHwoeQ4Ee23jPxD9wHiGQ" source="Objing">
+      <contents xmi:type="uml:Property" xmi:id="_MiHwouQ4Ee23jPxD9wHiGQ" name="exporterVersion">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_MiHwo-Q4Ee23jPxD9wHiGQ" value="3.0.0"/>
+      </contents>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_MiHwpOQ4Ee23jPxD9wHiGQ" name="cliente"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MiHwpeQ4Ee23jPxD9wHiGQ" memberEnd="_MiHwpuQ4Ee23jPxD9wHiGQ _MiHwqOQ4Ee23jPxD9wHiGQ" navigableOwnedEnd="_MiHwpuQ4Ee23jPxD9wHiGQ">
+      <ownedEnd xmi:id="_MiHwpuQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwvuQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwpeQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwp-Q4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MiHwqOQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwpOQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwpeQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwqeQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MiHwquQ4Ee23jPxD9wHiGQ" memberEnd="_MiHwq-Q4Ee23jPxD9wHiGQ _MiHwreQ4Ee23jPxD9wHiGQ" navigableOwnedEnd="_MiHwq-Q4Ee23jPxD9wHiGQ">
+      <ownedEnd xmi:id="_MiHwq-Q4Ee23jPxD9wHiGQ" visibility="public" type="_MiHw1OQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwquQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwrOQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MiHwreQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwpOQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwquQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwruQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MiHwr-Q4Ee23jPxD9wHiGQ" memberEnd="_MiHwsOQ4Ee23jPxD9wHiGQ _MiHwsuQ4Ee23jPxD9wHiGQ" navigableOwnedEnd="_MiHwsOQ4Ee23jPxD9wHiGQ">
+      <ownedEnd xmi:id="_MiHwsOQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHw6OQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwr-Q4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwseQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MiHwsuQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwpOQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwr-Q4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHws-Q4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MiHwtOQ4Ee23jPxD9wHiGQ" memberEnd="_MiHwteQ4Ee23jPxD9wHiGQ _MiHwt-Q4Ee23jPxD9wHiGQ" navigableOwnedEnd="_MiHwteQ4Ee23jPxD9wHiGQ">
+      <ownedEnd xmi:id="_MiHwteQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHw9OQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwtOQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwtuQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MiHwt-Q4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwpOQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwtOQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwuOQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MiHwueQ4Ee23jPxD9wHiGQ" memberEnd="_MiHwuuQ4Ee23jPxD9wHiGQ _MiHwvOQ4Ee23jPxD9wHiGQ" navigableOwnedEnd="_MiHwuuQ4Ee23jPxD9wHiGQ">
+      <ownedEnd xmi:id="_MiHwuuQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHw--Q4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwueQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwu-Q4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MiHwvOQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwpOQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwueQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwveQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_MiHwvuQ4Ee23jPxD9wHiGQ" name="Inicio de sesion ">
+      <ownedComment xmi:id="_MiHwv-Q4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHwwOQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHwweQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHwwuQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHww-Q4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHwxOQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <include xmi:id="_MiHwxeQ4Ee23jPxD9wHiGQ" name="UseCaseDependency" addition="_MiHw3OQ4Ee23jPxD9wHiGQ"/>
+      <include xmi:id="_MiHwxuQ4Ee23jPxD9wHiGQ" name="UseCaseDependency" addition="_MiHw6OQ4Ee23jPxD9wHiGQ"/>
+      <include xmi:id="_MiHwx-Q4Ee23jPxD9wHiGQ" name="UseCaseDependency" addition="_MiHw9OQ4Ee23jPxD9wHiGQ"/>
+      <include xmi:id="_MiHwyOQ4Ee23jPxD9wHiGQ" name="UseCaseDependency" addition="_MiHw--Q4Ee23jPxD9wHiGQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MiHwyeQ4Ee23jPxD9wHiGQ" memberEnd="_MiHwyuQ4Ee23jPxD9wHiGQ _MiHwzOQ4Ee23jPxD9wHiGQ" navigableOwnedEnd="_MiHwyuQ4Ee23jPxD9wHiGQ">
+      <ownedEnd xmi:id="_MiHwyuQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwzuQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwyeQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwy-Q4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MiHwzOQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwvuQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwyeQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHwzeQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_MiHwzuQ4Ee23jPxD9wHiGQ" name="Base de Datos"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MiHwz-Q4Ee23jPxD9wHiGQ" memberEnd="_MiHw0OQ4Ee23jPxD9wHiGQ _MiHw0uQ4Ee23jPxD9wHiGQ" navigableOwnedEnd="_MiHw0OQ4Ee23jPxD9wHiGQ">
+      <ownedEnd xmi:id="_MiHw0OQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHw1OQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwz-Q4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHw0eQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MiHw0uQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwzuQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHwz-Q4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHw0-Q4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_MiHw1OQ4Ee23jPxD9wHiGQ" name="Registro ">
+      <ownedComment xmi:id="_MiHw1eQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw1uQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw1-Q4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw2OQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw2eQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw2uQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <extend xmi:id="_MiHw2-Q4Ee23jPxD9wHiGQ" name="UseCaseDependency" extendedCase="_MiHwvuQ4Ee23jPxD9wHiGQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_MiHw3OQ4Ee23jPxD9wHiGQ" name="modificacion de datos">
+      <ownedComment xmi:id="_MiHw3eQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw3uQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw3-Q4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw4OQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw4eQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw4uQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MiHw4-Q4Ee23jPxD9wHiGQ" memberEnd="_MiHw5OQ4Ee23jPxD9wHiGQ _MiHw5uQ4Ee23jPxD9wHiGQ" navigableOwnedEnd="_MiHw5OQ4Ee23jPxD9wHiGQ">
+      <ownedEnd xmi:id="_MiHw5OQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwzuQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHw4-Q4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHw5eQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MiHw5uQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHw3OQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHw4-Q4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHw5-Q4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_MiHw6OQ4Ee23jPxD9wHiGQ" name="Visualizar Membresia">
+      <ownedComment xmi:id="_MiHw6eQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw6uQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw6-Q4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw7OQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw7eQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw7uQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MiHw7-Q4Ee23jPxD9wHiGQ" memberEnd="_MiHw8OQ4Ee23jPxD9wHiGQ _MiHw8uQ4Ee23jPxD9wHiGQ" navigableOwnedEnd="_MiHw8OQ4Ee23jPxD9wHiGQ">
+      <ownedEnd xmi:id="_MiHw8OQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwzuQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHw7-Q4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHw8eQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MiHw8uQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHw6OQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHw7-Q4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHw8-Q4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_MiHw9OQ4Ee23jPxD9wHiGQ" name="Cerrar Sesión">
+      <ownedComment xmi:id="_MiHw9eQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw9uQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw9-Q4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw-OQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw-eQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw-uQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_MiHw--Q4Ee23jPxD9wHiGQ" name="Visualizar  pedidos ">
+      <ownedComment xmi:id="_MiHw_OQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw_eQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw_uQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHw_-Q4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHxAOQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_MiHxAeQ4Ee23jPxD9wHiGQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MiHxAuQ4Ee23jPxD9wHiGQ" memberEnd="_MiHxA-Q4Ee23jPxD9wHiGQ _MiHxBeQ4Ee23jPxD9wHiGQ" navigableOwnedEnd="_MiHxA-Q4Ee23jPxD9wHiGQ">
+      <ownedEnd xmi:id="_MiHxA-Q4Ee23jPxD9wHiGQ" visibility="public" type="_MiHwzuQ4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHxAuQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHxBOQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MiHxBeQ4Ee23jPxD9wHiGQ" visibility="public" type="_MiHw--Q4Ee23jPxD9wHiGQ" isUnique="false" association="_MiHxAuQ4Ee23jPxD9wHiGQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MiHxBuQ4Ee23jPxD9wHiGQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_MiHxB-Q4Ee23jPxD9wHiGQ" name="Inicio de sesion ">
+      <nestedClassifier xmi:type="uml:Collaboration" xmi:id="_MiHxCOQ4Ee23jPxD9wHiGQ" name="locals">
+        <ownedAttribute xmi:id="_MiHxCeQ4Ee23jPxD9wHiGQ" aggregation="composite"/>
+        <ownedAttribute xmi:id="_MiHxCuQ4Ee23jPxD9wHiGQ" name="r1" aggregation="composite"/>
+        <ownedAttribute xmi:id="_MiHxC-Q4Ee23jPxD9wHiGQ" name="r2" aggregation="composite"/>
+      </nestedClassifier>
+      <lifeline xmi:id="_MiHxDOQ4Ee23jPxD9wHiGQ" name="r" represents="_MiHxCeQ4Ee23jPxD9wHiGQ" coveredBy="_MiHxDuQ4Ee23jPxD9wHiGQ"/>
+      <lifeline xmi:id="_MiHxDeQ4Ee23jPxD9wHiGQ" name="r1" represents="_MiHxCuQ4Ee23jPxD9wHiGQ" coveredBy="_MiHxD-Q4Ee23jPxD9wHiGQ _MiHxEOQ4Ee23jPxD9wHiGQ _MiHxEeQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxDuQ4Ee23jPxD9wHiGQ" covered="_MiHxDOQ4Ee23jPxD9wHiGQ" event="_MiHxE-Q4Ee23jPxD9wHiGQ" message="_MiHxEuQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxD-Q4Ee23jPxD9wHiGQ" covered="_MiHxDeQ4Ee23jPxD9wHiGQ" event="_MiHxFOQ4Ee23jPxD9wHiGQ" message="_MiHxEuQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_MiHxEOQ4Ee23jPxD9wHiGQ" covered="_MiHxDeQ4Ee23jPxD9wHiGQ" start="_MiHxD-Q4Ee23jPxD9wHiGQ" finish="_MiHxEeQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_MiHxEeQ4Ee23jPxD9wHiGQ" covered="_MiHxDeQ4Ee23jPxD9wHiGQ"/>
+      <message xmi:id="_MiHxEuQ4Ee23jPxD9wHiGQ" name="registrarUsuario" receiveEvent="_MiHxD-Q4Ee23jPxD9wHiGQ" sendEvent="_MiHxDuQ4Ee23jPxD9wHiGQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_MiHxE-Q4Ee23jPxD9wHiGQ"/>
+    <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_MiHxFOQ4Ee23jPxD9wHiGQ"/>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_MiHxFeQ4Ee23jPxD9wHiGQ" name="Modificacion de datos ">
+      <nestedClassifier xmi:type="uml:Collaboration" xmi:id="_MiHxFuQ4Ee23jPxD9wHiGQ" name="locals">
+        <ownedAttribute xmi:id="_MiHxF-Q4Ee23jPxD9wHiGQ" name="r" aggregation="composite"/>
+        <ownedAttribute xmi:id="_MiHxGOQ4Ee23jPxD9wHiGQ" name="r1" aggregation="composite"/>
+        <ownedAttribute xmi:id="_MiHxGeQ4Ee23jPxD9wHiGQ" name="r2" aggregation="composite"/>
+      </nestedClassifier>
+      <lifeline xmi:id="_MiHxGuQ4Ee23jPxD9wHiGQ" name="r" represents="_MiHxF-Q4Ee23jPxD9wHiGQ" coveredBy="_MiHxHeQ4Ee23jPxD9wHiGQ"/>
+      <lifeline xmi:id="_MiHxG-Q4Ee23jPxD9wHiGQ" name="r1" represents="_MiHxGOQ4Ee23jPxD9wHiGQ" coveredBy="_MiHxHuQ4Ee23jPxD9wHiGQ _MiHxH-Q4Ee23jPxD9wHiGQ _MiHxIuQ4Ee23jPxD9wHiGQ _MiHxJeQ4Ee23jPxD9wHiGQ"/>
+      <lifeline xmi:id="_MiHxHOQ4Ee23jPxD9wHiGQ" name="r2" represents="_MiHxGeQ4Ee23jPxD9wHiGQ" coveredBy="_MiHxIOQ4Ee23jPxD9wHiGQ _MiHxIeQ4Ee23jPxD9wHiGQ _MiHxI-Q4Ee23jPxD9wHiGQ _MiHxJOQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxHeQ4Ee23jPxD9wHiGQ" covered="_MiHxGuQ4Ee23jPxD9wHiGQ" event="_MiHxKOQ4Ee23jPxD9wHiGQ" message="_MiHxJuQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxHuQ4Ee23jPxD9wHiGQ" covered="_MiHxG-Q4Ee23jPxD9wHiGQ" event="_MiHxKeQ4Ee23jPxD9wHiGQ" message="_MiHxJuQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_MiHxH-Q4Ee23jPxD9wHiGQ" covered="_MiHxG-Q4Ee23jPxD9wHiGQ" start="_MiHxHuQ4Ee23jPxD9wHiGQ" finish="_MiHxJeQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_MiHxIOQ4Ee23jPxD9wHiGQ" covered="_MiHxHOQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_MiHxIeQ4Ee23jPxD9wHiGQ" covered="_MiHxHOQ4Ee23jPxD9wHiGQ" start="_MiHxIOQ4Ee23jPxD9wHiGQ" finish="_MiHxJOQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxIuQ4Ee23jPxD9wHiGQ" covered="_MiHxG-Q4Ee23jPxD9wHiGQ" event="_MiHxKuQ4Ee23jPxD9wHiGQ" message="_MiHxJ-Q4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxI-Q4Ee23jPxD9wHiGQ" covered="_MiHxHOQ4Ee23jPxD9wHiGQ" event="_MiHxK-Q4Ee23jPxD9wHiGQ" message="_MiHxJ-Q4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_MiHxJOQ4Ee23jPxD9wHiGQ" covered="_MiHxHOQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_MiHxJeQ4Ee23jPxD9wHiGQ" covered="_MiHxG-Q4Ee23jPxD9wHiGQ"/>
+      <message xmi:id="_MiHxJuQ4Ee23jPxD9wHiGQ" name="cambiarDatos" messageSort="asynchCall" receiveEvent="_MiHxHuQ4Ee23jPxD9wHiGQ" sendEvent="_MiHxHeQ4Ee23jPxD9wHiGQ"/>
+      <message xmi:id="_MiHxJ-Q4Ee23jPxD9wHiGQ" name="ingresarNuevosDatos" messageSort="asynchCall" receiveEvent="_MiHxI-Q4Ee23jPxD9wHiGQ" sendEvent="_MiHxIuQ4Ee23jPxD9wHiGQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_MiHxKOQ4Ee23jPxD9wHiGQ"/>
+    <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_MiHxKeQ4Ee23jPxD9wHiGQ"/>
+    <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_MiHxKuQ4Ee23jPxD9wHiGQ"/>
+    <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_MiHxK-Q4Ee23jPxD9wHiGQ"/>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_MiHxLOQ4Ee23jPxD9wHiGQ" name="Visualizar membresia">
+      <nestedClassifier xmi:type="uml:Collaboration" xmi:id="_MiHxLeQ4Ee23jPxD9wHiGQ" name="locals">
+        <ownedAttribute xmi:id="_MiHxLuQ4Ee23jPxD9wHiGQ" name="r" aggregation="composite"/>
+        <ownedAttribute xmi:id="_MiHxL-Q4Ee23jPxD9wHiGQ" name="r1" aggregation="composite"/>
+        <ownedAttribute xmi:id="_MiHxMOQ4Ee23jPxD9wHiGQ" name="r2" aggregation="composite"/>
+      </nestedClassifier>
+      <lifeline xmi:id="_MiHxMeQ4Ee23jPxD9wHiGQ" name="r" represents="_MiHxLuQ4Ee23jPxD9wHiGQ" coveredBy="_MiHxNOQ4Ee23jPxD9wHiGQ _MiHxO-Q4Ee23jPxD9wHiGQ"/>
+      <lifeline xmi:id="_MiHxMuQ4Ee23jPxD9wHiGQ" name="r2" represents="_MiHxMOQ4Ee23jPxD9wHiGQ" coveredBy="_MiHxNeQ4Ee23jPxD9wHiGQ _MiHxNuQ4Ee23jPxD9wHiGQ _MiHxN-Q4Ee23jPxD9wHiGQ _MiHxOeQ4Ee23jPxD9wHiGQ"/>
+      <lifeline xmi:id="_MiHxM-Q4Ee23jPxD9wHiGQ" name="r2" represents="_MiHxMOQ4Ee23jPxD9wHiGQ" coveredBy="_MiHxOOQ4Ee23jPxD9wHiGQ _MiHxOuQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxNOQ4Ee23jPxD9wHiGQ" covered="_MiHxMeQ4Ee23jPxD9wHiGQ" event="_MiHxP-Q4Ee23jPxD9wHiGQ" message="_MiHxPOQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxNeQ4Ee23jPxD9wHiGQ" covered="_MiHxMuQ4Ee23jPxD9wHiGQ" event="_MiHxQOQ4Ee23jPxD9wHiGQ" message="_MiHxPOQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_MiHxNuQ4Ee23jPxD9wHiGQ" covered="_MiHxMuQ4Ee23jPxD9wHiGQ" start="_MiHxNeQ4Ee23jPxD9wHiGQ" finish="_MiHxOeQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxN-Q4Ee23jPxD9wHiGQ" covered="_MiHxMuQ4Ee23jPxD9wHiGQ" message="_MiHxPeQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxOOQ4Ee23jPxD9wHiGQ" covered="_MiHxM-Q4Ee23jPxD9wHiGQ" message="_MiHxPeQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_MiHxOeQ4Ee23jPxD9wHiGQ" covered="_MiHxMuQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxOuQ4Ee23jPxD9wHiGQ" covered="_MiHxM-Q4Ee23jPxD9wHiGQ" message="_MiHxPuQ4Ee23jPxD9wHiGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MiHxO-Q4Ee23jPxD9wHiGQ" covered="_MiHxMeQ4Ee23jPxD9wHiGQ" message="_MiHxPuQ4Ee23jPxD9wHiGQ"/>
+      <message xmi:id="_MiHxPOQ4Ee23jPxD9wHiGQ" name="verMembresía" messageSort="asynchCall" receiveEvent="_MiHxNeQ4Ee23jPxD9wHiGQ" sendEvent="_MiHxNOQ4Ee23jPxD9wHiGQ"/>
+      <message xmi:id="_MiHxPeQ4Ee23jPxD9wHiGQ" name="create" messageSort="createMessage" receiveEvent="_MiHxOOQ4Ee23jPxD9wHiGQ" sendEvent="_MiHxN-Q4Ee23jPxD9wHiGQ"/>
+      <message xmi:id="_MiHxPuQ4Ee23jPxD9wHiGQ" messageSort="reply" receiveEvent="_MiHxO-Q4Ee23jPxD9wHiGQ" sendEvent="_MiHxOuQ4Ee23jPxD9wHiGQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_MiHxP-Q4Ee23jPxD9wHiGQ"/>
+    <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_MiHxQOQ4Ee23jPxD9wHiGQ"/>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_MiHxQeQ4Ee23jPxD9wHiGQ" name="Registro en el sistema">
+      <nestedClassifier xmi:type="uml:Collaboration" xmi:id="_MiHxQuQ4Ee23jPxD9wHiGQ" name="locals">
+        <ownedAttribute xmi:id="_MiHxQ-Q4Ee23jPxD9wHiGQ" name="r" aggregation="composite"/>
+        <ownedAttribute xmi:id="_MiHxROQ4Ee23jPxD9wHiGQ" name="r1" aggregation="composite"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_MiHxReQ4Ee23jPxD9wHiGQ" name="Visualizar pedidos">
+      <nestedClassifier xmi:type="uml:Collaboration" xmi:id="_MiHxRuQ4Ee23jPxD9wHiGQ" name="locals"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_MiHxR-Q4Ee23jPxD9wHiGQ" name="Cerrar sesion">
+      <nestedClassifier xmi:type="uml:Collaboration" xmi:id="_MiHxSOQ4Ee23jPxD9wHiGQ" name="locals"/>
+    </packagedElement>
+    <profileApplication xmi:id="_MjN80OQ4Ee23jPxD9wHiGQ">
+      <eAnnotations xmi:id="_MjPyAOQ4Ee23jPxD9wHiGQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="JavaExtensions.profile.xmi#_MidH1-Q4Ee23jPxD9wHiGQ"/>
+      </eAnnotations>
+      <appliedProfile href="JavaExtensions.profile.xmi#_MidH0OQ4Ee23jPxD9wHiGQ"/>
+    </profileApplication>
+  </uml:Model>
+  <JavaExtensions:JavaPackage xmi:id="_MjSOQOQ4Ee23jPxD9wHiGQ" base_Package="_MiHwoOQ4Ee23jPxD9wHiGQ"/>
+</xmi:XMI>

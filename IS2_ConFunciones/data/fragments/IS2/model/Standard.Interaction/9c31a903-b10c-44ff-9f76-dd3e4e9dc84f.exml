@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Cerrar sesion" version="4">
+  <OBJECT>
+    <ID name="Cerrar sesion" mc="Standard.Interaction" uid="9c31a903-b10c-44ff-9f76-dd3e4e9dc84f"/>
+    <PID name="Subsistema Gestion de usuarios" mc="Standard.Package" uid="d387a572-885f-41c4-97a6-af3eac146a01"/>
+    <ATTRIBUTES>
+      <ATT name="IsReentrant">false</ATT>
+      <ATT name="Name"><![CDATA[Cerrar sesion]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedCollaboration">
+        <OBJECT>
+          <ID name="locals" mc="Standard.Collaboration" uid="d1294d51-c147-487d-8180-f85b956b8304"/>
+          <ATTRIBUTES>
+            <ATT name="IsConcurrent">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[locals]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Cerrar sesion" mc="Standard.SequenceDiagram" uid="53396cf4-8199-417f-bc1e-15ade0d8807b"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Subsistema Gestion de usuarios" version="4">
+  <OBJECT>
+    <ID name="Subsistema Gestion de usuarios" mc="Standard.Package" uid="d387a572-885f-41c4-97a6-af3eac146a01"/>
+    <PID name="is2" mc="Standard.Package" uid="2bf0a5b9-86e5-4959-8e83-068a2699d87d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Subsistema Gestion de usuarios]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Inicio de sesion " mc="Standard.Interaction" uid="9270fadb-0a0e-4ac9-8b6f-cea2e4a7e71f"/>
+        <COMPID name="Modificacion de datos " mc="Standard.Interaction" uid="51e4f9d0-a21c-4c86-a076-fa1076f0b466"/>
+        <COMPID name="Visualizar membresia" mc="Standard.Interaction" uid="8640496f-13c6-4093-89db-b3ed3a462b1d"/>
+        <COMPID name="Registro en el sistema" mc="Standard.Interaction" uid="c8887814-7196-4f90-86bf-7e582f7a9dc1"/>
+        <COMPID name="Visualizar pedidos" mc="Standard.Interaction" uid="c8c943d4-67cf-4ed6-bcb8-4dade606d8d9"/>
+        <COMPID name="Cerrar sesion" mc="Standard.Interaction" uid="9c31a903-b10c-44ff-9f76-dd3e4e9dc84f"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="cliente" mc="Standard.Actor" uid="878fef62-8ccb-430a-a821-250fc823ee29"/>
+        <COMPID name="Inicio de sesion " mc="Standard.UseCase" uid="eea5d0c1-28fd-42d1-b993-22ef21ab0fde"/>
+        <COMPID name="Base de Datos" mc="Standard.Actor" uid="3bdcf185-498c-4c50-a6f2-4abb52c6b03a"/>
+        <COMPID name="Registro " mc="Standard.UseCase" uid="a6eb4696-3547-470c-add9-df9a6f52779c"/>
+        <COMPID name="modificacion de datos" mc="Standard.UseCase" uid="58c34bad-bd4d-4f89-9582-583279fa74f4"/>
+        <COMPID name="Visualizar Membresia" mc="Standard.UseCase" uid="716b8eb9-99cc-4fab-b1d0-02ae23493ef0"/>
+        <COMPID name="Cerrar Sesión" mc="Standard.UseCase" uid="02179c21-38ac-4097-a866-bd587eae2c63"/>
+        <COMPID name="Visualizar  pedidos " mc="Standard.UseCase" uid="af18703e-ba73-4514-b771-0b0477f00221"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Product">
+        <COMPID name="Subsistema Gestion de usuarios Use Case diagram" mc="Standard.UseCaseDiagram" uid="6636908a-f322-42a3-b7ba-b6bd8f8d613f"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

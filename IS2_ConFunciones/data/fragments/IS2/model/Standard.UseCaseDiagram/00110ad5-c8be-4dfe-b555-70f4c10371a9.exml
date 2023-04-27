@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Subsistema Gestion de pedidos Use Case diagram" version="4">
+  <OBJECT>
+    <ID name="Subsistema Gestion de pedidos Use Case diagram" mc="Standard.UseCaseDiagram" uid="00110ad5-c8be-4dfe-b555-70f4c10371a9"/>
+    <PID name="Subsistema Gestion de pedidos" mc="Standard.Package" uid="1b9feaed-de58-45b1-976f-b8295feee2c3"/>
+    <ATTRIBUTES>
+      <ATT name="UiDataVersion">8</ATT>
+      <ATT name="UiData"><![CDATA[eJztWG1T4jAQ/iudzn2l0BNOvUEdaDnsWKnTqjfeFyY0C1bTxElSof/+Ul4cqYg9RJQ5PjWTNM/uZp9ns5P6ySgm2iNwETF6pJtGRddOjute7w5CqUVYTemaTB/gSGd8YMQMA4mYkcTESASESACO0ICj2FADybgBBGKgUuSX2/GVAEtN2JMJXYvRHePdJ9MV/bh+wdkDcJlqFMXKIkEpS6SNJFJr14gkMHWFJoTo5eN6ebbhxdZApgT0uUC+Lwpk5p7I/hdGyDgYk70F/FPhhAgDnhlrjaQP/YJWOgpiulODkbR7jvJxPMwG55Od2p4xWh5oIwg8qxucer+thm/nzqnJGAFEde0xmzzS+4gIKIrne24rWCdgp3HttBtNx3Uub9aFa3mdTsu6dLyO711dtvwcbosm8c9C+T6D9JvFKFVsUen2Fe+AO/jJIdvxlZmikbqNZstdIcTyhK7LjHAgSAJWPMvhn2dTM/BAIooRx8a86LRKxTQrCNdK4UEPSlXch1KvVquV9iv9amhW9vZNdLg8SIKEPKNsSF3UA5LzIZA8ogP9OEh6IhISYqS1QWQHqmHQHlQxwExoyictc0qbJqNeHmMsjVqdnUMtFj8wEWV4rxguAGXdRgRzyBBc5eNcidhbsdaJNAtW1bhgPNh8bat+eG3LCtukiv6HlP06DK0tS/QTH0MWx4wat6AyyBUtbeijhMjxpdKa/HQ6Xts8U38UZaqCGqXvpmt1R9d30XVCoQKA4pYNu1H4AmiFm30MdQ/pkHG8BjSJwvuuOioO7A00yZMirpEFeSkA9US9Z2rYX8+F84sD/GG0kFLWK+eDnZy3Sc49htNVbqDy9LPo5F8s5cBmJDWmCc+55lAJg+wmmmbCLCCbw23t08zKrlHbEqm8s1EzF76bbFOnZhZ+MFlPbVfa2DF216t92V7NXNPrwOc1a2bhZ4Kdor+Eore5XXvTkBvRe7HE5dzvzYHN0VAdi4tSZX+e2MWeRfAEQBgkg8hu2+eIm5Hjv+36bDVE+aI+Y6bdNtzGTcvvNhvWWdv3rjr2uon6KsrzrImFvdfSR6YdHT6QDpfexeYL1nyc7yxcfwFOKy52]]></ATT>
+      <ATT name="PreviewData"><![CDATA[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAGElEQVR4nGP4TxlgGNU/qn9U/6j+EaofAB8cJiE1IQRUAAAAAElFTkSuQmCC]]></ATT>
+      <ATT name="Name"><![CDATA[Subsistema Gestion de pedidos Use Case diagram]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <LINK relation="Represented">
+        <ID name="Subsistema Gestion de pedidos" mc="Standard.Package" uid="1b9feaed-de58-45b1-976f-b8295feee2c3"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="c4b7c844-33ab-4e2e-ba94-a21ee9bce2ca"/>
+          <ATTRIBUTES>
+            <ATT name="Content"></ATT>
+            <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

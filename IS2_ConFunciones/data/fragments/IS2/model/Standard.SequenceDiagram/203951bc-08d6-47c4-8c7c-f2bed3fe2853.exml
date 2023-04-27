@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Registro en el sistema" version="4">
+  <OBJECT>
+    <ID name="Registro en el sistema" mc="Standard.SequenceDiagram" uid="203951bc-08d6-47c4-8c7c-f2bed3fe2853"/>
+    <PID name="Registro en el sistema" mc="Standard.Interaction" uid="c8887814-7196-4f90-86bf-7e582f7a9dc1"/>
+    <ATTRIBUTES>
+      <ATT name="UiDataVersion">0</ATT>
+      <ATT name="UiData"></ATT>
+      <ATT name="PreviewData"></ATT>
+      <ATT name="Name"><![CDATA[Registro en el sistema]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

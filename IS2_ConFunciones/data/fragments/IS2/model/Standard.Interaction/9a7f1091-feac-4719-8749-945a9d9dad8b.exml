@@ -35,11 +35,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="3548af9a-5bdc-4b0e-9956-a34c35c5a33d"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="getEstado" mc="Standard.Operation" uid="d5ff4745-b8c6-4cee-bdfe-793fba7cbebc"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>

@@ -3,7 +3,7 @@ package getpizza.model;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid("1d75fc77-55b9-4a19-9100-2802959c9e67")
-public abstract class Producto {
+public abstract class Producto implements Cloneable {
 	@objid("f1dc602d-21df-4f4c-8373-c968fff942e8")
 	protected String nombre;
 
@@ -34,7 +34,7 @@ public abstract class Producto {
 	}
 
 	@objid("896067bd-0e60-4b5b-9e74-9032de321e39")
-	void setNombre(String value) {
+	public void setNombre(String value) {
 		// Automatically generated method. Please delete this comment before entering
 		// specific code.
 		this.nombre = value;
@@ -80,6 +80,17 @@ public abstract class Producto {
 		// Automatically generated method. Please delete this comment before entering
 		// specific code.
 		this.desc = value;
+	}
+
+	@Override
+	public Object clone() {
+		Producto p = null;
+		try {
+			p = (Producto) super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return p;
 	}
 
 }

@@ -81,21 +81,4 @@ public class Pedido {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.conDatafono;
     }
-
-    @objid ("3ee1bc3e-7cd1-4f4a-810b-395ab3ac69d7")
-    public void escogerDescuento() {
-    }
-
-    @objid ("ff5ddb3c-fd8b-4e16-a2a5-31a5e42fd210")
-    public void escogerDatosFacturacion() {
-    }
-
-    @objid ("c49708c5-db10-4dae-934d-720a908ef1e3")
-    public void generarFactura() {
-    }
-
-    @objid ("67d48332-e23d-4c0a-bf0a-affed297af33")
-    public void finalizarPedido() {
-    }
-
 }

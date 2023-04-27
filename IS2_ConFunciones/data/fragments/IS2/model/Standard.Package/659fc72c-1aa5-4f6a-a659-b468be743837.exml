@@ -31,16 +31,14 @@
         <COMPID name="DescuentoPorCodigo" mc="Standard.Class" uid="d3bcee56-6d32-49d2-ba8f-241dfea19697"/>
         <COMPID name="DescuentoPorMembresia" mc="Standard.Class" uid="3f23fea3-2549-483e-9024-987df21a5333"/>
         <COMPID name="DescuentoPorDia" mc="Standard.Class" uid="665d8a0f-c73e-4933-aed0-f2f7541b4398"/>
-        <COMPID name="Carrito" mc="Standard.Class" uid="95f99c76-705c-46ef-8680-cb164fdf96ce"/>
+        <COMPID name="Menu" mc="Standard.Class" uid="95f99c76-705c-46ef-8680-cb164fdf96ce"/>
         <COMPID name="MenuPredefinido" mc="Standard.Class" uid="b556a3c3-5fa4-488f-be83-5625ff025654"/>
         <COMPID name="Producto" mc="Standard.Class" uid="1d75fc77-55b9-4a19-9100-2802959c9e67"/>
         <COMPID name="Postre" mc="Standard.Class" uid="baaa049f-20ed-461a-8420-86a93a5609aa"/>
         <COMPID name="Bebida" mc="Standard.Class" uid="ab60c0e0-1b19-475d-9ae0-2ab0e1d6448a"/>
         <COMPID name="Pizza" mc="Standard.Class" uid="7ede2093-d9fb-4857-a0f5-77008361800b"/>
-        <COMPID name="PizzaPredefinida" mc="Standard.Class" uid="d5ab36c0-7e01-403d-90a5-14677b0687c2"/>
         <COMPID name="PizzaPersonalizada" mc="Standard.Class" uid="5c65e4d9-c176-45c4-83af-c595dcef07b8"/>
         <COMPID name="Ingrediente" mc="Standard.Class" uid="799e1ae9-018a-4717-8abd-879e2e5c9ce0"/>
-        <COMPID name="Codigo" mc="Standard.Class" uid="9849baa0-a72f-47d2-bbcd-b18dba4418c5"/>
         <COMPID name="List" mc="Standard.DataType" uid="250919ee-1e55-45bf-94fc-37654a9d8cdb"/>
         <OBJECT>
           <ID name="Rango" mc="Standard.Enumeration" uid="533940b2-0048-4402-afd3-6258902d0c26"/>

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Inicio de sesion " version="4">
+  <OBJECT>
+    <ID name="Inicio de sesion " mc="Standard.SequenceDiagram" uid="85c1654c-b64a-400c-b984-1b0d8e048b2d"/>
+    <PID name="Inicio de sesion " mc="Standard.Interaction" uid="9270fadb-0a0e-4ac9-8b6f-cea2e4a7e71f"/>
+    <ATTRIBUTES>
+      <ATT name="UiDataVersion">0</ATT>
+      <ATT name="UiData"></ATT>
+      <ATT name="PreviewData"></ATT>
+      <ATT name="Name"><![CDATA[Inicio de sesion ]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>
