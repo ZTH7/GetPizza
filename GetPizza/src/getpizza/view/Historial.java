@@ -24,7 +24,7 @@ public class Historial extends JScrollPane implements Observer {
 
 	JPanel contentPanel;
 	Controller ctrl;
-	
+
 	public Historial(Controller ctrl) {
 		this.ctrl = ctrl;
 		contentPanel = new JPanel();
@@ -34,7 +34,7 @@ public class Historial extends JScrollPane implements Observer {
 		InitGUI();
 		InitHistoriaPanel();
 		repaint();
-		
+
 		ctrl.addClientObserver(this);
 	}
 
@@ -45,7 +45,7 @@ public class Historial extends JScrollPane implements Observer {
 		setBounds(60, 50, 408, 390);
 		setOpaque(false);
 	}
-	
+
 	void InitHistoriaPanel() {
 		contentPanel.add(createTitle(
 				"<html><a><center>Pedidos</center></a>" + "<HR align=center width=300 color=#153C46 size=1></html>"));
@@ -54,7 +54,7 @@ public class Historial extends JScrollPane implements Observer {
 			contentPanel.add(Box.createVerticalStrut(10));
 		}
 	}
-	
+
 	JLabel createTitle(String name) {
 		JLabel title = new JLabel(name);
 		title.setForeground(new Color(21, 60, 70));
@@ -63,23 +63,24 @@ public class Historial extends JScrollPane implements Observer {
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 		return title;
 	}
-	
+
 	JPanel createHitoriaPanel(Pedido pedido) {
 		JPanel prod = new JPanel();
 		prod.setLayout(new BoxLayout(prod, BoxLayout.X_AXIS));
 		prod.setBackground(new Color(234, 216, 154));
-		
+
 		DecimalFormat df = new DecimalFormat("#.##");
 
 		JLabel nombre = new JLabel("<html><p><center> ID: " + pedido.getId() + "</center></p>"
-				+ "<p> Precio: <strike>" + Float.toString(pedido.getPrecio()) + "</strike>  "
-				+ pedido.getPrecioFinal() + "</p>"
-				+ "<p> Precio descontado: " + df.format((pedido.getPrecio() - pedido.getPrecioFinal())) + "</p>"
-				+ "<p> Dirección: " + pedido.getDireccion() + "</p>"
-				+ "<p> Método de pago: " + (pedido.getConDatafono() ? "Tarjeta de crédito" : "Efectivo") + "</p>"
-				+ "</html>");
+				+ "<p> Precio: " + ((pedido.getPrecio() != pedido.getPrecioFinal())
+						? "<strike>" + Float.toString(pedido.getPrecio()) + "</strike>  "
+						: "")
+				+ pedido.getPrecioFinal() + "</p>" + "<p> Precio descontado: "
+				+ df.format((pedido.getPrecio() - pedido.getPrecioFinal())) + "</p>" + "<p> Dirección: "
+				+ pedido.getDireccion() + "</p>" + "<p> Método de pago: "
+				+ (pedido.getConDatafono() ? "Tarjeta de crédito" : "Efectivo") + "</p>" + "</html>");
 		nombre.setPreferredSize(new Dimension(140, 100));
-		
+
 		prod.add(nombre);
 		prod.add(Box.createHorizontalGlue());
 		prod.setMaximumSize(new Dimension(408, 100));
@@ -92,7 +93,7 @@ public class Historial extends JScrollPane implements Observer {
 	}
 
 	@Override
-	public void onProductRemoved( Producto p) {
+	public void onProductRemoved(Producto p) {
 	}
 
 	@Override

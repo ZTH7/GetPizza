@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.text.DecimalFormat;
 import java.util.UUID;
 
 import javax.swing.*;
@@ -234,7 +235,12 @@ public class PayConfirm extends JDialog {
 			precioFinal = 0;
 			
 		}
-		descuentoTips.setText("Se ha aplicado un descuento del " + descuento.getPorcentaje() * 100 + "%");
+		
+		DecimalFormat formato = new DecimalFormat("#.##");
+		String porcentajeFormato = formato.format(descuento.getPorcentaje() * 100);
+		
+		
+		descuentoTips.setText("Se ha aplicado un descuento del " + porcentajeFormato + "%");
 		prefinal.setText("Precio Final: " + precioFinal);
 	}
 
